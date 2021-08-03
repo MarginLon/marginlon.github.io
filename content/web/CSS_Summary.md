@@ -355,18 +355,24 @@ div {
 
 # CSS选择器
 ## 选择器
-- 基础选择器：标签选择器，类选择器，id 选择器，通配符选择器
-- 组合选择器：标签指定式选择器(p.one)，后代选择器(p .one)，子代选择器(p>.one)并集选择器
+- 基础选择器：#id, .class, element, *
+- 组合选择器：并列, 后代(e1 e2, e1>e2), 兄弟(e1+e2, e1~e2)
 - 属性选择器
     - E[attr]
     - E[attr=val]
     - E[attr~=val]:其中一个等于"val"
     - E[attr|=val]:其中之一以"val"开头
 - 伪类选择器
-    - :link
-    - :hover
-    - :active
-    - :visited
+    - a:
+      - :link
+      - :hover
+      - :active
+      - :visited
+    - input:
+      - :focus
+      - :enabled
+      - :disabled
+      - :checked
 - 选择器规则:  
    + 级联：两个规则，后者胜出
 
