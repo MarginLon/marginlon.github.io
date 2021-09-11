@@ -119,6 +119,7 @@ draft: false
   - 实现CALL的对象[函数、箭头函数、生成器函数、构造函数] -> 'function'
   - 未实现CALL的对象 -> 'object'
   - 未声明的变量 -> 'undefined'
+
 - [example] instanceof [class]  实例是否属于类
 - [example].constructor===[class] 获取构造函数
 - Object.prototype.toString.call([val])
