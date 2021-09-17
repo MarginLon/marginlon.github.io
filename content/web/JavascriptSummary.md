@@ -556,7 +556,7 @@ setTimeout(function(x){
    - （预先处理）形成一个闭包，存储信息，供下级context调用
  ```js
 let res = fn(1,2)(3);
-console.log(res);//=>6 1+2+3
+console.log(res);// =>6 1+2+3
 
 //ToDo
 function fn() {

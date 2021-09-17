@@ -91,10 +91,10 @@ setTimeout(function(x){
 ### 1.3. 构造函数
 - 初始this，把this指向当前的实例对象。 
 
- 
 ---
 
 ### 1.4. 箭头函数 [生成器generator]
+- 使用上级context的this
 
 ---
 ### 1.5. call/apply/bind强制修改this指向
