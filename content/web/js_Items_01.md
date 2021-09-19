@@ -81,7 +81,7 @@ draft: false
   - 未声明的变量 -> 'undefined'
     - 用于封装
     
-- [example] instanceof [class]  实例是否属于类
+- [example] instanceof [class]  实例是否属于类（通过原型链）
 - [example].constructor===[class] 获取构造函数
 - Object.prototype.toString.call([value])
 - Array.isArray([value])
