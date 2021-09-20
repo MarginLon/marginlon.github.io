@@ -1,0 +1,258 @@
+<!doctype html><html lang=en>
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.88.1"><meta name=theme-color content="#fff">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=format-detection content="telephone=no, date=no, address=no, email=no">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<title>JavaScript 堆栈内存 函数底层运行机制 块级作用域 | Margin</title>
+<link rel=stylesheet href=/css/meme.min.dc9fbca4432da68c47a0a43ce189958887e5a5572175556a190cc76f583ea12b.css integrity="sha256-3J+8pEMtpoxHoKQ84YmViIflpVchdVVqGQzHb1g+oSs=">
+<script src=https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js defer></script><script src=/js/meme.min.60d179c5ff466de3b06120305b4630abef0dfe4705aeb24c90767778c3f5cc08.js integrity="sha256-YNF5xf9GbeOwYSAwW0Ywq+8N/kcFrrJMkHZ3eMP1zAg="></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@700&display=swap" media=print onload="this.media='all'">
+<noscript><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@700&display=swap"></noscript>
+<meta name=author content="Margin"><meta name=description content="…">
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=mask-icon href=/icons/safari-pinned-tab.svg color=#2a6df4>
+<link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png>
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-title content="Margin">
+<meta name=apple-mobile-web-app-status-bar-style content="black-translucent">
+<meta name=mobile-web-app-capable content="yes">
+<meta name=application-name content="Margin">
+<meta name=msapplication-starturl content="../../">
+<meta name=msapplication-TileColor content="#fff">
+<meta name=msapplication-TileImage content="../../icons/mstile-150x150.png">
+<link rel=manifest href=/manifest.json>
+<link rel=canonical href=http://example.com/web/js_items_02/>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","datePublished":"2021-09-08T20:00:00+08:00","dateModified":"2021-09-20T23:35:38+08:00","url":"http://example.com/web/js_items_02/","headline":"JavaScript 堆栈内存 函数底层运行机制 块级作用域","description":"…","inLanguage":"en","articleSection":"web","wordCount":1329,"image":["https://github.com/MarginLon/MarginPostImage/blob/master/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98(%E4%BE%8B).png?raw=true","https://github.com/MarginLon/MarginPostImage/blob/master/%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6.png?raw=true","https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%8F%98%E9%87%8F.png?raw=true","https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%87%BD%E6%95%B0.png?raw=true"],"author":{"@type":"Person","description":"Hakuna Matata","email":"ljl19970218@gmail.com","image":"http://example.com/icons/apple-touch-icon.png","url":"https://marginlon.github.io/","name":"Margin"},"license":"[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)","publisher":{"@type":"Organization","name":"Margin","logo":{"@type":"ImageObject","url":"http://example.com/icons/apple-touch-icon.png"},"url":"http://example.com/"},"mainEntityOfPage":{"@type":"WebSite","@id":"http://example.com/"}}</script>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:creator content="@https://blog.twitter.com/">
+<meta property="og:title" content="JavaScript 堆栈内存 函数底层运行机制 块级作用域">
+<meta property="og:description" content="…">
+<meta property="og:url" content="http://example.com/web/js_items_02/">
+<meta property="og:site_name" content="Margin">
+<meta property="og:locale" content="en"><meta property="og:image" content="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98(%E4%BE%8B).png?raw=true">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-09-08T20:00:00+08:00">
+<meta property="article:modified_time" content="2021-09-20T23:35:38+08:00">
+<meta property="article:section" content="web">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<div class=header-wrapper>
+<div class="header-inner single">
+<div class=site-brand>
+<a href=/ class=brand>Margin</a>
+</div>
+<nav class=nav>
+<ul class=menu id=menu>
+<li class=menu-item><a href=/web/><span class=menu-item-name>Web</span></a>
+</li>
+<li class=menu-item><a href=/other/><span class=menu-item-name>Others</span></a>
+</li>
+<li class=menu-item><a href=/base/><span class=menu-item-name>Base</span></a>
+</li>
+<li class=menu-item><a href=/about/><span class=menu-item-name>About</span></a>
+</li>
+<li class=menu-item>
+<a id=theme-switcher href=#><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5 242 7a18 18 0 0128 0l48.8 97.5L422.2 70A18 18 0 01442 89.8l-34.5 103.4L505 242a18 18 0 010 28l-97.5 48.8L442 422.2A18 18 0 01422.2 442l-103.4-34.5L270 505a18 18 0 01-28 0l-48.8-97.5L89.8 442A18 18 0 0170 422.2l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8L70 89.8A18 18 0 0189.8 70zM256 128a128 128 0 10.01.0M256 160a96 96 0 10.01.0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412A256 256 0 10181 5a11.5 11.5.0 00-5 20A201.5 201.5.0 0142 399a11.5 11.5.0 00-15 13"/></svg></a>
+</li>
+<li class="menu-item search-item">
+<form id=search class=search role=search>
+<label for=search-input><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon search-icon"><path d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></label>
+<input type=search id=search-input class=search-input>
+</form>
+<template id=search-result hidden>
+<article class="content post">
+<h2 class=post-title><a class=summary-title-link></a></h2>
+<summary class=summary></summary>
+<div class=read-more-container>
+<a class=read-more-link>Read More »</a>
+</div>
+</article>
+</template>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<input type=checkbox id=nav-toggle aria-hidden=true>
+<label for=nav-toggle class=nav-toggle></label>
+<label for=nav-toggle class=nav-curtain></label>
+</header>
+<main class="main single" id=main>
+<div class=main-inner>
+<article class="content post h-entry" data-small-caps=true data-align=default data-type=web data-toc-num=true>
+<h1 class="post-title p-name">JavaScript 堆栈内存 函数底层运行机制 块级作用域</h1>
+<div class="post-body e-content">
+<ul>
+<li><a href=#1-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98>1. 堆栈内存</a></li>
+<li><a href=#2-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6>2. 函数底层运行机制</a></li>
+<li><a href=#3-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F>3. 块级作用域</a></li>
+</ul>
+<h1 id=1-堆栈内存><a href=#1-堆栈内存 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>1. 堆栈内存</h1>
+<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98(%E4%BE%8B).png?raw=true" alt=堆栈内存(例)></p>
+<ul>
+<li>
+<p>栈内存(Stack)</p>
+<ul>
+<li>执行环境栈 EC stack (execution context stack)
+<ul>
+<li>EC(G) 全局执行上下文，全局代码执行
+<ul>
+<li>VO(G) 全局变量对象[存储全局上下文中声明的变量]
+<ul>
+<li>特殊性：var/function声明的变量存于GO中, let/const存于VO(G).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EC(X) 某函数的执行上下文</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>堆内存(Heap)</p>
+<ul>
+<li>赋予一个16进制地址，对象中的键值依次存储，内存地址放在栈中供变量引用。</li>
+<li>GO(global object) 全局对象 [window]</li>
+</ul>
+</li>
+<li>
+<p>等号赋值</p>
+<ol>
+<li>创建值<br>
+原始值类型的值，储存在栈内，对象数据类型单独开辟堆内存</li>
+<li>声明变量<br>
+把声明的变量存储到当前上下文的变量对象中，如EC(G)</li>
+<li>赋值<br>
+指针的指向，对象类型赋值内存地址</li>
+</ol>
+</li>
+<li>
+<p>全局上下文遇到变量</p>
+<ul>
+<li>VO(G) => GO => Error</li>
+<li>window.xxx => GO => undefined</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id=2-函数底层运行机制><a href=#2-函数底层运行机制 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>2. 函数底层运行机制</h1>
+<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6.png?raw=true" alt=函数底层运行机制></p>
+<ul>
+<li>正常的函数创建 <code>function fn(y){...}</code></li>
+<li>匿名函数之函数表达式 <code>var fn = function(y){...};</code></li>
+<li>创建步骤：
+<ol>
+<li>开辟堆内存空间</li>
+<li>声明函数作用域scope，存储代码（字符串），存储对象键值对（函数名，形参个数）。</li>
+<li>16进制地址存入栈中以供引用</li>
+</ol>
+</li>
+<li>执行步骤
+<ol>
+<li>形成一个全新的私有context => EC(FN) AO(FN) 进栈 （AO:ActiveObject 变量对象）</li>
+<li>初始化作用域链[Scope-chain]
+<ul>
+<li>&lt;当前自己的私有context，函数的作用域> => 链的右侧是当前context的“上级”context</li>
+</ul>
+</li>
+<li>初始化this</li>
+<li>初始化arguments</li>
+<li>形参赋值：当前上下文声明一个形参变量，并传递实参值，非严格模式建立映射机制：集合中的每一项和对应的形参变量绑定（只在代码执行之前）。</li>
+<li>变量提升
+<ul>
+<li>var/function 提前声明/定义</li>
+<li>基于var/function 全局context 声明的变量映射到GO(window)一份，并随动。</li>
+<li>if 无论条件是否成立，都变量提升（条件中带function在新浏览器只提前声明，不提前赋值）</li>
+</ul>
+<div class=highlight><div class=chroma>
+<div class=table-container><table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kd>var</span> <span class=nx>func</span> <span class=o>=</span> <span class=kd>function</span> <span class=nx>AAA</span><span class=p>()</span> <span class=p>{</span>
+ <span class=c1>// 函数表达式匿名函数“具名化”，不能外部访问
+</span><span class=c1></span> <span class=c1>// 函数内部私有context会把名字作为context的变量
+</span><span class=c1></span> <span class=c1>// AAA(); 递归调用 而非arguments.callee
+</span><span class=c1></span><span class=p>}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div></li>
+<li>代码执行
+<ul>
+<li>变量：私有则只操作自己，和外界无关；如果不是自己私有，则基于chain向context查找，是否为上级私有，如果不是，继续向上查找，直到EC(G)，即<span style=color:red>作用域链查找机制</span></li>
+</ul>
+</li>
+<li>出栈 or 不出栈</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id=3-块级作用域><a href=#3-块级作用域 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>3. 块级作用域</h1>
+<ul>
+<li>除“函数和对象”的大括号外,出现了 let/const/function/class 等关键词声明变量，产生一个“块级私有context”</li>
+<li>块级作用域内默认变量
+<ul>
+<li>不带var，let，const，只有执行过定义的变量的代码后才可以访问，之前会报错,window对象上为undefined</li>
+<li>块内默认变量依旧是全局变量</li>
+</ul>
+</li>
+<li>块级作用域函数声明
+<ul>
+<li><span style=color:red>块内函数声明会提升到块顶部，也会在全局作用域用var声明一个同名的undefined变量</span></li>
+<li>块外的全局同名变量的赋值时机是执行完块内函数声明语句</li>
+<li><span style=color:red>执行到函数声明时，这行代码以前的所有操作同步给全局一份，之后的操作只与私有context有关。</span></li>
+</ul>
+</li>
+<li>块内同时有同名的默认变量和函数声明
+<ul>
+<li>块内的函数声明每次执行的时候都会给全局那个同名的变量赋值一次，并且，只有执行那个定义函数声明的代码才会触发赋值，你写的函数声明就相当于setter,每执行一次就给外部的那个同名的变量赋值一次</li>
+<li>如果块内同时有同名的函数声明和默认的变量声明，那给默认的变量赋值时其实相当于赋值给那个同名的函数，因为查找块内的作用域链时找到了,就不会往全局声明了。
+<img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%8F%98%E9%87%8F.png?raw=true" alt=块级作用域_变量>
+<img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%87%BD%E6%95%B0.png?raw=true" alt=块级作用域_函数></li>
+</ul>
+</li>
+</ul>
+</div>
+</article>
+<div class=updated-badge-container>
+<span title="Updated @ 2021-09-20 23:35:38 CST" style=cursor:help><svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-09-20</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-09-20</text></g></svg>
+</span></div>
+<div class=post-share>
+<div class=share-items>
+</div>
+</div>
+<ul class=post-nav>
+<li class=post-nav-prev>
+<a href=/web/js_items_03/ rel=prev>&lt; JavaScript 数据结构</a>
+</li>
+<li class=post-nav-next>
+<a href=/web/js_items_01/ rel=next>JavaScript 数据类型 类型检测 类型转换 ></a>
+</li>
+</ul>
+</div>
+</main>
+<div id=back-to-top class=back-to-top>
+<a href=#><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+</div>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=site-info>©&nbsp;2019–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3.0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Margin</div><div class=powered-by>Powered by <a href=https://github.com/gohugoio/hugo target=_blank rel=noopener>Hugo</a> | Theme is <a href=https://github.com/reuixiy/hugo-theme-meme target=_blank rel=noopener>MemE</a></div><div class=site-copyright><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en target=_blank rel=noopener>CC BY-NC-SA 4.0</a></div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js></script>
+<script>mediumZoom(document.querySelectorAll('div.post-body img'),{background:'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'})</script>
+<script src=https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js type=module defer></script>
+</body>
+</html>

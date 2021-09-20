@@ -1,0 +1,270 @@
+<!doctype html><html lang=en>
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.88.1"><meta name=theme-color content="#fff">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=format-detection content="telephone=no, date=no, address=no, email=no">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<title>JavaScript 工厂设计模式 数组和对象的深浅拷贝 深浅合并 | Margin</title>
+<link rel=stylesheet href=/css/meme.min.dc9fbca4432da68c47a0a43ce189958887e5a5572175556a190cc76f583ea12b.css integrity="sha256-3J+8pEMtpoxHoKQ84YmViIflpVchdVVqGQzHb1g+oSs=">
+<script src=https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js defer></script><script src=/js/meme.min.60d179c5ff466de3b06120305b4630abef0dfe4705aeb24c90767778c3f5cc08.js integrity="sha256-YNF5xf9GbeOwYSAwW0Ywq+8N/kcFrrJMkHZ3eMP1zAg="></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@700&display=swap" media=print onload="this.media='all'">
+<noscript><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@700&display=swap"></noscript>
+<meta name=author content="Margin"><meta name=description content="…">
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=mask-icon href=/icons/safari-pinned-tab.svg color=#2a6df4>
+<link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png>
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-title content="Margin">
+<meta name=apple-mobile-web-app-status-bar-style content="black-translucent">
+<meta name=mobile-web-app-capable content="yes">
+<meta name=application-name content="Margin">
+<meta name=msapplication-starturl content="../../">
+<meta name=msapplication-TileColor content="#fff">
+<meta name=msapplication-TileImage content="../../icons/mstile-150x150.png">
+<link rel=manifest href=/manifest.json>
+<link rel=canonical href=http://example.com/web/js_items_11/>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","datePublished":"2021-09-16T20:00:00+08:00","dateModified":"2021-09-20T23:35:38+08:00","url":"http://example.com/web/js_items_11/","headline":"JavaScript 工厂设计模式 数组和对象的深浅拷贝 深浅合并","description":"…","inLanguage":"en","articleSection":"web","wordCount":636,"image":["https://github.com/MarginLon/MarginPostImage/blob/master/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png?raw=true"],"author":{"@type":"Person","description":"Hakuna Matata","email":"ljl19970218@gmail.com","image":"http://example.com/icons/apple-touch-icon.png","url":"https://marginlon.github.io/","name":"Margin"},"license":"[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)","publisher":{"@type":"Organization","name":"Margin","logo":{"@type":"ImageObject","url":"http://example.com/icons/apple-touch-icon.png"},"url":"http://example.com/"},"mainEntityOfPage":{"@type":"WebSite","@id":"http://example.com/"}}</script>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:creator content="@https://blog.twitter.com/">
+<meta property="og:title" content="JavaScript 工厂设计模式 数组和对象的深浅拷贝 深浅合并">
+<meta property="og:description" content="…">
+<meta property="og:url" content="http://example.com/web/js_items_11/">
+<meta property="og:site_name" content="Margin">
+<meta property="og:locale" content="en"><meta property="og:image" content="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png?raw=true">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-09-16T20:00:00+08:00">
+<meta property="article:modified_time" content="2021-09-20T23:35:38+08:00">
+<meta property="article:section" content="web">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<div class=header-wrapper>
+<div class="header-inner single">
+<div class=site-brand>
+<a href=/ class=brand>Margin</a>
+</div>
+<nav class=nav>
+<ul class=menu id=menu>
+<li class=menu-item><a href=/web/><span class=menu-item-name>Web</span></a>
+</li>
+<li class=menu-item><a href=/other/><span class=menu-item-name>Others</span></a>
+</li>
+<li class=menu-item><a href=/base/><span class=menu-item-name>Base</span></a>
+</li>
+<li class=menu-item><a href=/about/><span class=menu-item-name>About</span></a>
+</li>
+<li class=menu-item>
+<a id=theme-switcher href=#><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5 242 7a18 18 0 0128 0l48.8 97.5L422.2 70A18 18 0 01442 89.8l-34.5 103.4L505 242a18 18 0 010 28l-97.5 48.8L442 422.2A18 18 0 01422.2 442l-103.4-34.5L270 505a18 18 0 01-28 0l-48.8-97.5L89.8 442A18 18 0 0170 422.2l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8L70 89.8A18 18 0 0189.8 70zM256 128a128 128 0 10.01.0M256 160a96 96 0 10.01.0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412A256 256 0 10181 5a11.5 11.5.0 00-5 20A201.5 201.5.0 0142 399a11.5 11.5.0 00-15 13"/></svg></a>
+</li>
+<li class="menu-item search-item">
+<form id=search class=search role=search>
+<label for=search-input><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon search-icon"><path d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></label>
+<input type=search id=search-input class=search-input>
+</form>
+<template id=search-result hidden>
+<article class="content post">
+<h2 class=post-title><a class=summary-title-link></a></h2>
+<summary class=summary></summary>
+<div class=read-more-container>
+<a class=read-more-link>Read More »</a>
+</div>
+</article>
+</template>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<input type=checkbox id=nav-toggle aria-hidden=true>
+<label for=nav-toggle class=nav-toggle></label>
+<label for=nav-toggle class=nav-curtain></label>
+</header>
+<main class="main single" id=main>
+<div class=main-inner>
+<article class="content post h-entry" data-small-caps=true data-align=default data-type=web data-toc-num=true>
+<h1 class="post-title p-name">JavaScript 工厂设计模式 数组和对象的深浅拷贝 深浅合并</h1>
+<div class="post-body e-content">
+<ul>
+<li><a href=#1%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F>1.工厂设计模式</a></li>
+<li><a href=#2%E6%95%B0%E7%BB%84%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D>2.数组和对象的深浅拷贝</a></li>
+</ul>
+<h1 id=1工厂设计模式><a href=#1工厂设计模式 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>1.工厂设计模式</h1>
+<div class=highlight><div class=chroma>
+<div class=table-container><table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js>    <span class=kd>var</span> <span class=nx>jQuery</span> <span class=o>=</span> <span class=kd>function</span><span class=p>(</span> <span class=nx>selector</span><span class=p>,</span> <span class=nx>context</span> <span class=p>)</span> <span class=p>{</span>
+		<span class=k>return</span> <span class=k>new</span> <span class=nx>jQuery</span><span class=p>.</span><span class=nx>fn</span><span class=p>.</span><span class=nx>init</span><span class=p>(</span> <span class=nx>selector</span><span class=p>,</span> <span class=nx>context</span> <span class=p>);</span>
+        <span class=p>};</span>
+    <span class=nx>jQuery</span><span class=p>.</span><span class=nx>fn</span> <span class=o>=</span> <span class=nx>jQuery</span><span class=p>.</span><span class=nx>prototype</span> <span class=o>=</span> <span class=p>{</span>
+        <span class=nx>jquery</span><span class=o>:</span> <span class=s2>&#34;3.6.0&#34;</span><span class=p>,</span>
+        <span class=nx>constructor</span><span class=o>:</span> <span class=nx>jQuery</span>
+    <span class=p>};</span>
+    <span class=nx>init</span> <span class=o>=</span> <span class=nx>jQuery</span><span class=p>.</span><span class=nx>fn</span><span class=p>.</span><span class=nx>init</span> <span class=o>=</span> <span class=kd>function</span><span class=p>(</span> <span class=nx>selector</span><span class=p>,</span> <span class=nx>context</span><span class=p>,</span> <span class=nx>root</span> <span class=p>){};</span>
+    <span class=nx>init</span><span class=p>.</span><span class=nx>prototype</span> <span class=o>=</span> <span class=nx>jQuery</span><span class=p>.</span><span class=nx>fn</span><span class=p>;</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png?raw=true" alt=工厂设计模式></p>
+<hr>
+<h1 id=2数组和对象的深浅拷贝><a href=#2数组和对象的深浅拷贝 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>2.数组和对象的深浅拷贝</h1>
+<p><img src alt=深浅拷贝></p>
+<div class=highlight><div class=chroma>
+<div class=table-container><table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js>
+<span class=c1>//======================浅克隆：只克隆第一级信息，第二级及以后的信息共用
+</span><span class=c1></span>    <span class=kd>let</span> <span class=nx>obj1</span> <span class=o>=</span> <span class=p>{</span>
+        <span class=nx>name</span><span class=o>:</span><span class=s2>&#34;Margin&#34;</span><span class=p>,</span>
+        <span class=nx>course</span><span class=o>:</span> <span class=p>{</span>
+            <span class=nx>c1</span><span class=o>:</span><span class=s1>&#39;CSS&#39;</span><span class=p>,</span>
+            <span class=nx>c2</span><span class=o>:</span><span class=s1>&#39;JS&#39;</span>
+        <span class=p>}</span>
+        <span class=nx>fn</span><span class=o>:</span> <span class=kd>function</span><span class=p>(){</span>
+            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=nx>name</span><span class=p>);</span>
+        <span class=p>}</span>
+    <span class=p>};</span>
+    <span class=c1>// 克隆1：循环遍历 【浅】
+</span><span class=c1></span>    <span class=kd>let</span> <span class=nx>obj2</span> <span class=o>=</span><span class=p>{},</span>
+        <span class=nx>keys</span> <span class=o>=</span> <span class=p>[</span>
+            <span class=p>...</span><span class=nb>Object</span><span class=p>.</span><span class=nx>keys</span><span class=p>(</span><span class=nx>obj1</span><span class=p>),</span>
+            <span class=p>...</span><span class=nb>Object</span><span class=p>.</span><span class=nx>getOwnPropertySymbols</span><span class=p>(</span><span class=nx>obj1</span><span class=p>)</span>
+        <span class=p>];</span>
+    <span class=nx>keys</span><span class=p>.</span><span class=nx>forEach</span><span class=p>(</span><span class=nx>key</span> <span class=p>=&gt;{</span>
+            <span class=nx>obj2</span><span class=p>[</span><span class=nx>key</span><span class=p>]</span> <span class=o>=</span> <span class=nx>obj1</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+        <span class=p>});</span>
+    <span class=c1>// 克隆2：展开运算符 【浅】
+</span><span class=c1></span>    <span class=kd>let</span> <span class=nx>obj2</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=p>...</span><span class=nx>obj1</span>
+        <span class=p>};</span>
+    <span class=c1>// 克隆3：assign 【浅】
+</span><span class=c1></span>    <span class=c1>// 原理 Object.assign([obj1],[obj2]); 
+</span><span class=c1></span>    <span class=c1>// =&gt; 返回结果仍是obj1堆内存，只不过是把obj2中的键值对和obj1的键值对合在一起
+</span><span class=c1></span>    <span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=nb>Object</span><span class=p>.</span><span class=nx>assign</span><span class=p>({},</span><span class=nx>obj1</span><span class=p>);</span>
+<span class=c1>//======================数组浅拷贝 
+</span><span class=c1></span>    <span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=p>[</span><span class=mi>30</span><span class=p>,</span><span class=mi>40</span><span class=p>]];</span>
+
+    <span class=c1>// 克隆1：循环 for each [浅]
+</span><span class=c1></span>    <span class=kd>let</span> <span class=nx>arr2</span> <span class=o>=</span> <span class=p>[];</span> 
+    <span class=nx>arr1</span><span class=p>.</span><span class=nx>forEach</span><span class=p>((</span><span class=nx>item</span><span class=p>,</span> <span class=nx>index</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+        <span class=nx>arr2</span><span class=p>[</span><span class=nx>index</span><span class=p>]</span> <span class=o>=</span> <span class=nx>item</span><span class=p>;</span>
+    <span class=p>});</span>
+
+    <span class=nx>arr2</span> <span class=o>=</span> <span class=nx>arr1</span><span class=p>.</span><span class=nx>map</span><span class=p>(</span><span class=nx>item</span> <span class=p>=&gt;</span> <span class=nx>item</span><span class=p>);</span>
+
+    <span class=c1>// 克隆2：展开运算符 Object.assign 【浅】
+</span><span class=c1></span>
+    <span class=c1>// 克隆3：基于slice/concat 【浅】
+</span><span class=c1></span>    <span class=kd>let</span> <span class=nx>arr2</span> <span class=o>=</span> <span class=nx>arr1</span><span class=p>.</span><span class=nx>slice</span><span class=p>();</span>
+
+<span class=c1>//======================深克隆：每一级信息都克隆
+</span><span class=c1></span>    <span class=c1>// 克隆1：JSON.stringfy / JSON.parse
+</span><span class=c1></span>
+    <span class=c1>// 原理：基于JSON.stringfy把原对象（数组）变为字符串，再基于JSON.parse把字符串转化为对象或者数组。
+</span><span class=c1></span>    <span class=c1>// 问题: 1.正则，Math，ArrayBuffer对象 =&gt; 空对象； 
+</span><span class=c1></span>    <span class=c1>//      2.函数/Symbol/undefined属性值的属性 =&gt; 消失；  
+</span><span class=c1></span>    <span class=c1>//      3. BigInt =&gt; 不能处理； 
+</span><span class=c1></span>    <span class=c1>//      4. Date =&gt; String 
+</span><span class=c1></span>    <span class=c1>//      5. arrayBuffer等也存在问题
+</span><span class=c1></span>    <span class=kd>let</span> <span class=nx>obj2</span> <span class=o>=</span> <span class=nx>JSON</span><span class=p>.</span><span class=nx>parse</span><span class=p>(</span><span class=nx>JSON</span><span class=p>.</span><span class=nx>stringfy</span><span class=p>(</span><span class=nx>obj1</span><span class=p>));</span>
+</code></pre></td></tr></table></div>
+</div>
+</div>
+</div>
+</article>
+<div class=updated-badge-container>
+<span title="Updated @ 2021-09-20 23:35:38 CST" style=cursor:help><svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-09-20</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-09-20</text></g></svg>
+</span></div>
+<div class=post-share>
+<div class=share-items>
+</div>
+</div>
+<ul class=post-nav>
+<li class=post-nav-next>
+<a href=/web/js_items_10/ rel=next>JavaScript CLASS 继承 ></a>
+</li>
+</ul>
+</div>
+</main>
+<div id=back-to-top class=back-to-top>
+<a href=#><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+</div>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=site-info>©&nbsp;2019–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3.0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Margin</div><div class=powered-by>Powered by <a href=https://github.com/gohugoio/hugo target=_blank rel=noopener>Hugo</a> | Theme is <a href=https://github.com/reuixiy/hugo-theme-meme target=_blank rel=noopener>MemE</a></div><div class=site-copyright><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en target=_blank rel=noopener>CC BY-NC-SA 4.0</a></div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js></script>
+<script>mediumZoom(document.querySelectorAll('div.post-body img'),{background:'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'})</script>
+<script src=https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js type=module defer></script>
+</body>
+</html>
