@@ -72,20 +72,41 @@ draft: false
   - null -> 'object'
   - 实现CALL的对象[函数、箭头函数、生成器函数、构造函数] -> 'function'
   - 未实现CALL的对象 -> 'object'
+  - 未声明的变量 -> 'undefined' 
   - 需求：验证val是否为一个对象
     ```js
     if(val!==null && /^(object|function)$/i.test(typeof val)){
 
     }
     ``` 
-  - 未声明的变量 -> 'undefined'
-    - 用于封装
-    
 - [example] instanceof [class]  实例是否属于类（通过原型链）
+  - 返回true/false
+  - 细分Object
+  - 无法检测标准普通对象
+  - 无法检测原始值类型
+  - 运行：
+    1. class[Symbol.hasInstance]:只支持ES6中的class static重构
+    2. example原型链查找class直到Object.prototype 
 - [example].constructor===[class] 获取构造函数
 - Object.prototype.toString.call([value])
-- Array.isArray([value])
- 
+  - 返回结果: "[object ?]"
+    1. example[Symbol.toStringTag]
+    2. 没有此属性，则找构造函数
+  - 标准普通对象=>字符串
+    - JSON.stringify
+    - Qs.stringify
+  - 自定义构造函数 : "[object Object]"
+  ```js
+  //需求：期望自定义构造函数："[object 构造函数]"
+  const Fn = function Fn(){}
+  Fn.prototype[Symbol.toStringTag] = "Fn";
+  let f = new Fn;
+  console.log(Object.prototype.toString.call(f));
+  ```
+- 快捷
+  - Array.isArray([value])
+  - isNaN
+
 ---
 
 ## 3. 类型转换
@@ -117,6 +138,9 @@ draft: false
   - 规则:
     - 原始值，其他对象用引号包含
     - 标准普通对象 => ```"[object Object]"``` 
+    - 标准普通对象 => 字符串
+    - JSON.stringify <=> JSON.parse
+    - Qs.stringify <=>  
   - 隐式转换：
     - '+':
       - 两边:出现字符串

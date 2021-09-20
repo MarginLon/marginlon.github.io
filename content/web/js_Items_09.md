@@ -75,7 +75,7 @@ draft: false
   return (attr in obj) && !obj.hasOwnProperty(attr);
   }
   ```
-+ 基于"for..in"循环遍历
++ 基于"for key in obj"循环遍历 
   + 优先遍历数字属性
   + 不会遍历到Symbol
   + 会把自己扩展到“类原型”上的公共属性方法也遍历 [可枚举的] ```if(!obj.hasOwnProperty(key)) break;//遍历到公共属性，停止遍历```

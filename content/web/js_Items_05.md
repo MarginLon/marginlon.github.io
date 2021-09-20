@@ -98,5 +98,6 @@ setTimeout(function(x){
 
 ---
 ### 1.5. call/apply/bind强制修改this指向
+- ```Function.prototype```
 
 ---
