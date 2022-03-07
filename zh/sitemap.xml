@@ -2,407 +2,416 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://marginlon.github.io/zh/authors/</loc>
-    <lastmod>2021-03-31T13:11:22+08:00</lastmod>
+    <loc>/zh/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/authors/"
+                href="/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/authors/"
+                href="/zh/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/posts/diagram-support/</loc>
-    <lastmod>2021-03-31T13:11:22+08:00</lastmod>
+    <loc>/zh/docs/qss-doc/chapter-2/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh/docs/qss-doc/chapter-1/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh/docs/qss-doc/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh/docs/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/posts/diagram-support/"
+                href="/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/posts/diagram-support/"
+                href="/zh/docs/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/authors/example-author/</loc>
+    <loc>/zh/authors/</loc>
     <lastmod>2021-03-31T13:11:22+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/authors/example-author/"
+                href="/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/authors/example-author/"
+                href="/zh/authors/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/posts/</loc>
+    <loc>/zh/posts/diagram-support/</loc>
     <lastmod>2021-03-31T13:11:22+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/posts/"
+                href="/posts/diagram-support/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/posts/"
+                href="/zh/posts/diagram-support/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/</loc>
+    <loc>/zh/authors/example-author/</loc>
     <lastmod>2021-03-31T13:11:22+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/"
+                href="/authors/example-author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/"
+                href="/zh/authors/example-author/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/posts/math-support/</loc>
+    <loc>/zh/posts/</loc>
+    <lastmod>2021-03-31T13:11:22+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/posts/"
+                />
+  </url><url>
+    <loc>/zh/posts/math-support/</loc>
     <lastmod>2020-11-20T22:52:56+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/posts/math-support/"
+                href="/posts/math-support/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/posts/math-support/"
+                href="/zh/posts/math-support/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/docs/example-doc/chapter-1/</loc>
+    <loc>/zh/docs/example-doc/chapter-1/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/docs/example-doc/chapter-1/"
+                href="/docs/example-doc/chapter-1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/docs/example-doc/chapter-1/"
+                href="/zh/docs/example-doc/chapter-1/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/docs/example-doc/nested-chapter/chapter-1/</loc>
+    <loc>/zh/docs/example-doc/nested-chapter/chapter-1/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/docs/example-doc/nested-chapter/chapter-1/"
+                href="/docs/example-doc/nested-chapter/chapter-1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/docs/example-doc/nested-chapter/chapter-1/"
+                href="/zh/docs/example-doc/nested-chapter/chapter-1/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/docs/example-doc/chapter-2/</loc>
+    <loc>/zh/docs/example-doc/chapter-2/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/docs/example-doc/chapter-2/"
+                href="/docs/example-doc/chapter-2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/docs/example-doc/chapter-2/"
+                href="/zh/docs/example-doc/chapter-2/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/docs/example-doc/nested-chapter/chapter-2/</loc>
+    <loc>/zh/docs/example-doc/nested-chapter/chapter-2/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/docs/example-doc/nested-chapter/chapter-2/"
+                href="/docs/example-doc/nested-chapter/chapter-2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/docs/example-doc/nested-chapter/chapter-2/"
+                href="/zh/docs/example-doc/nested-chapter/chapter-2/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/docs/</loc>
+    <loc>/zh/docs/example-doc/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/docs/"
+                href="/docs/example-doc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/docs/"
+                href="/zh/docs/example-doc/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/docs/example-doc/</loc>
+    <loc>/zh/docs/example-doc/nested-chapter/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/docs/example-doc/"
+                href="/docs/example-doc/nested-chapter/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/docs/example-doc/"
+                href="/zh/docs/example-doc/nested-chapter/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/docs/example-doc/nested-chapter/</loc>
-    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marginlon.github.io/docs/example-doc/nested-chapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://marginlon.github.io/zh/docs/example-doc/nested-chapter/"
-                />
-  </url><url>
-    <loc>https://marginlon.github.io/zh/categories/</loc>
+    <loc>/zh/categories/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/categories/"
+                href="/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/categories/"
+                href="/zh/categories/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/posts/featured-image/</loc>
+    <loc>/zh/posts/featured-image/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/posts/featured-image/"
+                href="/posts/featured-image/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/posts/featured-image/"
+                href="/zh/posts/featured-image/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/tags/image/</loc>
+    <loc>/zh/tags/image/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/tags/image/"
+                href="/tags/image/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/tags/image/"
+                href="/zh/tags/image/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/series/</loc>
+    <loc>/zh/series/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/series/"
+                href="/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/series/"
+                href="/zh/series/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/tags/</loc>
+    <loc>/zh/tags/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/tags/"
+                href="/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/tags/"
+                href="/zh/tags/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/categories/themes/</loc>
+    <loc>/zh/categories/themes/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/categories/themes/"
+                href="/categories/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/categories/themes/"
+                href="/zh/categories/themes/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/series/themes-guide/</loc>
+    <loc>/zh/series/themes-guide/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/series/themes-guide/"
+                href="/series/themes-guide/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/series/themes-guide/"
+                href="/zh/series/themes-guide/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/tags/css/</loc>
+    <loc>/zh/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/tags/css/"
+                href="/tags/css/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/tags/css/"
+                href="/zh/tags/css/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/tags/html/</loc>
+    <loc>/zh/tags/html/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/tags/html/"
+                href="/tags/html/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/tags/html/"
+                href="/zh/tags/html/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/authors/hugo-authors/</loc>
+    <loc>/zh/authors/hugo-authors/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/authors/hugo-authors/"
+                href="/authors/hugo-authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/authors/hugo-authors/"
+                href="/zh/authors/hugo-authors/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/tags/markdown/</loc>
+    <loc>/zh/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/tags/markdown/"
+                href="/tags/markdown/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/tags/markdown/"
+                href="/zh/tags/markdown/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/posts/markdown-syntax/</loc>
+    <loc>/zh/posts/markdown-syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/posts/markdown-syntax/"
+                href="/posts/markdown-syntax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/posts/markdown-syntax/"
+                href="/zh/posts/markdown-syntax/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/categories/syntax/</loc>
+    <loc>/zh/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/categories/syntax/"
+                href="/categories/syntax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/categories/syntax/"
+                href="/zh/categories/syntax/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/tags/themes/</loc>
+    <loc>/zh/tags/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/tags/themes/"
+                href="/tags/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/tags/themes/"
+                href="/zh/tags/themes/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/posts/placeholder-text/</loc>
+    <loc>/zh/posts/placeholder-text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/posts/placeholder-text/"
+                href="/posts/placeholder-text/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/posts/placeholder-text/"
+                href="/zh/posts/placeholder-text/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/tags/text/</loc>
+    <loc>/zh/tags/text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/tags/text/"
+                href="/tags/text/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/tags/text/"
+                href="/zh/tags/text/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/tags/emoji/</loc>
+    <loc>/zh/tags/emoji/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/tags/emoji/"
+                href="/tags/emoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/tags/emoji/"
+                href="/zh/tags/emoji/"
                 />
   </url><url>
-    <loc>https://marginlon.github.io/zh/posts/emoji-support/</loc>
+    <loc>/zh/posts/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marginlon.github.io/posts/emoji-support/"
+                href="/posts/emoji-support/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://marginlon.github.io/zh/posts/emoji-support/"
+                href="/zh/posts/emoji-support/"
                 />
   </url>
 </urlset>

@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>css | Marginlon</title>
+<title>QSS基础 | QSS文档 | Marginlon</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="Eureka is a elegant and powerful theme for Hugo.">
+  content="QSS基础">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,55 +66,58 @@
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"Tags",
-      "item":"/zh/tags/"},{
+      "name":"文档",
+      "item":"/zh/docs/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"css",
-      "item":"/zh/tags/css/"}]
+      "name":"QSS文档",
+      "item":"/zh/docs/qss-doc/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"QSS基础",
+      "item":"/zh/docs/qss-doc/chapter-1/"}]
 }
 </script>
 
 
 
-
 <script type="application/ld+json">
 {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[{
-            "@type":"ListItem",
-            "position":  1 ,
-            "name": "Markdown Syntax Guide",
-            "description": "Sample article showcasing basic Markdown syntax and formatting for HTML elements.",
-            "url": "/zh/posts/markdown-syntax/"
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/docs/qss-doc/chapter-1/"
+    },
+    "headline": "QSS基础 | QSS文档 | Marginlon","datePublished": "2022-03-07T00:00:00+00:00",
+    "dateModified": "2022-03-07T00:00:00+00:00",
+    "wordCount":  13 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
         }
-    ]
+        },
+    "description": "QSS基础"
 }
-</script><meta property="og:title" content="css | Marginlon" />
-<meta property="og:type" content="website" />
+</script><meta property="og:title" content="QSS基础 | QSS文档 | Marginlon" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/zh/tags/css/" />
+<meta property="og:url" content="/zh/docs/qss-doc/chapter-1/" />
 
 
 
-
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
-
+<meta property="og:description" content="QSS基础" />
 
 
 
 <meta property="og:locale" content="zh" />
-
-
-
-<meta property="og:locale:alternate" content="en" />
 
 
 
@@ -126,14 +129,17 @@
 
 
 
-<meta property="og:updated_time" content="2019-03-11T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-03-07T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-03-07T00:00:00&#43;00:00" />
 
 
 
-<meta property="article:section" content="tags" />
+<meta property="article:section" content="docs" />
 
 
-<link rel="alternate" type="application/rss+xml" href="/zh/tags/css/index.xml" title="Marginlon" />
+
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -154,7 +160,7 @@
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
             <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
             <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">博客</a>
-            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文档</a>
         </div>
 
         <div class="flex">
@@ -169,19 +175,6 @@
                     <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
                     <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
                     <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
-                </div>
-            </div>
-            <div class="relative pt-4 ps-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="languageMode">
-                    <i class="fas fa-globe"></i>
-                    <span class="ps-1">简体中文</span>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open-lang">
-                </div>
-                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='languageOptions'>
-                    <a class="px-4 py-1 hover:text-eureka" href="/zh/tags/css/">简体中文</a>
-                    <a class="px-4 py-1 hover:text-eureka" href="/tags/css/">English</a>
                 </div>
             </div>
         </div>
@@ -211,7 +204,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         getcolorscheme();
         switchBurger();
-        switchLanguage()
     });
 </script>
 </div>
@@ -219,69 +211,179 @@
   <main class="grow pt-16">
     <div class="ps-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-<article class="mx-6 my-8">
-    <h1 class="font-bold text-3xl text-primary-text">css</h1>
-    
-</article>
-<div class="bg-secondary-bg rounded px-6">
-    <div class="overflow-hidden divide-y">
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/markdown-syntax/" class="font-bold text-xl hover:text-eureka">Markdown Syntax Guide</a>
-</div>
-<div class="content">
-  
-    Sample article showcasing basic Markdown syntax and formatting for HTML elements.
-  
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-e">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class='fas fa-caret-right ms-1'></i>
 </div>
 
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="/zh/docs/qss-doc/">QSS文档</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qss-doc/chapter-2/">QSS加载</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="/zh/docs/qss-doc/chapter-1/">QSS基础</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="w-full lg:w-3/4 ps-6 ms-0 me-auto">
+                <h1 class="font-bold text-3xl text-primary-text">QSS基础</h1>
+                <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2019-03-11</span>
+        <span>2022-03-07</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>3分钟阅读时长</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
-    <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
+
+    
+</div>
+            </div>
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    
+                    
+                    <div class="content">
+                        <p>QSS基础</p>
+<h2 id="1">1</h2>
+<p>1</p>
+<h2 id="2">2</h2>
+<p>2</p>
+<h2 id="3">3</h2>
+<p>3</p>
+<h2 id="4">4</h2>
+<p>4</p>
+                    </div>
+                    
+                    
+
+                    
+
+
+
+                    
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
         
-        <a href="/zh/categories/themes/" class="hover:text-eureka">themes</a>
-        
-        
-        <span>, </span>
-        <a href="/zh/categories/syntax/" class="hover:text-eureka">syntax</a>
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/docs/qss-doc/chapter-2/" class="block">QSS加载</a>
         
     </div>
-    
-
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
+    <div class="md:text-right mt-4 md:mt-0">
         
     </div>
-    
 </div>
 
-  </div>
-
-  
-</div>
-  </div>
-  
-</div>
+                    
 
 
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">本页内容</span>
 </div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-s ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1">1</a></li>
+    <li><a href="#2">2</a></li>
+    <li><a href="#3">3</a></li>
+    <li><a href="#4">4</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
 
 
       </div>

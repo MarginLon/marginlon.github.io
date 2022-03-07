@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 中文标题</title>
-    <link>https://marginlon.github.io/zh/tags/</link>
-    <description>Recent content in Tags on 中文标题</description>
+    <title>Tags on Marginlon</title>
+    <link>/zh/tags/</link>
+    <description>Recent content in Tags on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://marginlon.github.io/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="/zh/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>image</title>
-      <link>https://marginlon.github.io/zh/tags/image/</link>
+      <link>/zh/tags/image/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://marginlon.github.io/zh/tags/image/</guid>
+      <guid>/zh/tags/image/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>https://marginlon.github.io/zh/tags/css/</link>
+      <link>/zh/tags/css/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://marginlon.github.io/zh/tags/css/</guid>
+      <guid>/zh/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>html</title>
-      <link>https://marginlon.github.io/zh/tags/html/</link>
+      <link>/zh/tags/html/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://marginlon.github.io/zh/tags/html/</guid>
+      <guid>/zh/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>https://marginlon.github.io/zh/tags/markdown/</link>
+      <link>/zh/tags/markdown/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://marginlon.github.io/zh/tags/markdown/</guid>
+      <guid>/zh/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>themes</title>
-      <link>https://marginlon.github.io/zh/tags/themes/</link>
+      <link>/zh/tags/themes/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://marginlon.github.io/zh/tags/themes/</guid>
+      <guid>/zh/tags/themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>text</title>
-      <link>https://marginlon.github.io/zh/tags/text/</link>
+      <link>/zh/tags/text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://marginlon.github.io/zh/tags/text/</guid>
+      <guid>/zh/tags/text/</guid>
       <description></description>
     </item>
     
     <item>
       <title>emoji</title>
-      <link>https://marginlon.github.io/zh/tags/emoji/</link>
+      <link>/zh/tags/emoji/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://marginlon.github.io/zh/tags/emoji/</guid>
+      <guid>/zh/tags/emoji/</guid>
       <description></description>
     </item>
     
