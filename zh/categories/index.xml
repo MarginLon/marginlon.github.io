@@ -5,25 +5,6 @@
     <link>/zh/categories/</link>
     <description>Recent content in Categories on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="/zh/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>themes</title>
-      <link>/zh/categories/themes/</link>
-      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/zh/categories/themes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>syntax</title>
-      <link>/zh/categories/syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/zh/categories/syntax/</guid>
-      <description></description>
-    </item>
-    
+    <language>zh</language><atom:link href="/zh/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
