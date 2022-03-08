@@ -2,84 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2021-03-31T13:11:22+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/authors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/authors/"
-                />
-  </url><url>
-    <loc>/posts/diagram-support/</loc>
-    <lastmod>2021-03-31T13:11:22+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/posts/diagram-support/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/posts/diagram-support/"
-                />
-  </url><url>
-    <loc>/authors/example-author/</loc>
-    <lastmod>2021-03-31T13:11:22+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/authors/example-author/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/authors/example-author/"
-                />
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2021-03-31T13:11:22+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
-                />
-  </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2021-03-31T13:11:22+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/posts/"
-                />
-  </url><url>
-    <loc>/posts/math-support/</loc>
-    <lastmod>2020-11-20T22:52:56+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/posts/math-support/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/posts/math-support/"
-                />
-  </url><url>
     <loc>/docs/example-doc/chapter-1/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -158,6 +80,19 @@
                 href="/docs/example-doc/"
                 />
   </url><url>
+    <loc>/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+  </url><url>
     <loc>/docs/example-doc/nested-chapter/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -171,8 +106,19 @@
                 href="/docs/example-doc/nested-chapter/"
                 />
   </url><url>
+    <loc>/authors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/authors/"
+                />
+  </url><url>
     <loc>/categories/</loc>
-    <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -184,34 +130,43 @@
                 href="/categories/"
                 />
   </url><url>
-    <loc>/posts/featured-image/</loc>
-    <lastmod>2020-05-26T00:00:00+00:00</lastmod>
+    <loc>/authors/example-author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/zh/posts/featured-image/"
+                href="/zh/authors/example-author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/posts/featured-image/"
+                href="/authors/example-author/"
                 />
   </url><url>
-    <loc>/tags/image/</loc>
-    <lastmod>2020-05-26T00:00:00+00:00</lastmod>
+    <loc>/authors/hugo-authors/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/zh/tags/image/"
+                href="/zh/authors/hugo-authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/image/"
+                href="/authors/hugo-authors/"
+                />
+  </url><url>
+    <loc>/posts/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/"
                 />
   </url><url>
     <loc>/series/</loc>
-    <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -224,7 +179,6 @@
                 />
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -234,175 +188,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/tags/"
-                />
-  </url><url>
-    <loc>/categories/themes/</loc>
-    <lastmod>2020-05-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/categories/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/categories/themes/"
-                />
-  </url><url>
-    <loc>/series/themes-guide/</loc>
-    <lastmod>2020-05-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/series/themes-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/series/themes-guide/"
-                />
-  </url><url>
-    <loc>/tags/css/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/css/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/css/"
-                />
-  </url><url>
-    <loc>/tags/html/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/html/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/html/"
-                />
-  </url><url>
-    <loc>/authors/hugo-authors/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/authors/hugo-authors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/authors/hugo-authors/"
-                />
-  </url><url>
-    <loc>/tags/markdown/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/markdown/"
-                />
-  </url><url>
-    <loc>/posts/markdown-syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/posts/markdown-syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/posts/markdown-syntax/"
-                />
-  </url><url>
-    <loc>/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/categories/syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/categories/syntax/"
-                />
-  </url><url>
-    <loc>/tags/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/themes/"
-                />
-  </url><url>
-    <loc>/posts/placeholder-text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/posts/placeholder-text/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/posts/placeholder-text/"
-                />
-  </url><url>
-    <loc>/tags/text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/text/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/text/"
-                />
-  </url><url>
-    <loc>/tags/emoji/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/emoji/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/emoji/"
-                />
-  </url><url>
-    <loc>/posts/emoji-support/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/posts/emoji-support/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/posts/emoji-support/"
                 />
   </url>
 </urlset>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='zh' dir='ltr' ><meta charset="utf-8">
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
@@ -136,8 +136,8 @@
   <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
     <div class="w-full max-w-screen-xl mx-auto"><script>
     let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
@@ -157,7 +157,7 @@
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
+                    <i class="fas fa-moon"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
@@ -191,18 +191,17 @@
 <script>
     
     let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
         document.addEventListener('DOMContentLoaded', () => {
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
         })
     } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.classList.remove('fa-moon')
         element.firstElementChild.setAttribute("data-icon", 'sun')
         element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
     }
 
     document.addEventListener('DOMContentLoaded', () => {

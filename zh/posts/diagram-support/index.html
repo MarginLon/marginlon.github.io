@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='zh' dir='ltr' ><meta charset="utf-8">
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
@@ -123,10 +123,6 @@
 
 
 
-<meta property="og:locale:alternate" content="en" />
-
-
-
 
 <meta property="og:site_name" content="Marginlon" />
 
@@ -151,8 +147,8 @@
   <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
     <div class="w-full max-w-screen-xl mx-auto"><script>
     let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
@@ -172,7 +168,7 @@
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
+                    <i class="fas fa-moon"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
@@ -181,19 +177,6 @@
                     <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
                     <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
                     <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
-                </div>
-            </div>
-            <div class="relative pt-4 ps-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="languageMode">
-                    <i class="fas fa-globe"></i>
-                    <span class="ps-1">简体中文</span>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open-lang">
-                </div>
-                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='languageOptions'>
-                    <a class="px-4 py-1 hover:text-eureka" href="/zh/posts/diagram-support/">简体中文</a>
-                    <a class="px-4 py-1 hover:text-eureka" href="/posts/diagram-support/">English</a>
                 </div>
             </div>
         </div>
@@ -206,24 +189,22 @@
 <script>
     
     let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
         document.addEventListener('DOMContentLoaded', () => {
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
         })
     } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.classList.remove('fa-moon')
         element.firstElementChild.setAttribute("data-icon", 'sun')
         element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
     }
 
     document.addEventListener('DOMContentLoaded', () => {
         getcolorscheme();
         switchBurger();
-        switchLanguage()
     });
 </script>
 </div>
