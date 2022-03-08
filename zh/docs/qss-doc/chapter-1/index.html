@@ -91,7 +91,7 @@
     },
     "headline": "QSS基础 | QSS文档 | Marginlon","datePublished": "2022-03-07T00:00:00+00:00",
     "dateModified": "2022-03-07T00:00:00+00:00",
-    "wordCount":  13 ,
+    "wordCount":  2721 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -289,7 +289,7 @@
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>6分钟阅读时长</span>
     </div>
     
     
@@ -303,14 +303,231 @@
                     
                     <div class="content">
                         <p>QSS基础</p>
-<h2 id="1">1</h2>
-<p>1</p>
-<h2 id="2">2</h2>
-<p>2</p>
-<h2 id="3">3</h2>
-<p>3</p>
-<h2 id="4">4</h2>
-<p>4</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-css">selector { attribute:value; }
+</code></pre>
+<p>  <code>selector</code>代表选择器，指明了哪种控件将会受到规则影响。<code>attribute:value</code>代表声明语句，其中<code>attribute</code>表示属性，<code>value</code>表示该属性的值，属性与它的值之间必须以冒号隔开，属性值后面必须以分号结束。</p>
+<h2 id="选择器">选择器</h2>
+<h3 id="通用选择器">通用选择器</h3>
+<p>  通用选择器(*)表示匹配程序中所有的<code>widget</code>，效率较低，尽量减少使用。</p>
+<pre><code class="language-css">* { 
+	font:normal 20px &quot;微软雅黑&quot;; 
+}
+</code></pre>
+<hr>
+<h3 id="类型选择器">类型选择器</h3>
+<p>  类名即Widget类名, 由<code>QObject :: metaObject() :: className()</code>获取, 类型选择器匹配所有该类以及该类的派生类的对象。</p>
+<pre><code class="language-css">QPushButton { 
+	color:blue; 
+}
+</code></pre>
+<p>  如果想要为相似控件提供统一样式，则可以如下使用：</p>
+<pre><code class="language-css">QAbstractSpinBox { //QSpinBox, QDateTimeEdit, QTimeEdit, QDateEdit
+	min-height: 30px;
+	max-height: 30px;
+	border-width: 1px;
+	order-style:solid;
+	order-color:gray;
+	padding: 0px;
+}
+</code></pre>
+<p>  注意：当自定义控件在命名空间中（或是一个嵌套类），<code>QObject::className()</code>会返回( :: )，与子控件选择器冲突。解决该问题的方法是要将<code>::</code>替换为<code>--</code>。</p>
+<pre><code class="language-cpp">namespace ns {
+	class MyPushButton : public QPushButton {
+		// ...
+	}
+}
+
+// ...
+qApp-&gt;setStyleSheet(&quot;ns-MyPushButton { background: yellow; }&quot;)
+</code></pre>
+<hr>
+<h3 id="类选择器">类选择器</h3>
+<p>  类选择器与类型选择器相似，不同点在于类选择器不会匹配其派生类的对象。</p>
+<pre><code class="language-css">.QPushButton {
+	color:blue;
+}
+</code></pre>
+<hr>
+<h3 id="id选择器">ID选择器</h3>
+<p>  id指的是<code>objectName</code>，一般情况下，<code>objectName</code>唯一且不要在运行时改变。</p>
+<pre><code class="language-css">#button_1 {
+	color:red;
+}
+.QLabel#button_1 { //CSS中的交集选择器
+	color:red;
+}
+</code></pre>
+<p>  注意：</p>
+<ol>
+<li><code>objectName</code>大小写敏感</li>
+<li>&ldquo;#&ldquo;与ID之间没有空格</li>
+<li>由于<code>objectName</code>允许字符串中含有空格，但是由于第2条的影响，为了使用ID选择器，<code>	objectName</code>不能含有空格</li>
+<li>实际开发建议使用如上的第2种方式，是Qt官方给出的ID选择器格式，增强可读性。</li>
+</ol>
+<hr>
+<h3 id="后代选择器">后代选择器</h3>
+<p>  在<code>BaseDialog</code>匹配的所有对象中, 找到<code>QPushButton</code>所匹配的所有后代对象, 并给它们设置样式。</p>
+<pre><code class="language-css">BaseDialog QPushButton {
+	min-width: 120px;
+	min-height: 40px;
+	max-width: 120px;
+	min-height: 40px;
+	font-size:20px;
+	padding: 0px;
+}
+</code></pre>
+<p>  注意:</p>
+<ol>
+<li>后代选择器必须用空格隔开每个选择器，单个选择器可以使用各种类型的选择器。</li>
+<li>后代选择器可以通过空格一直延续。</li>
+<li>Qt中控件的父子关系取决于如何布局。</li>
+</ol>
+<hr>
+<h3 id="子元素选择器">子元素选择器</h3>
+<p>  子元素选择器表示找到指定选择器所匹配的对象中的所有特定直接子元素然后设置属性, 即找到<code>.QGroupBox</code>匹配到的对象中的<code>.QCheckBox</code>匹配到的直接子元素然后设置属性<code>color:blue;</code></p>
+<pre><code class="language-css">.QGroupBox &gt; .QCheckBox {
+	color:blue;
+}
+</code></pre>
+<p>  注意：</p>
+<ol>
+<li>子元素选择器与后代选择器的不同在于只会查找“儿子”，不会查找其他后代。</li>
+<li>子元素选择器可以使用各种类型的选择器。</li>
+<li>只能有一个&rdquo;&gt;&quot;，不能延续。</li>
+<li>使用子元素选择器时，推荐使用类选择器替代类型选择器。</li>
+</ol>
+<hr>
+<h3 id="属性选择器">属性选择器</h3>
+<p>  匹配特定属性设置样式的选择器。通常情况下, 这里的属性指的是, 使用<code>Q_PROPERTY</code>宏所声明的属性, 并且属性类型
+要受<code> QVariant::toString()</code>支持.</p>
+<pre><code class="language-css">[objectName=&quot;button&quot;] {	// 值为button的objectName属性
+	color:red;
+}
+
+[objectName|=&quot;button&quot;] { // 值以button开头的objectName属性
+	color:red;
+}
+
+[objectName~=&quot;button&quot;] { // 值包含button的objectName属性，且是以空格隔开的button
+	color:red;
+}
+</code></pre>
+<p>  在设置了样式表后，相应的属性值发生了改变，则有必要重新加载样式表</p>
+<pre><code class="language-cpp">style()-&gt;unpolish(this); 
+style()-&gt;polish(this); 
+</code></pre>
+<hr>
+<h3 id="并集选择器">并集选择器</h3>
+<p>  并集选择器表示，将每个单独选择器匹配的控件放在同一个集合中设置样式。</p>
+<pre><code class="language-css">.QLineEdit, .QcomboBox {
+	border: 1px solid gray;
+	background-color: white;
+}
+</code></pre>
+<hr>
+<h3 id="子控件选择器">子控件选择器</h3>
+<p>  子控件选择器（Sub-Control）表示对类型选择器或类选择器指定的所有控件的子控件设置样式，注意与CSS3的伪元素不同。</p>
+<pre><code class="language-css">QComboBox::down-arrow {
+	image:url(:/res/arrowdown.png);
+	subcontrol-origin:margin;
+}
+</code></pre>
+<p>  注意：</p>
+<ol>
+<li>Sub-Controls始终相对于另一个参考元素来定位。<code>QComboBox</code>的<code>::down-arrow</code>会默认置于<code>QComboBox</code>的Padding右上角，<code>::down-arrow</code>默认置于另一个<code>::drop-down Sub-Control</code>的中心，<code>subcontrol-origin</code>可以改变其默认位置。</li>
+<li><code>width</code>和<code>height</code>属性用来控制Sub-Controls的size，而设置了<code>image</code>就隐式设置了size。</li>
+<li><code>position:relative</code>，允许Sub-Controls从初始化位置便宜。</li>
+<li><code>position:absolute</code>，使Sub-Controls的positon和size基于参考元素改变。</li>
+<li>像 QComboBox 和 QScrollBar 这样的复杂部件，如果sub-control的一项属性是自定义的，那么其他所有的属性跟sub-control也都应该自定义。</li>
+</ol>
+<hr>
+<h3 id="伪类选择器">伪类选择器</h3>
+<p>  表示对类型选择器或类选择器指定的所有控件设置它在指定状态时的样式。</p>
+<pre><code class="language-css">.QPushButton:hover {
+	color:white;
+}
+.QPushButton:hover:checked {
+	color:white;
+}
+</code></pre>
+<p>  注意：</p>
+<ol>
+<li><code>!</code>表示取反</li>
+<li>伪装态可以链接，隐式包含逻辑与</li>
+</ol>
+<hr>
+<h3 id="不使用选择器不推荐">不使用选择器（不推荐）</h3>
+<pre><code class="language-cpp">pBtn1-&gt;setStyleSheet(&quot;color:green;&quot;)
+</code></pre>
+<p>  这条语句等价于（假设pBtn1是QPushButton对象的指针）</p>
+<pre><code class="language-cpp">pBtn1-&gt;setStyleSheet(&quot;QPushButton, QPushBtton *{color:green;}&quot;)
+</code></pre>
+<hr>
+<h3 id="选择器匹配规则">选择器匹配规则</h3>
+<pre><code class="language-css">Qdialog QComboBox, QLineEdit { //wrong
+	border: 1px solid blue;
+}
+
+Qdialog&gt;QComboBox, QLineEdit { //wrong
+	border: 1px solid blue;
+}
+
+Qdialog QComboBox, QDiaLog QLineEdit { //right
+	border: 1px solid blue;
+}
+
+Qdialog&gt;QComboBox, QDialog&gt;QLineEdit { //right
+	border: 1px solid blue;
+}
+</code></pre>
+<p>  情景：父控件QDiaLog有子控件QComboBox和QLineEdit，如果使用前两种的写法，QComboBox正常，但程序所有的QLineEdit的边框都变成了1px的蓝色实线。基于以上，多个选择器组合使用时，它们会从右到左进行结合，即<code>Qdialog QComboBox, QLineEdit</code>，<code>Qdialog&gt;QComboBox, QLineEdit</code>。</p>
+<h2 id="qss特性">QSS特性</h2>
+<h3 id="层叠性">层叠性</h3>
+<p>  层叠性用以处理冲突，只有多个选择器匹配到同一个控件时才发生层叠性，两个选择器匹配到同一个按钮，结果是后面的样式覆盖掉前面的。</p>
+<pre><code class="language-css">pBtn1-&gt;setStyleSheet(&quot;QPushButton{color:green;}&quot;)
+pBtn1-&gt;setStyleSheet(&quot;.QPushButton{color:green;}&quot;)
+</code></pre>
+<h3 id="继承性qt-version57">继承性(Qt-Version&gt;=5.7)</h3>
+<p>  CSS中，如果一个标签的字体和颜色没有显式设置，会自动从父亲获得。而QSS中，控件不会从其父亲继承字体和颜色的设置。</p>
+<pre><code class="language-cpp">qApp-&gt;setStyleSheet(&quot;QGroupBox{ color: red; }&quot;);
+qApp-&gt;setStyleSheet(&quot;QGroupBox, QGroupBox * { color: red; }&quot;); //让孩子也获得其属性
+</code></pre>
+<p>  但要注意的是<code>QWidget::setFont()</code>可以设置包括孩子在内的字体，<code>QWidget::setPalette()</code>可以设置调色板包括孩子在内的调色板。如果想要字体和调色板被孩子继承，可以给QApplication设置<code>Qt::AA_UseStyleSheetPropagationInWidgetStyles</code>(Qt5.7加入)属性。</p>
+<pre><code class="language-cpp">QCoreApplication::setAttribute(Qt::AA_UseStyleSheetPropagationInWidgetStyles, true);
+</code></pre>
+<h3 id="优先级">优先级</h3>
+<p>  当一个控件被多个选择器选中并且设置了相同的属性（值不同）时， 不能仅仅根据设置样式语句出现的先后顺序进行层叠, 那么控件的样式如何确定，于是引出了选择器的优先级问题。</p>
+<ol>
+<li>设置方式的优先级：控件直接设置的样式 &gt; QApplication设置的样式</li>
+<li>样式表本身的优先级：一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。
+<ul>
+<li>继承：最终样式为离目标最近的样式</li>
+<li>相同选择器：写在后面的会覆盖掉前面的</li>
+<li>不同选择器：Id &gt; 类 &gt; 类型 &gt; 通配符 &gt; 继承 &gt;默认</li>
+</ul>
+</li>
+<li>优先级权重：
+<ul>
+<li>计算id选择器数量[=a]</li>
+<li>计算类选择器数量+属性选择器数量[=b]</li>
+<li>计算类型选择器数量[=c]</li>
+<li>忽略子控件选择器</li>
+<li>串联上述abc，数字越大权重越大，优先级越高。</li>
+</ul>
+</li>
+</ol>
+<h3 id="冲突解决">冲突解决</h3>
+<h2 id="盒子模型">盒子模型</h2>
+<center>
+<p><img src="https://qtdebug.com/img/qtbook/qss/QSS-BoxModel-1.png" alt="盒模型"></p>
+</center>
+<center>
+<p><img src="https://qtdebug.com/img/qtbook/qss/QSS-BoxModel-2.png" alt="盒模型"></p>
+</center>
+<h2 id="属性">属性</h2>
+<p>  </p>
+<p>  </p>
                     </div>
                     
                     
@@ -346,10 +563,33 @@
 <div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-s ">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#1">1</a></li>
-    <li><a href="#2">2</a></li>
-    <li><a href="#3">3</a></li>
-    <li><a href="#4">4</a></li>
+    <li><a href="#语法">语法</a></li>
+    <li><a href="#选择器">选择器</a>
+      <ul>
+        <li><a href="#通用选择器">通用选择器</a></li>
+        <li><a href="#类型选择器">类型选择器</a></li>
+        <li><a href="#类选择器">类选择器</a></li>
+        <li><a href="#id选择器">ID选择器</a></li>
+        <li><a href="#后代选择器">后代选择器</a></li>
+        <li><a href="#子元素选择器">子元素选择器</a></li>
+        <li><a href="#属性选择器">属性选择器</a></li>
+        <li><a href="#并集选择器">并集选择器</a></li>
+        <li><a href="#子控件选择器">子控件选择器</a></li>
+        <li><a href="#伪类选择器">伪类选择器</a></li>
+        <li><a href="#不使用选择器不推荐">不使用选择器（不推荐）</a></li>
+        <li><a href="#选择器匹配规则">选择器匹配规则</a></li>
+      </ul>
+    </li>
+    <li><a href="#qss特性">QSS特性</a>
+      <ul>
+        <li><a href="#层叠性">层叠性</a></li>
+        <li><a href="#继承性qt-version57">继承性(Qt-Version&gt;=5.7)</a></li>
+        <li><a href="#优先级">优先级</a></li>
+        <li><a href="#冲突解决">冲突解决</a></li>
+      </ul>
+    </li>
+    <li><a href="#盒子模型">盒子模型</a></li>
+    <li><a href="#属性">属性</a></li>
   </ul>
 </nav>
 </div>
