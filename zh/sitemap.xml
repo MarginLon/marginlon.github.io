@@ -7,7 +7,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="/en/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -29,7 +29,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/docs/"
+                href="/en/docs/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -41,7 +41,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/authors/"
+                href="/en/authors/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -53,7 +53,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -65,7 +65,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/authors/example-author/"
+                href="/en/authors/example-author/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -77,7 +77,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/authors/hugo-authors/"
+                href="/en/authors/hugo-authors/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -89,7 +89,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/posts/"
+                href="/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -101,7 +101,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/series/"
+                href="/en/series/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -113,7 +113,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
