@@ -43,6 +43,97 @@
     <loc>/zh/docs/qss-doc/</loc>
     <lastmod>2022-03-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/zh/categories/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/categories/"
+                />
+  </url><url>
+    <loc>/zh/posts/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/posts/"
+                />
+  </url><url>
+    <loc>/zh/series/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/series/"
+                />
+  </url><url>
+    <loc>/zh/tags/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/tags/"
+                />
+  </url><url>
+    <loc>/zh/tags/visual-studio-code/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/series/visual-studio-code/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/categories/visual-studio-code/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/20.12.8/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/tags/github/</loc>
+    <lastmod>2020-11-20T18:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/series/github/</loc>
+    <lastmod>2020-11-20T18:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/categories/github/</loc>
+    <lastmod>2020-11-20T18:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/20.11.20/</loc>
+    <lastmod>2020-11-20T18:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/tags/github-page/</loc>
+    <lastmod>2020-09-18T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/categories/github-page/</loc>
+    <lastmod>2020-09-18T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/20.9.18/</loc>
+    <lastmod>2020-09-18T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/tags/meme/</loc>
+    <lastmod>2020-09-17T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/20.9.17/</loc>
+    <lastmod>2020-09-17T16:28:39+08:00</lastmod>
+  </url><url>
     <loc>/zh/authors/</loc>
     <xhtml:link
                 rel="alternate"
@@ -53,18 +144,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="/zh/authors/"
-                />
-  </url><url>
-    <loc>/zh/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/categories/"
                 />
   </url><url>
     <loc>/zh/authors/example-author/</loc>
@@ -89,42 +168,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="/zh/authors/hugo-authors/"
-                />
-  </url><url>
-    <loc>/zh/posts/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/posts/"
-                />
-  </url><url>
-    <loc>/zh/series/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/series/"
-                />
-  </url><url>
-    <loc>/zh/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/"
                 />
   </url>
 </urlset>

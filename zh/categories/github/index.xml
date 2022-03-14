@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on Marginlon</title>
+    <link>/zh/categories/github/</link>
+    <description>Recent content in github on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 20 Nov 2020 18:28:39 +0800</lastBuildDate><atom:link href="/zh/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github 远端仓库download不同本地</title>
+      <link>/zh/posts/20.11.20/</link>
+      <pubDate>Fri, 20 Nov 2020 18:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/20.11.20/</guid>
+      <description>仅此记录过程，供日后复用。 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C &amp;quot;example@example.com&amp;quot; ssh -v git@github.com // No more authentication methods</description>
+    </item>
+    
+  </channel>
+</rss>

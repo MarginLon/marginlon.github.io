@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>visual studio code on Marginlon</title>
+    <link>/zh/tags/visual-studio-code/</link>
+    <description>Recent content in visual studio code on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 08 Dec 2020 18:02:39 +0800</lastBuildDate><atom:link href="/zh/tags/visual-studio-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS Code自定义快捷模块</title>
+      <link>/zh/posts/20.12.8/</link>
+      <pubDate>Tue, 08 Dec 2020 18:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/20.12.8/</guid>
+      <description>VS Code自定义快捷模块 //1.&amp;lt;ctrl&amp;gt;+&amp;lt;shift&amp;gt;+&amp;lt;p&amp;gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如</description>
+    </item>
+    
+  </channel>
+</rss>

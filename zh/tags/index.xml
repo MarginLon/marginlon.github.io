@@ -5,6 +5,43 @@
     <link>/zh/tags/</link>
     <description>Recent content in Tags on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language><atom:link href="/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <lastBuildDate>Tue, 08 Dec 2020 18:02:39 +0800</lastBuildDate><atom:link href="/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>visual studio code</title>
+      <link>/zh/tags/visual-studio-code/</link>
+      <pubDate>Tue, 08 Dec 2020 18:02:39 +0800</pubDate>
+      
+      <guid>/zh/tags/visual-studio-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>/zh/tags/github/</link>
+      <pubDate>Fri, 20 Nov 2020 18:28:39 +0800</pubDate>
+      
+      <guid>/zh/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github page</title>
+      <link>/zh/tags/github-page/</link>
+      <pubDate>Fri, 18 Sep 2020 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/tags/github-page/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meme</title>
+      <link>/zh/tags/meme/</link>
+      <pubDate>Thu, 17 Sep 2020 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/tags/meme/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
