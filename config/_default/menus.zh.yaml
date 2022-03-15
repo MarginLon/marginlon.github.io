@@ -1,0 +1,10 @@
+main:
+  - name: 关于我
+    url: '#about'
+    weight: 1
+  - name: 博客
+    url: /posts/
+    weight: 2
+  - name: 文档
+    url: /docs/
+    weight: 3
