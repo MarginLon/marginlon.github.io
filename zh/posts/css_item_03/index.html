@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>CSS3 属性 选择器 浮动 | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/zh/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"CSS3 属性 选择器 浮动",
+      "item":"/zh/posts/css_item_03/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/posts/css_item_03/"
+    },
+    "headline": "CSS3 属性 选择器 浮动 | Marginlon","datePublished": "2021-10-03T22:02:39+08:00",
+    "dateModified": "2021-10-03T22:02:39+08:00",
+    "wordCount":  816 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; \/*字体大小*\/ line-height: 30px; \/*行高*\/ font-family: 幼圆,黑体; \/*字体类型：如果没有幼圆"
+}
+</script><meta property="og:title" content="CSS3 属性 选择器 浮动 | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/posts/css_item_03/" />
+
+
+
+
+<meta property="og:description" content="1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-10-03T22:02:39&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-10-03T22:02:39&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">CSS3 属性 选择器 浮动</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-10-03</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <ul>
+<li><a href="#1%E5%AD%97%E4%BD%93%E6%96%87%E6%9C%AC%E8%83%8C%E6%99%AF">1.字体，文本，背景</a></li>
+<li><a href="#2css%E5%8F%98%E9%87%8F">2.CSS变量</a></li>
+<li><a href="#3%E9%80%89%E6%8B%A9%E5%99%A8">3.选择器</a></li>
+<li><a href="#4%E6%B5%AE%E5%8A%A8">4.浮动</a></li>
+</ul>
+<h1 id="1字体文本背景">1.字体，文本，背景</h1>
+<pre><code class="language-css">p{
+	font-size: 50px; 		/*字体大小*/
+	line-height: 30px;      /*行高*/
+	font-family: 幼圆,黑体; 	/*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/
+	font-style: italic ;		/*italic表示斜体，normal表示不倾斜*/
+	font-weight: bold;	/*粗体*/
+	font-variant: small-caps;  /*小写变大写*/
+}
+vertical-align: middle; /*指定行级元素的垂直对齐方式。 内元素（inline）、行内块元素（inline-block）、表格的单元格（table-cell） */
+
+div{
+  letter-spacing:1px;
+  word-spacing:1px;
+  text-decoration:none;
+  text-transform:lowercase;
+  color:red;
+  text-align:center;
+}
+</code></pre>
+<pre><code class="language-css">body {
+  background-color:#ff99ff;
+  background-image:url(images/2.gif);
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-attachment:scroll|fixed;
+  background-origin:padding-box|border-box|content-box;
+  background-clip:border-box|padding-box|content-box;
+  background-size:1px 1px;
+  background-image: linear-gradient(to direction | angle, color-stop1, color-stop2...);background-image: radial-gradient(shape size at position,start-color,...,last-color);
+}
+</code></pre>
+<h1 id="2css变量">2.CSS变量</h1>
+<p>全局/局部</p>
+<pre><code class="language-css">/*全局变量*/
+:root { --color: blue; }
+.box{color: var(--color)}
+
+/*局部变量*/
+.box{
+--color: red;
+color: var(--color);
+}
+</code></pre>
+<ul>
+<li>拼接
+<ul>
+<li>如果变量值是⼀个字符串，可以与其他字符串拼接；</li>
+<li>如果变量值是数值，不能与数值单位直接连⽤，使用calc()函数；</li>
+<li>如果变量值带有单位，就不能写成字符串;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-css">/*字符串拼接*/
+.foo {
+   --bar: 'hello';
+   --concat: var(--bar) ' world';
+}
+/*变量为数值*/
+.foo {
+   --gap: 20;
+   margintop: calc(var(--gap) * 1px);
+}
+/*带单位*/
+.foo {
+   --foo: 20px;
+   font-size: var(--foo);
+}
+</code></pre>
+<h1 id="3选择器">3.选择器</h1>
+<ul>
+<li>基础选择器：#id, .class, element, *</li>
+<li>组合选择器：并列, 后代(e1 e2, e1&gt;e2), 兄弟(e1+e2, e1~e2)</li>
+<li>属性选择器
+<ul>
+<li>E[attr]</li>
+<li>E[attr=val]</li>
+<li>E[attr~=val]:其中一个等于&quot;val&quot;</li>
+<li>E[attr|=val]:其中之一以&quot;val&quot;开头</li>
+<li>E[attr^=&ldquo;val&rdquo;]:以val开头</li>
+<li>E[attr$=&ldquo;val&rdquo;]:以val结尾</li>
+<li>E[attr*=&ldquo;val&rdquo;]：包含val</li>
+</ul>
+</li>
+<li>伪类选择器
+<ul>
+<li>a:
+<ul>
+<li>:link</li>
+<li>:hover</li>
+<li>:active</li>
+<li>:visited</li>
+</ul>
+</li>
+<li>input:
+<ul>
+<li>:focus</li>
+<li>:enabled</li>
+<li>:disabled</li>
+<li>:checked</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>伪元素
+<ul>
+<li>::after
+<ul>
+<li>
+<pre><code class="language-css">&lt;!-- 清除浮动 --&gt;
+.clearfix::after{
+  content:'';
+  display:block;
+  clear:both;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="4浮动">4.浮动</h1>
+<ul>
+<li>标准文档流
+<ul>
+<li>
+<ol>
+<li>空白折叠</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>底边对齐</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>自动换行</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>行内元素和块级元素：
+<ul>
+<li>行内元素：
+<ul>
+<li>并排行内元素</li>
+<li>不能设置宽高，默认文字宽度</li>
+</ul>
+</li>
+<li>块级元素：
+<ul>
+<li>占一行</li>
+<li>可以设置宽高，默认宽度为父的100%</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>浮动：脱标，贴靠，字围，收缩</li>
+<li>清除浮动
+<ol>
+<li>给浮动元素的祖先加高度</li>
+<li><code>clear:both;</code>;
+<ul>
+<li>margin失效</li>
+</ul>
+</li>
+<li>隔墙（外墙，内墙）</li>
+<li><code>overflow:hidden;</code>;（偏方）
+<ul>
+<li>ie6: <code>_zoom:1;</code></li>
+<li>ie6微盒子: <code>height:6px;_font-size:0;</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/posts/css_item_06/" class="block">CSS3 Sass</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/posts/css_item_05/" class="block">CSS3 动画</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

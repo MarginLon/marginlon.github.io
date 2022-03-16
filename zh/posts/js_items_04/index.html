@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>JavaScript GC机制 闭包作用域 let/const/var | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/zh/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"JavaScript GC机制 闭包作用域 let/const/var",
+      "item":"/zh/posts/js_items_04/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/posts/js_items_04/"
+    },
+    "headline": "JavaScript GC机制 闭包作用域 let\/const\/var | Marginlon","datePublished": "2021-09-09T20:00:00+08:00",
+    "dateModified": "2021-09-09T20:00:00+08:00",
+    "wordCount":  1035 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "1. GC机制 2. 闭包作用域 3.let\/const\/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释"
+}
+</script><meta property="og:title" content="JavaScript GC机制 闭包作用域 let/const/var | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/posts/js_items_04/" />
+
+
+
+
+<meta property="og:description" content="1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-09-09T20:00:00&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-09-09T20:00:00&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript GC机制 闭包作用域 let/const/var</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-09</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <ul>
+<li><a href="#1-gc%E6%9C%BA%E5%88%B6">1. GC机制</a></li>
+<li><a href="#2-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F">2. 闭包作用域</a></li>
+<li><a href="#3letconstvar">3.let/const/var</a></li>
+</ul>
+<h1 id="1-gc机制">1. GC机制</h1>
+<ul>
+<li>GC：浏览器的垃圾回收机制（内存释放）
+<ul>
+<li>栈内存：
+<ul>
+<li>加载页面，形成全局context，只有页面关闭后，全局context释放</li>
+<li>函数执行私有context，进栈执行；函数中代码执行完成，大部分情况，出栈释放。
+<ul>
+<li>特殊：如果当前context的某些内容（一般是一个堆），被context以外内容占用，则不能出栈释放。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>堆内存
+<ul>
+<li>（谷歌）：标记清除
+<ul>
+<li>浏览器在空闲或指定时间，查看所有堆内存，把没有被任何东西占用的堆内存释放。</li>
+</ul>
+</li>
+<li>（IE低版本）：引用计数
+<ul>
+<li>创建了堆内存，被占用一次，则浏览器计数+1，取消占用计数-1，计数=0释放内存； =&gt; 某些情况（循环占用）导致计数混乱，出现“内存泄漏”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>释放内存：
+<ul>
+<li>x=null =&gt; 手动取消占用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="2-闭包作用域">2. 闭包作用域</h1>
+<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E9%97%AD%E5%8C%85%E6%A1%88%E4%BE%8B.png?raw=true" alt="闭包案例"></p>
+<ul>
+<li>EC(FN)：
+<ul>
+<li>开辟的某个堆内存，被当前EC(FN)外的变量占用，此时当前context即EC(FN)不能被出栈释放</li>
+<li>闭包：(大函数执行返回小函数只是其中一种形式)
+<ul>
+<li>函数执行产生一个私有context，保护内部私有变量不受污染。[保护]</li>
+<li>有可能形成不被释放的context，私有变量和一些值被保存，可供下级context中调取使用。[保存]</li>
+<li>闭包特点
+<ul>
+<li>保护：保护私有context的私有变量和外界互不影响</li>
+<li>保存：context的私有变量和值保存起来</li>
+<li>弊端：栈内存太大，影响性能，需合理利用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="3letconstvar">3.let/const/var</h1>
+<ul>
+<li>
+<p>let VS const</p>
+<ul>
+<li>let 变量储值可改</li>
+<li>const 赋值不能再与其他赋值关联</li>
+</ul>
+</li>
+<li>
+<p>let VS var</p>
+<ul>
+<li>变量提升：var 存在变量提升 let 不存在变量提升</li>
+<li>GO：全局context var相当于给GO增一个属性，随动；let和GO没有关系。</li>
+<li>重复声明：let不允许同context重复声明（不管先前何种方式声明，都不能let声明,词法解析阶段），var无所谓。</li>
+<li>let/const/function产生块级私有context
+<ul>
+<li>context &amp; 作用域
+<ul>
+<li>全局context</li>
+<li>函数执行的私有context</li>
+<li>块级作用域（私有context）
+<ul>
+<li>对象 function的大括号 判断，循环和代码块的大括号</li>
+</ul>
+<pre><code class="language-js">    debugger;//开启断点调试,控制台基于F10/F11 逐过程/逐语句 控制执行
+    //代码块不会对n产生限制，n使全局context
+    {
+        var n = 12;
+        console.log(n);
+
+        let m = 13;
+    }
+    console.log(n);
+    console.log(m);// m is not defined
+
+
+    let i = 0;//不产生块级context
+    for (; i&lt; 5;i++)
+    {
+        console.log(i);
+    }
+    console.log(i);//5
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>暂时性死区（基于typeof检测一个未被声明的变量，不会报错，结果是&rsquo;undefined&rsquo;）
+<ul>
+<li>只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</li>
+</ul>
+<ul>
+<li>
+<pre><code class="language-js">console.log(typeof n);//undefined
+let n = 12;//使上一句报错 
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/var%E5%8F%98%E9%87%8F.png?raw=true" alt="var"></p>
+</li>
+</ul>
+<hr>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/posts/js_items_05/" class="block">JavaScript This指向</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/posts/js_items_03/" class="block">JavaScript 数据结构</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>JavaScript 数据类型 类型检测 类型转换 | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: // NaN 非有效数字、Infinity 无穷大 // Number.MIN_SAFE_INTERGER // NaN == NaN false // NaN === NaN false =&gt; NaN !== NaN // =&gt; isNaN([value]); // Object.is(NaN,NaN); true string: &lsquo;&rsquo;, &ldquo;&rdquo;,`` boolean: true、f">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/zh/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"JavaScript 数据类型 类型检测 类型转换",
+      "item":"/zh/posts/js_items_01/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/posts/js_items_01/"
+    },
+    "headline": "JavaScript 数据类型 类型检测 类型转换 | Marginlon","datePublished": "2021-09-07T20:00:00+08:00",
+    "dateModified": "2021-09-07T20:00:00+08:00",
+    "wordCount":  1722 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: \/\/ NaN 非有效数字、Infinity 无穷大 \/\/ Number.MIN_SAFE_INTERGER \/\/ NaN == NaN false \/\/ NaN === NaN false =\u0026gt; NaN !== NaN \/\/ =\u0026gt; isNaN([value]); \/\/ Object.is(NaN,NaN); true string: \u0026lsquo;\u0026rsquo;, \u0026ldquo;\u0026rdquo;,`` boolean: true、f"
+}
+</script><meta property="og:title" content="JavaScript 数据类型 类型检测 类型转换 | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/posts/js_items_01/" />
+
+
+
+
+<meta property="og:description" content="1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: // NaN 非有效数字、Infinity 无穷大 // Number.MIN_SAFE_INTERGER // NaN == NaN false // NaN === NaN false =&gt; NaN !== NaN // =&gt; isNaN([value]); // Object.is(NaN,NaN); true string: &lsquo;&rsquo;, &ldquo;&rdquo;,`` boolean: true、f" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-09-07T20:00:00&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-09-07T20:00:00&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript 数据类型 类型检测 类型转换</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-07</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>4分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <ul>
+<li><a href="#1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">1. 数据类型</a></li>
+<li><a href="#2-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B">2. 类型检测</a></li>
+<li><a href="#3-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">3. 类型转换</a></li>
+</ul>
+<hr>
+<h2 id="1-数据类型">1. 数据类型</h2>
+<ul>
+<li>
+<p>原始值</p>
+<ul>
+<li>number:</li>
+</ul>
+<pre><code class="language-js">// NaN 非有效数字、Infinity 无穷大
+// Number.MIN_SAFE_INTERGER
+// NaN == NaN false
+// NaN === NaN false  =&gt; NaN !== NaN
+// =&gt; isNaN([value]); 
+// Object.is(NaN,NaN); true
+</code></pre>
+<ul>
+<li>string: &lsquo;&rsquo;, &ldquo;&rdquo;,``</li>
+<li>boolean: true、false</li>
+<li>null</li>
+<li>undefined</li>
+<li>BigInt</li>
+<li>Symbol:</li>
+</ul>
+<pre><code class="language-js">// 1. 对象的唯一属性名 (属性名类型：string &amp;&amp; symbol)
+//console.log(Symbol()===Symbol()); // false
+
+let key = Symbol();
+let obj1 = {
+      [key]:100
+    };
+console.log(obj1[key]);
+
+let obj2 = {
+      [Symbol()]:100
+    };
+let arr = Object.getOwnPropertySymbols(obj);
+  arr.forEach(key=&gt;{
+    console.log(obj2[key]);
+  });
+
+//2. redux/vuex公共状态管理，派发的行为标识基于symbol类型宏管理
+
+//3. Symbol.hasInstance\toStringTag\toPrimitive\iterator
+</code></pre>
+</li>
+<li>
+<p>引用值(对象类型)</p>
+<ul>
+<li>标准普通 {num:100}</li>
+<li>标准特殊 [10,20] /\d+/ new Date()</li>
+<li>非标准特殊 new Number(10)
+<ul>
+<li>
+<pre><code class="language-js">new Symbol() // TypeError
+new BigInt() // TypeError: Not a constructor
+Object(Symbol()) // pass 
+</code></pre>
+</li>
+</ul>
+</li>
+<li>函数对象(实现了call方法) function fn(){}</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-类型检测">2. 类型检测</h2>
+<ul>
+<li>typeof 运算符
+<ul>
+<li>返回字符串</li>
+<li>null -&gt; &lsquo;object&rsquo;</li>
+<li>实现CALL的对象[函数、箭头函数、生成器函数、构造函数] -&gt; &lsquo;function&rsquo;</li>
+<li>未实现CALL的对象 -&gt; &lsquo;object&rsquo;</li>
+<li>未声明的变量 -&gt; &lsquo;undefined&rsquo;</li>
+<li>需求：验证val是否为一个对象
+<pre><code class="language-js">if(val!==null &amp;&amp; /^(object|function)$/i.test(typeof val)){
+
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>[example] instanceof [class]  实例是否属于类（通过原型链）
+<ul>
+<li>返回true/false</li>
+<li>细分Object</li>
+<li>无法检测标准普通对象</li>
+<li>无法检测原始值类型</li>
+<li>运行：
+<ol>
+<li>class[Symbol.hasInstance]:只支持ES6中的class static重构</li>
+<li>example原型链查找class直到Object.prototype</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>[example].constructor===[class] 获取构造函数</li>
+<li>Object.prototype.toString.call([value])
+<ul>
+<li>返回结果: &ldquo;[object ?]&rdquo;
+<ol>
+<li>example[Symbol.toStringTag]</li>
+<li>没有此属性，则找构造函数</li>
+</ol>
+</li>
+<li>标准普通对象=&gt;字符串
+<ul>
+<li>JSON.stringify</li>
+<li>Qs.stringify</li>
+</ul>
+</li>
+<li>自定义构造函数 : &ldquo;[object Object]&rdquo;</li>
+</ul>
+<pre><code class="language-js">//需求：期望自定义构造函数：&quot;[object 构造函数]&quot;
+const Fn = function Fn(){}
+Fn.prototype[Symbol.toStringTag] = &quot;Fn&quot;;
+let f = new Fn;
+console.log(Object.prototype.toString.call(f));
+</code></pre>
+</li>
+<li>快捷
+<ul>
+<li>Array.isArray([value])</li>
+<li>isNaN</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-类型转换">3. 类型转换</h2>
+<ul>
+<li><span style="color:#cc0033">Others =&gt; Number</span>
+<ul>
+<li>Number([val])
+<ul>
+<li>隐式转换的调用方法（如<code>isNaN()</code>）</li>
+<li>String:出现非有效数字字符即为<code>NaN</code>，空串为<code>0</code></li>
+<li>null:<code>0</code></li>
+<li>undefined:<code>NaN</code></li>
+<li>boolean:<code>true==1 false==0</code></li>
+<li>BigInt:去除<code>n</code>, 超过安全数字处理为科学计数法</li>
+<li>Symbol-&gt;Uncaught TypeError: Cannot convert a Symbol value to a number</li>
+</ul>
+</li>
+<li>parseInt([val],[radix])/parseFloat([val])
+<ul>
+<li>[val] 必须是一个字符串，否则隐式转换</li>
+<li>[radix] 不设置或为0，按照10处理，若字符串'0x&rsquo;开头，按照16处理</li>
+<li>处理过程：在[val]中找到所有符合[radix]进制的内容，直到遇到不符合的字符，把找到的内容按照[radix]进制转换为10进制</li>
+<li>[radix]范围：2~36,包括0,否则<code>NaN</code></li>
+</ul>
+</li>
+<li>隐式转换
+<ul>
+<li>inNaN()</li>
+<li><span style="color:#2a5caa">数学运算(特殊：&quot;+&ldquo;的字符串拼接)</span></li>
+<li>&ldquo;==&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span style="color:#cc0033">Object =&gt; Number/String</span>
+<ol>
+<li>检测<code>Symbol.toPrimitive</code>，获得原始值</li>
+<li>第一步没有，<code>valueOf</code>获取原始值，不是原始值则继续第三步</li>
+<li>第二步没有，调用<code>toString</code>，字符串</li>
+<li>第三步后，若有需要，基于<code>Number()</code>，数字</li>
+</ol>
+</li>
+<li><span style="color:#cc0033">Others =&gt; String</span>
+<ul>
+<li>规则:
+<ul>
+<li>原始值，其他对象用引号包含</li>
+<li>标准普通对象 =&gt; <code>&quot;[object Object]&quot;</code></li>
+<li>标准普通对象 =&gt; 字符串</li>
+<li>JSON.stringify &lt;=&gt; JSON.parse</li>
+<li>Qs.stringify &lt;=&gt;</li>
+</ul>
+</li>
+<li>隐式转换：
+<ul>
+<li>&lsquo;+&rsquo;:
+<ul>
+<li>两边:出现字符串</li>
+<li>两边:出现对象
+<ul>
+<li>按Object =&gt; Number/String处理, toString获取了字符串则拼接</li>
+</ul>
+</li>
+<li>一边：左边为空
+<ul>
+<li>数学运算</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span style="color:#cc0033">Others =&gt; Boolean</span>
+<ul>
+<li>规则：只有<code>0,NaN,null,undefined,&quot;&quot;</code>为<code>false</code></li>
+<li>! !!</li>
+<li>Boolean([val])</li>
+<li>循环或条件判断（隐式转换）</li>
+<li>A||B A&amp;&amp;B
+<ul>
+<li>A &amp;&amp; B
+<ul>
+<li>如果第一个操作数是对象，则返回第二个数</li>
+<li>如果第二个操作数是对象，则只有在第一个操作数的求值结果为true的情况下才会返回该对象。</li>
+<li>如果两个操作数都是对象，则返回第二个数操作数。</li>
+<li>如果有一个操作数是null，则返回null。</li>
+<li>如果有一个操作数是NaN，则返回NaN。</li>
+<li>如果第一个操作数是undefined，则返回undefined。</li>
+<li>对于逻辑与，如果第一个操作数是false，无论第二个操作数是什么，结果都不可能再是true。</li>
+</ul>
+</li>
+<li>A || B
+<ul>
+<li>如果第一个操作数是对象，则返第一个操作数</li>
+<li>如果第一个操作数的求值结果为false，则返回第二个操作数</li>
+<li>如果两个操作数都是对象，则返回第一个操作数</li>
+<li>如果两个操作数是null，则返回null</li>
+<li>如果两个操作数是NaN，则返回NaN</li>
+<li>如果两个操作数是undefined，则返回undefined</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span style="color:#cc0033">&quot;==&ldquo;的规则</span>
+<ul>
+<li>类型相同
+<ul>
+<li><code>{}=={}</code> :false 比较堆内存地址，地址相同则相等</li>
+<li><code>[]==[]</code> :false</li>
+<li><code>NaN==NaN</code> :false <code>Object.is(NaN, NaN)</code> :true</li>
+</ul>
+</li>
+<li>类型不同
+<ul>
+<li><code>null==undefined</code> :true <code>===</code> :false null/undefined与其他类型不相等</li>
+<li>字符串==对象 对象=&gt;字符串</li>
+<li>两边类型不一致，先转换为数字再比较</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span style="color:#cc0033">其它</span>
+<ul>
+<li>&ldquo;+&rdquo;
+<ul>
+<li>{} + 0 左边{}视为代码块 // +0 =&gt; 0</li>
+<li>({} + 0)  // &ldquo;[object Object]0&rdquo;</li>
+<li>0 + {} // &ldquo;0[object Object]&rdquo;</li>
+</ul>
+</li>
+<li>模板字符串实现的是字符串拼接，对象转换为字符串，其余数学运算则对象=&gt;数字</li>
+</ul>
+</li>
+</ul>
+<hr>
+<pre><code class="language-js">//var a = ?;
+
+//方案一：
+var a ={
+  i:0
+};
+a[Symbol.toPrimitive] = function toPrimitive(){
+  //this -&gt; a
+  return ++this.i;
+}
+
+//方案二：
+var a =[1,2,3];
+a.toString = a.shift;
+
+//方案三：
+var i = 0;
+Object.defineProperty(window,'a',{
+  get(){
+    return ++i;
+  }
+});
+
+if(a==1 &amp;&amp; a==2 &amp;&amp; a==3){
+  console.log('OK');
+}
+</code></pre>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/posts/js_items_02/" class="block">JavaScript 堆栈内存 函数底层运行机制 块级作用域</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/posts/js_items_a/" class="block">JavaScript DOM</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

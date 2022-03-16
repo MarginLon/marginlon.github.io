@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>JavaScript CLASS 继承 | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="1.CLASS 2.类的继承 1.CLASS //ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; // this.n = 100; } // 给实例的私有属性和方法 n = 100; // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） // 增加">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/zh/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"JavaScript CLASS 继承",
+      "item":"/zh/posts/js_items_10/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/posts/js_items_10/"
+    },
+    "headline": "JavaScript CLASS 继承 | Marginlon","datePublished": "2021-09-15T20:00:00+08:00",
+    "dateModified": "2021-09-15T20:00:00+08:00",
+    "wordCount":  495 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "1.CLASS 2.类的继承 1.CLASS \/\/ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; \/\/ this.n = 100; } \/\/ 给实例的私有属性和方法 n = 100; \/\/ 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） \/\/ 增加"
+}
+</script><meta property="og:title" content="JavaScript CLASS 继承 | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/posts/js_items_10/" />
+
+
+
+
+<meta property="og:description" content="1.CLASS 2.类的继承 1.CLASS //ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; // this.n = 100; } // 给实例的私有属性和方法 n = 100; // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） // 增加" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-09-15T20:00:00&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-09-15T20:00:00&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript CLASS 继承</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-15</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <ul>
+<li><a href="#1class">1.CLASS</a></li>
+<li><a href="#2%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF">2.类的继承</a></li>
+</ul>
+<h1 id="1class">1.CLASS</h1>
+<pre><code class="language-js">//ES6
+class Modal {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        // this.n = 100;
+    } 
+    // 给实例的私有属性和方法
+    n = 100;
+
+    // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数）
+    // 增加的方法没有prototype，不可枚举
+    getX() { console.log(this.x);}
+    getY() { console.log(this.y);}
+
+    //当作普通对象设置“静态”属性和方法
+    static n = 200;
+    static setNumber(n) {this.n=n;}
+}
+//原型上的公共属性提取到外面单独写
+Modal.prototype.z = 10;
+let m = new Modal(10, 20);
+
+//ES5
+function Modal(x,y){
+    this.x=x;
+    this.y=y;
+}
+
+Modal.prototype.z=10;
+Modal.prototype.getX=function(){
+    console.log(this.x);
+}
+Modal.prototype.getY=function(){
+    console.log(this.y);
+}
+// Model-&gt;普通对象: 私有属性和方法与实例无关
+Modal.n=200;
+Modal.setNumber=function(n){
+    this.n=n;
+};
+let m = new Model(10,20);
+
+</code></pre>
+<hr>
+<h1 id="2类的继承">2.类的继承</h1>
+<ul>
+<li>封装：低耦合、高内聚</li>
+<li>多态: 重载[方法名相同，参数类型或个数不同 =&gt; 多个方法] &amp; 重写[子类重写父类中的方法]</li>
+<li>继承: 子类继承父类 [JS:子类的实例既有子类赋予的私有/共有属性和方法，也想拥有父类的私有/公有属性方法]
+<ol>
+<li>原型继承</li>
+</ol>
+<pre><code class="language-js">//基于原型链__proto__
+// + 父要赋予其实例的私有属性，子实例会变为公有属性
+// + 子实例可以修改父的方法，影响父实例。
+Child.prototype = new Parent;
+Child.prototype.get = function get(){};
+</code></pre>
+<ol start="2">
+<li>call继承</li>
+</ol>
+<pre><code class="language-js">// 父类普通方法执行{原型失效}，让方法中的this是子类的实例，让父类的私有赋予子类实例的私有
+function Child(){
+  Parent.call(this);
+}
+Child.prototype = new Parent;
+</code></pre>
+<ol start="3">
+<li>寄生组合式继承</li>
+</ol>
+<pre><code class="language-js">function Child(){
+ Parent.call(this);
+}
+
+Child.prototype = Object.create(Parent.prototype);
+</code></pre>
+<ol start="4">
+<li>ES6 extends继承</li>
+</ol>
+<pre><code class="language-js">class Parent {
+  constructor(){
+    this.x =100;
+  }
+  getX(){}
+}
+class Child extends Parent {
+  constructor(){
+    super();
+    this.y = 200;
+  }
+  getY(){}
+}
+</code></pre>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/posts/js_items_11/" class="block">JavaScript 工厂设计模式 数组和对象的深浅拷贝 深浅合并</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/posts/js_items_09/" class="block">JavaScript 面向对象[构造函数 原型和原型链 面向对象基础]</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

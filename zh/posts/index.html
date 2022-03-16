@@ -70,27 +70,63 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "VS Code自定义快捷模块",
-            "description": "VS Code自定义快捷模块 //1.\u0026lt;ctrl\u0026gt;+\u0026lt;shift\u0026gt;+\u0026lt;p\u0026gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\\r\\n换行符隔开.如",
-            "url": "/zh/posts/20.12.8/"
+            "name": "JavaScript BOM",
+            "description": " 1. BOM  1. BOM  navigator.userAgent history location window screen  ",
+            "url": "/zh/posts/js_base_04/"
         },{
             "@type":"ListItem",
             "position":  2 ,
-            "name": "Github 远端仓库download不同本地",
-            "description": "仅此记录过程，供日后复用。 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C \u0026quot;example@example.com\u0026quot; ssh -v git@github.com // No more authentication methods",
-            "url": "/zh/posts/20.11.20/"
+            "name": "JavaScript client offset相关属性和对比",
+            "description": "1.client 2.offset 3.offset/scroll/client对比 1.client clientWidth: width+padding; clientHeight: width+padding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width+padding+border; offsetHeight: width+padding+border; offsetPare",
+            "url": "/zh/posts/js_base_02/"
         },{
             "@type":"ListItem",
             "position":  3 ,
-            "name": "GitHub Pages绑定个人域名",
-            "description": "简单叙述一下Github Pages换域名的流程，以供日后使用。 域名解析配置 注册域名，实名认证 域名解析： 增加新纪录 记录类型：CNAME 主机记录：@ 记录值",
-            "url": "/zh/posts/20.9.18/"
+            "name": "JavaScript 事件绑定 事件对象 事件传播 事件委托",
+            "description": "1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener('click',function(){},false) true:捕获阶段触发 / false：冒泡阶段触发(默认) this: 事件对象 ie8",
+            "url": "/zh/posts/js_base_03/"
         },{
             "@type":"ListItem",
             "position":  4 ,
-            "name": "Meme主题部署到GitHub Pages",
-            "description": "本地运行Meme主题使用正常Hugo流程即可，注意使用__Extended__版本Hugo即可。简单叙述一下部署到Github Pages的流程，以供日",
-            "url": "/zh/posts/20.9.17/"
+            "name": "JavaScript scroll相关属性和缓动动画",
+            "description": "1.scroll 2.缓动动画 1.scroll window.onscroll(): 当我们用鼠标滚轮，滚动网页的时候，会触发 window.onscroll() 方法 scrollWidth and scrollHeight: width + padding scrollTop and scrollLeft: 当某个元素满足scrollHeight - scrollTop == clientHeight",
+            "url": "/zh/posts/js_base_01/"
+        },{
+            "@type":"ListItem",
+            "position":  5 ,
+            "name": "数据结构与算法_数据结构",
+            "description": "1.数据结构 数据结构 具体内容 题目 备注 线性表：向量Vector 单链表Singly Linked List 1. 双向链表 Double Linked Lists2. 静态链表 Static List3. 对称矩阵 Symmetric Matrix4. 稀疏矩阵 Sparse Matrix",
+            "url": "/zh/posts/datastructure_01/"
+        },{
+            "@type":"ListItem",
+            "position":  6 ,
+            "name": "CSS3 Sass",
+            "description": "// 变量 $nav-color: #F90; nav { $width: 100px; width: $width; color: $nav-color; } //编译后 nav { width: 100px; color: #F90; } // @mixin @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } //sass最终生成： .notice { background-color: green; border: 2px solid #00aa00; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }",
+            "url": "/zh/posts/css_item_06/"
+        },{
+            "@type":"ListItem",
+            "position":  7 ,
+            "name": "CSS3 属性 选择器 浮动",
+            "description": "1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆",
+            "url": "/zh/posts/css_item_03/"
+        },{
+            "@type":"ListItem",
+            "position":  8 ,
+            "name": "CSS3 动画",
+            "description": "1.动画 1.动画 过渡： transition transition-property:all transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D\u0026amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;",
+            "url": "/zh/posts/css_item_05/"
+        },{
+            "@type":"ListItem",
+            "position":  9 ,
+            "name": "CSS3 定位和层叠上下文原理",
+            "description": "1.定位 1.定位 position static(default) relative 参照物：自身 不脱标 使用情形： 微调元素，方位和z-index能够生效 做absolute的参考，子绝父相 absolute 参照物：父 脱标 top:参照",
+            "url": "/zh/posts/css_item_04/"
+        },{
+            "@type":"ListItem",
+            "position":  10 ,
+            "name": "CSS3 布局",
+            "description": "1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp",
+            "url": "/zh/posts/css_item_02/"
         }
     ]
 }
@@ -129,7 +165,7 @@
 
 
 
-<meta property="og:updated_time" content="2020-12-08T18:02:39&#43;08:00" />
+<meta property="og:updated_time" content="2021-10-31T20:00:00&#43;08:00" />
 
 
 
@@ -233,18 +269,18 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/20.12.8/" class="font-bold text-xl hover:text-eureka">VS Code自定义快捷模块</a>
+  <a href="/zh/posts/js_base_04/" class="font-bold text-xl hover:text-eureka">JavaScript BOM</a>
 </div>
 <div class="content">
   
-    VS Code自定义快捷模块 //1.&lt;ctrl&gt;&#43;&lt;shift&gt;&#43;&lt;p&gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如
+     1. BOM  1. BOM  navigator.userAgent history location window screen  
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2020-12-08</span>
+        <span>2021-10-31</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -252,21 +288,7 @@
     </div>
     
     
-    <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
-        
-        <a href="/zh/categories/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
-        
-    </div>
-    
 
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
-        
-    </div>
     
 </div>
 
@@ -281,18 +303,18 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/20.11.20/" class="font-bold text-xl hover:text-eureka">Github 远端仓库download不同本地</a>
+  <a href="/zh/posts/js_base_02/" class="font-bold text-xl hover:text-eureka">JavaScript client offset相关属性和对比</a>
 </div>
 <div class="content">
   
-    仅此记录过程，供日后复用。 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C &#34;example@example.com&#34; ssh -v git@github.com // No more authentication methods
+    1.client 2.offset 3.offset/scroll/client对比 1.client clientWidth: width&#43;padding; clientHeight: width&#43;padding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width&#43;padding&#43;border; offsetHeight: width&#43;padding&#43;border; offsetPare
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2020-11-20</span>
+        <span>2021-10-30</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -300,21 +322,7 @@
     </div>
     
     
-    <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
-        
-        <a href="/zh/categories/github/" class="hover:text-eureka">github</a>
-        
-    </div>
-    
 
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/github/" class="hover:text-eureka">github</a>
-        
-    </div>
     
 </div>
 
@@ -329,18 +337,18 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/20.9.18/" class="font-bold text-xl hover:text-eureka">GitHub Pages绑定个人域名</a>
+  <a href="/zh/posts/js_base_03/" class="font-bold text-xl hover:text-eureka">JavaScript 事件绑定 事件对象 事件传播 事件委托</a>
 </div>
 <div class="content">
   
-    简单叙述一下Github Pages换域名的流程，以供日后使用。 域名解析配置 注册域名，实名认证 域名解析： 增加新纪录 记录类型：CNAME 主机记录：@ 记录值
+    1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener(&#39;click&#39;,function(){},false) true:捕获阶段触发 / false：冒泡阶段触发(默认) this: 事件对象 ie8
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2020-09-18</span>
+        <span>2021-10-30</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -348,21 +356,7 @@
     </div>
     
     
-    <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
-        
-        <a href="/zh/categories/github-page/" class="hover:text-eureka">github page</a>
-        
-    </div>
-    
 
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/github/" class="hover:text-eureka">github</a>
-        
-    </div>
     
 </div>
 
@@ -377,18 +371,18 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/20.9.17/" class="font-bold text-xl hover:text-eureka">Meme主题部署到GitHub Pages</a>
+  <a href="/zh/posts/js_base_01/" class="font-bold text-xl hover:text-eureka">JavaScript scroll相关属性和缓动动画</a>
 </div>
 <div class="content">
   
-    本地运行Meme主题使用正常Hugo流程即可，注意使用__Extended__版本Hugo即可。简单叙述一下部署到Github Pages的流程，以供日
+    1.scroll 2.缓动动画 1.scroll window.onscroll(): 当我们用鼠标滚轮，滚动网页的时候，会触发 window.onscroll() 方法 scrollWidth and scrollHeight: width &#43; padding scrollTop and scrollLeft: 当某个元素满足scrollHeight - scrollTop == clientHeight
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2020-09-17</span>
+        <span>2021-10-29</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -396,21 +390,211 @@
     </div>
     
     
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/datastructure_01/" class="font-bold text-xl hover:text-eureka">数据结构与算法_数据结构</a>
+</div>
+<div class="content">
+  
+    1.数据结构 数据结构 具体内容 题目 备注 线性表：向量Vector 单链表Singly Linked List 1. 双向链表 Double Linked Lists2. 静态链表 Static List3. 对称矩阵 Symmetric Matrix4. 稀疏矩阵 Sparse Matrix
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
-        
-        <a href="/zh/categories/github-page/" class="hover:text-eureka">github page</a>
-        
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-10-13</span>
     </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
     
 
     
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css_item_06/" class="font-bold text-xl hover:text-eureka">CSS3 Sass</a>
+</div>
+<div class="content">
+  
+    // 变量 $nav-color: #F90; nav { $width: 100px; width: $width; color: $nav-color; } //编译后 nav { width: 100px; color: #F90; } // @mixin @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } //sass最终生成： .notice { background-color: green; border: 2px solid #00aa00; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/github/" class="hover:text-eureka">github</a>
-        
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-10-08</span>
     </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css_item_03/" class="font-bold text-xl hover:text-eureka">CSS3 属性 选择器 浮动</a>
+</div>
+<div class="content">
+  
+    1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-10-03</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css_item_05/" class="font-bold text-xl hover:text-eureka">CSS3 动画</a>
+</div>
+<div class="content">
+  
+    1.动画 1.动画 过渡： transition transition-property:all transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D&amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-10-02</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css_item_04/" class="font-bold text-xl hover:text-eureka">CSS3 定位和层叠上下文原理</a>
+</div>
+<div class="content">
+  
+    1.定位 1.定位 position static(default) relative 参照物：自身 不脱标 使用情形： 微调元素，方位和z-index能够生效 做absolute的参考，子绝父相 absolute 参照物：父 脱标 top:参照
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-10-02</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css_item_02/" class="font-bold text-xl hover:text-eureka">CSS3 布局</a>
+</div>
+<div class="content">
+  
+    1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-10-02</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
     
 </div>
 
@@ -425,6 +609,32 @@
 
 </div>
 
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/zh/posts/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/zh/posts/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="/zh/posts/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="/zh/posts/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/zh/posts/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
 
       </div>
     </div>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>JavaScript 面向对象[构造函数 原型和原型链 面向对象基础] | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="1. 构造函数 2. 原型和原型链 3. 面向对象基础 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &hellip; DOM HTML标签 -&gt; HTMLXXXElement -&gt; HTMLElement -&gt; Element -&gt; Node -&gt; EventTarget -&gt; Object HTMLDocument -&gt; Document -&gt; Node -&gt; &hellip; Window -&gt; WindowProperties -&gt; EventTarget -&gt; Object 元素集合 -&gt;">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/zh/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"JavaScript 面向对象[构造函数 原型和原型链 面向对象基础]",
+      "item":"/zh/posts/js_items_09/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/posts/js_items_09/"
+    },
+    "headline": "JavaScript 面向对象[构造函数 原型和原型链 面向对象基础] | Marginlon","datePublished": "2021-09-14T20:00:00+08:00",
+    "dateModified": "2021-09-14T20:00:00+08:00",
+    "wordCount":  1122 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "1. 构造函数 2. 原型和原型链 3. 面向对象基础 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function \u0026hellip; DOM HTML标签 -\u0026gt; HTMLXXXElement -\u0026gt; HTMLElement -\u0026gt; Element -\u0026gt; Node -\u0026gt; EventTarget -\u0026gt; Object HTMLDocument -\u0026gt; Document -\u0026gt; Node -\u0026gt; \u0026hellip; Window -\u0026gt; WindowProperties -\u0026gt; EventTarget -\u0026gt; Object 元素集合 -\u0026gt;"
+}
+</script><meta property="og:title" content="JavaScript 面向对象[构造函数 原型和原型链 面向对象基础] | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/posts/js_items_09/" />
+
+
+
+
+<meta property="og:description" content="1. 构造函数 2. 原型和原型链 3. 面向对象基础 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &hellip; DOM HTML标签 -&gt; HTMLXXXElement -&gt; HTMLElement -&gt; Element -&gt; Node -&gt; EventTarget -&gt; Object HTMLDocument -&gt; Document -&gt; Node -&gt; &hellip; Window -&gt; WindowProperties -&gt; EventTarget -&gt; Object 元素集合 -&gt;" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-09-14T20:00:00&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-09-14T20:00:00&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript 面向对象[构造函数 原型和原型链 面向对象基础]</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-14</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <ul>
+<li><a href="#1-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">1. 构造函数</a></li>
+<li><a href="#2-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE">2. 原型和原型链</a></li>
+<li><a href="#3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80">3. 面向对象基础</a></li>
+</ul>
+<h1 id="1-构造函数">1. 构造函数</h1>
+<ul>
+<li>JS内置类
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Symbol</li>
+<li>BigInt</li>
+<li>Object</li>
+<li>Function</li>
+<li>&hellip;</li>
+<li>DOM
+<ul>
+<li>HTML标签 -&gt; HTMLXXXElement -&gt; HTMLElement -&gt; Element -&gt; Node -&gt; EventTarget -&gt; Object</li>
+<li>HTMLDocument -&gt; Document -&gt; Node -&gt; &hellip;</li>
+<li>Window -&gt; WindowProperties -&gt; EventTarget -&gt; Object</li>
+<li>元素集合 -&gt; HTMLCollection -&gt; Object</li>
+<li>节点集合 -&gt; NodeList -&gt; Object</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>自定义类（类 &lt;=&gt; 构造函数）
+<ul>
+<li>构造函数 VS 普通函数
+<ol>
+<li>产生私有context及后续步骤</li>
+<li><span style="color:#cc0033">构造函数创建一个空实例对象</span></li>
+<li>初始this，把this指向当前的实例对象。</li>
+<li>执行完，return时
+<ul>
+<li>没有return/return 基本数据类型值，浏览器默认把创建的实例对象返回</li>
+<li>return 引用类型，返回自己的返回值。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Fn VS Fn()：Fn代表函数本身（堆内存），Fn()函数执行，获取返回值。</li>
+<li>new Fn VS new Fn()：执行，第一个不传递实参，第二个传递实参。 优先级 19 VS 20
+<img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E7%9A%84%E5%8C%BA%E5%88%AB.png?raw=true" alt="构造函数和普通函数"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="2-原型和原型链">2. 原型和原型链</h1>
+<ul>
+<li>function内置prototype属性，属性值是一个对象[堆内存]，对象中存储属性和方法是供当前类所属实例调用的公共属性和方法
+<ul>
+<li><span style="color:#cc0033">箭头函数</span>和<span style="color:#cc0033">基于ES6给对象某个成员赋值函数值的快捷操作</span>没有prototype</li>
+<li>Function.prototype是函数</li>
+<li>原型对象上有一个内置的属性 constructor（构造器），属性值是当前函数本身</li>
+</ul>
+</li>
+<li>object都具备：__proto__，属性值是当前实例所属类的原型prototype
+<ul>
+<li>Object.protptype的__proto__值是null，Object是所有对象的“基类”</li>
+</ul>
+</li>
+<li>原型链查找机制
+<ul>
+<li>f1.say
+<ul>
+<li>先找私有属性</li>
+<li>没有，基于__proto__找所属类原型的公共属性方法</li>
+<li>没有，基于原型对象的__proto__查找，直到Object.prototype</li>
+</ul>
+</li>
+<li>f1.__proto__.say
+<ul>
+<li>跳过私有的，找所属类原型的公有属性方法</li>
+<li>Fn.prototype.say  基于原型对象查找
+<img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE.png?raw=true" alt="原型和原型链"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="3-面向对象基础">3. 面向对象基础</h1>
+<ul>
+<li>JS创建值（实例）两种方案:
+<ul>
+<li>字面量</li>
+<li>构造函数new</li>
+<li>对于对象和函数类型，无区别；<span style="color:red">对于原始值，字面量返回原始值类型，构造函数方式返回对象类型，但都是所属类的实例。</span></li>
+<li>Symbol和BigInt 不允许new <code>Object()</code></li>
+<li>装箱: <code>(10).toFixed(2)</code> 原始值变为对象类型实例再操作</li>
+<li>拆箱： <code>let n = new Number(10); n+10;</code></li>
+</ul>
+</li>
+<li>检测一个属性是否为当前对象的成员
+<ul>
+<li>属性名 in 对象：无论公私有，有就是true</li>
+<li>对象.hasOwnProperty(属性名)：只有私有true</li>
+</ul>
+</li>
+<li>验证实例属于类 instanceof
+<ul>
+<li><code>1 instanceof Number // =&gt; false</code></li>
+</ul>
+</li>
+<li>检测公有属性
+<pre><code class="language-js">function hasPubProperty(obj,attr){
+//弊端：既私有又公有
+return (attr in obj) &amp;&amp; !obj.hasOwnProperty(attr);
+}
+</code></pre>
+</li>
+<li>基于&quot;for key in obj&quot;循环遍历
+<ul>
+<li>优先遍历数字属性</li>
+<li>不会遍历到Symbol</li>
+<li>会把自己扩展到“类原型”上的公共属性方法也遍历 [可枚举的] <code>if(!obj.hasOwnProperty(key)) break;//遍历到公共属性，停止遍历</code></li>
+<li>Object.keys(obj):非Symbol私有属性 [数组]</li>
+<li>Object.getOwnPropertyNames(obj): 同上</li>
+<li>Object.getOwnPropertySymbols(obj):Symbol私有属性 [数组]</li>
+</ul>
+<pre><code class="language-js">let keys = [...Object.keys(obj),...Object.getOwnPropertySymbols(obj)];
+keys.forEach(key=&gt; {
+            console.log(`属性名:$(),属性值:$()`);.
+});
+</code></pre>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/posts/js_items_10/" class="block">JavaScript CLASS 继承</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/posts/js_items_08/" class="block">JavaScript 函数防抖 函数节流</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>
