@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>VS Code自定义快捷模块 | Marginlon</title>
+<title>Webpack | Marginlon</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="VS Code自定义快捷模块 //1.&lt;ctrl&gt;&#43;&lt;shift&gt;&#43;&lt;p&gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如">
+  content="1. Webpack 1. Webpack // npx webpack =&gt; npm run build // package.json &quot;scripts&quot;: { &quot;build&quot;: &quot;webpack&quot; } // module.exports = { entry: &#39;./src/index.js&#39;, output: { filename: &#39;bundle.js&#39;, path: path.resolve(__dirname, &#39;dist&#39;) } module: { rules: [ { test: /\.(js|jsx)$/, use: &#39;babel-loader&#39; } ] }, plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin({template: &#39;./src/index.html&#39;}) ] }; 面试 Loader css-loader: 加载CSS，支持模块化，压缩，文件导">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"/zh/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"VS Code自定义快捷模块",
-      "item":"/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/"}]
+      "name":"Webpack",
+      "item":"/zh/posts/webpack/"}]
 }
 </script>
 
@@ -83,11 +83,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/"
+        "@id": "/zh/posts/webpack/"
     },
-    "headline": "VS Code自定义快捷模块 | Marginlon","datePublished": "2020-12-08T18:02:39+08:00",
-    "dateModified": "2020-12-08T18:02:39+08:00",
-    "wordCount":  380 ,
+    "headline": "Webpack | Marginlon","datePublished": "2021-09-30T20:00:00+08:00",
+    "dateModified": "2021-09-30T20:00:00+08:00",
+    "wordCount":  1466 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -96,21 +96,21 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "VS Code自定义快捷模块 \/\/1.\u0026lt;ctrl\u0026gt;\u002b\u0026lt;shift\u0026gt;\u002b\u0026lt;p\u0026gt; \/\/2. snippets \/\/3. 新建 \/*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\\r\\n换行符隔开.如"
+    "description": "1. Webpack 1. Webpack \/\/ npx webpack =\u0026gt; npm run build \/\/ package.json \u0026quot;scripts\u0026quot;: { \u0026quot;build\u0026quot;: \u0026quot;webpack\u0026quot; } \/\/ module.exports = { entry: \u0027.\/src\/index.js\u0027, output: { filename: \u0027bundle.js\u0027, path: path.resolve(__dirname, \u0027dist\u0027) } module: { rules: [ { test: \/\\.(js|jsx)$\/, use: \u0027babel-loader\u0027 } ] }, plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin({template: \u0027.\/src\/index.html\u0027}) ] }; 面试 Loader css-loader: 加载CSS，支持模块化，压缩，文件导"
 }
-</script><meta property="og:title" content="VS Code自定义快捷模块 | Marginlon" />
+</script><meta property="og:title" content="Webpack | Marginlon" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/" />
+<meta property="og:url" content="/zh/posts/webpack/" />
 
 
 
 
-<meta property="og:description" content="VS Code自定义快捷模块 //1.&lt;ctrl&gt;&#43;&lt;shift&gt;&#43;&lt;p&gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如" />
+<meta property="og:description" content="1. Webpack 1. Webpack // npx webpack =&gt; npm run build // package.json &quot;scripts&quot;: { &quot;build&quot;: &quot;webpack&quot; } // module.exports = { entry: &#39;./src/index.js&#39;, output: { filename: &#39;bundle.js&#39;, path: path.resolve(__dirname, &#39;dist&#39;) } module: { rules: [ { test: /\.(js|jsx)$/, use: &#39;babel-loader&#39; } ] }, plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin({template: &#39;./src/index.html&#39;}) ] }; 面试 Loader css-loader: 加载CSS，支持模块化，压缩，文件导" />
 
 
 
@@ -127,26 +127,14 @@
 
 
 
-<meta property="article:published_time" content="2020-12-08T18:02:39&#43;08:00" />
+<meta property="article:published_time" content="2021-09-30T20:00:00&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2020-12-08T18:02:39&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-30T20:00:00&#43;08:00" />
 
 
 
 <meta property="article:section" content="posts" />
-
-
-<meta property="article:tag" content="visual studio code" />
-
-
-
-
-
-
-
-
-
 
 
 
@@ -224,34 +212,20 @@
 
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">VS Code自定义快捷模块</h1>
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Webpack</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2020-12-08</span>
+        <span>2021-09-30</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>3分钟阅读时长</span>
     </div>
     
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
-        
-        <a href="/zh/categories/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
-        
-    </div>
     
 
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
-        
-    </div>
     
 </div>
         
@@ -259,108 +233,111 @@
         
 
         <div class="content">
-            <h2 id="vs-code自定义快捷模块">VS Code自定义快捷模块</h2>
-<hr>
-<pre><code class="language-js">//1.&lt;ctrl&gt;+&lt;shift&gt;+&lt;p&gt;
-//2. snippets
-//3. 新建
-/*4. args:
-prefix：使用代码段的快捷入口
-body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如果值里包含特殊字符需要进行转义,多行代码以&quot;,&quot;分隔(在引号后面写逗号)
-$0：定义最终光标位置
-$1：定义第一次光标位置，按tab键可进行快速切换, 还可以有 $2, $3, $4, $5 ...
-description：代码段描述,在使用智能感知时的描述
- * /
+            <ul>
+<li><a href="#1-webpack">1. Webpack</a></li>
+</ul>
+<h1 id="1-webpack">1. Webpack</h1>
+<pre><code class="language-js"> // npx webpack =&gt; npm run build   
+    // package.json
+ &quot;scripts&quot;: {
+     &quot;build&quot;: &quot;webpack&quot;
+ } 
+
+// 
+ module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: 'babel-loader'
+      }
+    ]
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+    new HtmlWebpackPlugin({template: './src/index.html'})
+  ]
+};
 </code></pre>
-<pre><code class="language-json">// 自定义(vue页面结构)
- {
-     &quot;vue&quot;: {
-    &quot;prefix&quot;: &quot;vue-tem&quot;, // 设置的快捷入口
-    &quot;body&quot;: [ // 模块内容
-        &quot;&lt;!-- $1 --&gt;&quot;, // 光标
-        &quot;&lt;template&gt;&quot;,
-        &quot;  &lt;div&gt;&quot;,
-        &quot;     $2&quot;,
-        &quot;  &lt;/div&gt;&quot;,
-        &quot;&lt;/template&gt;&quot;,
-        &quot;&quot;,
-        &quot;&lt;script&gt;&quot;,
-        &quot;  export default {&quot;,
-        &quot;    name: '',&quot;,
-      &quot;    components: {&quot;,
-      &quot;         &quot;,
-      &quot;    },&quot;,
-      &quot;    props: {&quot;,
-      &quot;       &quot;,
-      &quot;    },&quot;,
-      &quot;    data() {&quot;,
-      &quot;      return {&quot;,
-      &quot;          &quot;,
-      &quot;      }&quot;,
-      &quot;    },&quot;,
-      &quot;    computed: {&quot;,
-      &quot;        &quot;,
-      &quot;    },&quot;,
-      &quot;    created() {&quot;,
-      &quot;        &quot;,
-        &quot;    },&quot;,
-      &quot;    methods: {&quot;,
-      &quot;        &quot;,
-        &quot;    },&quot;,
-        &quot;    watch: {&quot;,
-        &quot;       &quot;,
-        &quot;    },&quot;,
-        &quot;  }&quot;,
-            &quot;&lt;/script&gt;&quot;,
-            &quot;&quot;,
-            &quot;&lt;style scoped lang=''&gt;&quot;,
-            &quot;    &quot;,
-            &quot;&lt;/style&gt;&quot;
-    ],
-    &quot;description&quot;: &quot;Vue templet&quot; // 说明
- }
-}
-</code></pre>
-<pre><code class="language-json">{
-	&quot;h5 sample&quot;:{
-		&quot;prefix&quot;: &quot;MYH5&quot;,
-		&quot;body&quot;: [
-			&quot;&lt;!DOCTYPE html&gt;&quot;,
-			&quot;&lt;html&gt;&quot;,
-			&quot;&lt;head&gt;&quot;,
-			&quot;\t&lt;meta charset=\&quot;UTF-8\&quot;&gt;&quot;,
-			&quot;\t&lt;meta name=\&quot;keywords\&quot; content=\&quot;\&quot;&gt;&quot;,
-			&quot;\t&lt;meta name=\&quot;description\&quot; content=\&quot;\&quot;&gt;&quot;,
-			&quot;\t&lt;meta name=\&quot;viewport\&quot; content=\&quot;width=device-width, initial-scale=1.0\&quot;&gt;&quot;,
-			&quot;\t&lt;title&gt;Document&lt;/title&gt;&quot;,
-			&quot;\t&lt;!-- CSS --&gt;&quot;,
-			&quot;\t&lt;link rel=\&quot;stylesheet\&quot; type=\&quot;text\\css\&quot; href=\&quot;\&quot;&gt;&quot;,
-			&quot;\t&lt;style&gt;&quot;,
-			&quot;&quot;,
-			&quot;\t&lt;/style&gt;&quot;,
-			&quot;&lt;/head&gt;&quot;,
-			&quot;&quot;,
-			&quot;&lt;body&gt;&quot;,
-			&quot;\t&lt;!-- JS --&gt;&quot;,
-			&quot;\t&lt;script&gt;&quot;,
-			&quot;&quot;,		
-			&quot;\t&lt;/script&gt;&quot;,
-			&quot;&lt;/body&gt;&quot;,
-			&quot;&quot;,
-			&quot;&lt;/html&gt;&quot;
-		],
-		&quot;description&quot;: &quot;create HTML5 templete&quot;
-	}
-}
-</code></pre>
+<ul>
+<li>面试
+<ol>
+<li>Loader</li>
+</ol>
+<ul>
+<li>css-loader: 加载CSS，支持模块化，压缩，文件导入等</li>
+<li>style-loader: 把CSS注入JS中，通过DOM操作加载CSS</li>
+<li>postcss-loader:扩展CSS语法</li>
+<li>babel-loader: ES6=&gt;ES5</li>
+<li>file-loader: 文件输出，处理图片和字体</li>
+<li>url-loader:base64url编码 -&gt; 去掉尾部的&quot;=&quot; , &ldquo;+&rdquo; 替换成 &ldquo;-&rdquo;</li>
+<li>vue-loader: 加载Vue.js单文件组件</li>
+</ul>
+<ol start="2">
+<li>Plugin</li>
+</ol>
+<ul>
+<li>html-webpack-plugin:设置渲染页面的模板</li>
+<li>clean-webpack-plugin:目录清理</li>
+<li>define-plugin:定义环境变量</li>
+<li>DllPlugin:减少构建时间，进行分离打包</li>
+</ul>
+<ol start="3">
+<li>Loader和Plugin</li>
+</ol>
+<ul>
+<li>Loader本质是function，返回转换的结果，Webpack只认识JavaScript，Loader负责其他类型的资源的转译
+<ul>
+<li>Loader在module.rules里配置，类型为数组，每一项都是Object，内部包含test（文件类型），loader，options等属性</li>
+</ul>
+</li>
+<li>Plugin是插件，基于事件流框架Tapable，扩展Webpack的功能，在Webpack运行的生命周期会广播许多事件，Plugin可以监听这些事件，合适的时机通过Webpack提供的Api改变结果。
+<ul>
+<li>plugins中单独配置，类型为数组，每一项都是Plugin的实例，参数通过构造函数传入。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>Webpack构建流程
+<ol>
+<li>初始化参数：从配置文件和Shell读取合并参数</li>
+<li>开始编译：初始化Compiler对象，加载所有配置的插件，执行对象的run方法编译</li>
+<li>确定入口：从entry找到所有入口文件</li>
+<li>编译模块：从入口文件出发，调用所有配置的Loader对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件完成本步</li>
+<li>完成模块编译：得到每个模块的最终内容和依赖关系</li>
+<li>输出资源：组装成包含多个模块的Chunk，把每个Chunk转为单独的文件=&gt;输出列表</li>
+<li>输出完成：确定内容后，根据出口配置输出的路径和文件名，把文件写入文件系统</li>
+</ol>
+</li>
+<li>Webpack热更新</li>
+</ol>
+<ul>
+<li>Webpack的模块热更新(HMR)，功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载整个页面。主要是通过以下几种方式，来显著加快开发速度：(1)保留在完全重新加载页面时丢失的应用程序状态。(2)只更新变更内容，以节省宝贵的开发时间。(3)调整样式更加快速 - 几乎相当于在浏览器调试器中更改样式。</li>
+<li>维护一个Websocket，本地资源变化，客户端会进行资源对比，发送Ajax请求获取更新内容，再借助这些信息继续发送jsonp请求获取增量更新，后续部分交给HotModulePlugin更新</li>
+</ul>
+<ol start="6">
+<li>优化构建速度
+<ol>
+<li>使用最新的webpack版本</li>
+<li>Loaders应用于最少的模块</li>
+<li>使用 DllPlugin 将更改不频繁的代码进行单独编译。这将改善引用程序的编译速度，即使它增加了构建过程的复杂性。</li>
+<li>使用 cache-loader 启用持久化缓存。使用 package.json 中的 &ldquo;postinstall&rdquo; 清除缓存目录。</li>
+<li>使用 更少/更小 的库。在多页面应用程序中使用 CommonsChunksPlugin。在多页面应用程序中以 async 模式使用 CommonsChunksPlugin 。移除不使用的代码。只编译你当前正在开发部分的代码。</li>
+<li>多进程/多实例：thread-loader 可以将非常消耗资源的 loaders 转存到 worker pool 中。</li>
+<li>基础包分离：使用html-webpack-externals-plugin将基础包通过CDN引入，不打入bundle中使用SplitChunksPlugin进行分离，替代CommonsChunkPlugin。</li>
+</ol>
+</li>
+<li>手写loader/plugins</li>
+</ol>
+</li>
+</ul>
 
         </div>
-        
-        <div class="my-4">
-    
-    <a href="/zh/tags/visual-studio-code/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#visual studio code</a>
-    
-</div>
         
         
         
@@ -374,13 +351,13 @@ description：代码段描述,在使用智能感知时的描述
     <div>
         
         <span class="block font-bold">上一页</span>
-        <a href="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" class="block">JavaScript 内置对象</a>
+        <a href="/zh/posts/node.js/" class="block">Node.js</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/" class="block">Github 远端仓库download不同本地</a>
+        <a href="/zh/posts/js_items_17/" class="block">JavaScript axios</a>
         
     </div>
 </div>
@@ -389,24 +366,6 @@ description：代码段描述,在使用智能感知时的描述
 
 
 
-    </div>
-    
-    <div class="col-span-2">
-        
-        
-<div class="bg-secondary-bg rounded p-6">
-    <h3 class="text-lg font-semibold mb-4">系列文章</h3>
-    <div class="content">
-        
-        
-        <a href="/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/">VS Code自定义快捷模块</a>
-        <br />
-        
-        
-    </div>
-</div>
-        
-        
     </div>
     
 

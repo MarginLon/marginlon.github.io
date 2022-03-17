@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>VS Code自定义快捷模块 | Marginlon</title>
+<title>JavaScript 内置对象 | Marginlon</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="VS Code自定义快捷模块 //1.&lt;ctrl&gt;&#43;&lt;shift&gt;&#43;&lt;p&gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如">
+  content="1. {String} 2. {Number} 3. {Array} 1. {String} 字符串的方法不会改变原串，会返回一个新值 //查找 // indexOf()/lastIndexOf(): @params:(str,startIndex); @return:index|-1; // search(): @params:(Reg|str); @return:index|-1; // includes(): @params:(str,[position|0]); @return:Boolean; //startsWith()/endsWith(): @params:(str,[position|0]); @return:Boolean; //获取字符 // charAt(): = str[index] @params:(index); @return:str|&#39;&#39;; // charCodeAt(): @params:(index); @return:str|&#39;&#39;; // 截取 // slice(): @params:(startIndex,endIndex); @return:str; @note">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"/zh/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"VS Code自定义快捷模块",
-      "item":"/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/"}]
+      "name":"JavaScript 内置对象",
+      "item":"/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"}]
 }
 </script>
 
@@ -83,11 +83,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/"
+        "@id": "/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"
     },
-    "headline": "VS Code自定义快捷模块 | Marginlon","datePublished": "2020-12-08T18:02:39+08:00",
-    "dateModified": "2020-12-08T18:02:39+08:00",
-    "wordCount":  380 ,
+    "headline": "JavaScript 内置对象 | Marginlon","datePublished": "2021-09-01T20:00:00+08:00",
+    "dateModified": "2021-09-01T20:00:00+08:00",
+    "wordCount":  674 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -96,21 +96,21 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "VS Code自定义快捷模块 \/\/1.\u0026lt;ctrl\u0026gt;\u002b\u0026lt;shift\u0026gt;\u002b\u0026lt;p\u0026gt; \/\/2. snippets \/\/3. 新建 \/*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\\r\\n换行符隔开.如"
+    "description": "1. {String} 2. {Number} 3. {Array} 1. {String} 字符串的方法不会改变原串，会返回一个新值 \/\/查找 \/\/ indexOf()\/lastIndexOf(): @params:(str,startIndex); @return:index|-1; \/\/ search(): @params:(Reg|str); @return:index|-1; \/\/ includes(): @params:(str,[position|0]); @return:Boolean; \/\/startsWith()\/endsWith(): @params:(str,[position|0]); @return:Boolean; \/\/获取字符 \/\/ charAt(): = str[index] @params:(index); @return:str|\u0027\u0027; \/\/ charCodeAt(): @params:(index); @return:str|\u0027\u0027; \/\/ 截取 \/\/ slice(): @params:(startIndex,endIndex); @return:str; @note"
 }
-</script><meta property="og:title" content="VS Code自定义快捷模块 | Marginlon" />
+</script><meta property="og:title" content="JavaScript 内置对象 | Marginlon" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/" />
+<meta property="og:url" content="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" />
 
 
 
 
-<meta property="og:description" content="VS Code自定义快捷模块 //1.&lt;ctrl&gt;&#43;&lt;shift&gt;&#43;&lt;p&gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如" />
+<meta property="og:description" content="1. {String} 2. {Number} 3. {Array} 1. {String} 字符串的方法不会改变原串，会返回一个新值 //查找 // indexOf()/lastIndexOf(): @params:(str,startIndex); @return:index|-1; // search(): @params:(Reg|str); @return:index|-1; // includes(): @params:(str,[position|0]); @return:Boolean; //startsWith()/endsWith(): @params:(str,[position|0]); @return:Boolean; //获取字符 // charAt(): = str[index] @params:(index); @return:str|&#39;&#39;; // charCodeAt(): @params:(index); @return:str|&#39;&#39;; // 截取 // slice(): @params:(startIndex,endIndex); @return:str; @note" />
 
 
 
@@ -127,26 +127,14 @@
 
 
 
-<meta property="article:published_time" content="2020-12-08T18:02:39&#43;08:00" />
+<meta property="article:published_time" content="2021-09-01T20:00:00&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2020-12-08T18:02:39&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-01T20:00:00&#43;08:00" />
 
 
 
 <meta property="article:section" content="posts" />
-
-
-<meta property="article:tag" content="visual studio code" />
-
-
-
-
-
-
-
-
-
 
 
 
@@ -224,34 +212,20 @@
 
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">VS Code自定义快捷模块</h1>
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript 内置对象</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2020-12-08</span>
+        <span>2021-09-01</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>2分钟阅读时长</span>
     </div>
     
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
-        
-        <a href="/zh/categories/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
-        
-    </div>
     
 
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
-        
-    </div>
     
 </div>
         
@@ -259,108 +233,176 @@
         
 
         <div class="content">
-            <h2 id="vs-code自定义快捷模块">VS Code自定义快捷模块</h2>
-<hr>
-<pre><code class="language-js">//1.&lt;ctrl&gt;+&lt;shift&gt;+&lt;p&gt;
-//2. snippets
-//3. 新建
-/*4. args:
-prefix：使用代码段的快捷入口
-body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如果值里包含特殊字符需要进行转义,多行代码以&quot;,&quot;分隔(在引号后面写逗号)
-$0：定义最终光标位置
-$1：定义第一次光标位置，按tab键可进行快速切换, 还可以有 $2, $3, $4, $5 ...
-description：代码段描述,在使用智能感知时的描述
- * /
+            <ul>
+<li><a href="#1-string">1. {String}</a></li>
+<li><a href="#2-number">2. {Number}</a></li>
+<li><a href="#3-array">3. {Array}</a></li>
+</ul>
+<h1 id="1-string">1. {String}</h1>
+<ul>
+<li>字符串的方法不会改变原串，会返回一个新值</li>
+</ul>
+<pre><code class="language-js">//查找
+// indexOf()/lastIndexOf():
+@params:(str,startIndex);
+@return:index|-1;
+
+// search():
+@params:(Reg|str);
+@return:index|-1;
+
+// includes():
+@params:(str,[position|0]);
+@return:Boolean;
+
+//startsWith()/endsWith():
+@params:(str,[position|0]);
+@return:Boolean;
+
+//获取字符
+// charAt(): = str[index]
+@params:(index);
+@return:str|'';
+
+// charCodeAt():
+@params:(index);
+@return:str|'';
+
+// 截取
+// slice():
+@params:(startIndex,endIndex);
+@return:str;
+@notes:包左不包右，负值表示倒数
+
+// substring():
+@params:(startIndex,endIndex);
+@return:str;
+@notes:包左不包右，右&gt;左则交换，不接受负值
+
+// substr():
+@params:(startIndex,length);
+@return:str;
+
+// 其他：
+// fromCharCode():
+@params:(Unicode);
+@return:str;
+
+// concat():
+@params:(str);
+@return:str+str;
+
+// split():
+@params:(str| );
+@return:Array;
+
+// replace():
+@params:(str1,str2);
+@return:str;
+
+// repeat():
+@params:(num);
+@return:str;
+
+// trim(): 去除空白
+// toLowerCase()
+// toUpperCase()
 </code></pre>
-<pre><code class="language-json">// 自定义(vue页面结构)
- {
-     &quot;vue&quot;: {
-    &quot;prefix&quot;: &quot;vue-tem&quot;, // 设置的快捷入口
-    &quot;body&quot;: [ // 模块内容
-        &quot;&lt;!-- $1 --&gt;&quot;, // 光标
-        &quot;&lt;template&gt;&quot;,
-        &quot;  &lt;div&gt;&quot;,
-        &quot;     $2&quot;,
-        &quot;  &lt;/div&gt;&quot;,
-        &quot;&lt;/template&gt;&quot;,
-        &quot;&quot;,
-        &quot;&lt;script&gt;&quot;,
-        &quot;  export default {&quot;,
-        &quot;    name: '',&quot;,
-      &quot;    components: {&quot;,
-      &quot;         &quot;,
-      &quot;    },&quot;,
-      &quot;    props: {&quot;,
-      &quot;       &quot;,
-      &quot;    },&quot;,
-      &quot;    data() {&quot;,
-      &quot;      return {&quot;,
-      &quot;          &quot;,
-      &quot;      }&quot;,
-      &quot;    },&quot;,
-      &quot;    computed: {&quot;,
-      &quot;        &quot;,
-      &quot;    },&quot;,
-      &quot;    created() {&quot;,
-      &quot;        &quot;,
-        &quot;    },&quot;,
-      &quot;    methods: {&quot;,
-      &quot;        &quot;,
-        &quot;    },&quot;,
-        &quot;    watch: {&quot;,
-        &quot;       &quot;,
-        &quot;    },&quot;,
-        &quot;  }&quot;,
-            &quot;&lt;/script&gt;&quot;,
-            &quot;&quot;,
-            &quot;&lt;style scoped lang=''&gt;&quot;,
-            &quot;    &quot;,
-            &quot;&lt;/style&gt;&quot;
-    ],
-    &quot;description&quot;: &quot;Vue templet&quot; // 说明
- }
-}
+<h1 id="2-number">2. {Number}</h1>
+<pre><code class="language-js">// isInteger():
+@params:(number);
+@return:Boolean;
+
+// toFixed():
+@params:(number);
+@return:
+
+// Math 工具类
+PI
+abs()
+random()
+floor()
+ceil()
+round()
+max()
+min()
+pow()
+sqrt()
 </code></pre>
-<pre><code class="language-json">{
-	&quot;h5 sample&quot;:{
-		&quot;prefix&quot;: &quot;MYH5&quot;,
-		&quot;body&quot;: [
-			&quot;&lt;!DOCTYPE html&gt;&quot;,
-			&quot;&lt;html&gt;&quot;,
-			&quot;&lt;head&gt;&quot;,
-			&quot;\t&lt;meta charset=\&quot;UTF-8\&quot;&gt;&quot;,
-			&quot;\t&lt;meta name=\&quot;keywords\&quot; content=\&quot;\&quot;&gt;&quot;,
-			&quot;\t&lt;meta name=\&quot;description\&quot; content=\&quot;\&quot;&gt;&quot;,
-			&quot;\t&lt;meta name=\&quot;viewport\&quot; content=\&quot;width=device-width, initial-scale=1.0\&quot;&gt;&quot;,
-			&quot;\t&lt;title&gt;Document&lt;/title&gt;&quot;,
-			&quot;\t&lt;!-- CSS --&gt;&quot;,
-			&quot;\t&lt;link rel=\&quot;stylesheet\&quot; type=\&quot;text\\css\&quot; href=\&quot;\&quot;&gt;&quot;,
-			&quot;\t&lt;style&gt;&quot;,
-			&quot;&quot;,
-			&quot;\t&lt;/style&gt;&quot;,
-			&quot;&lt;/head&gt;&quot;,
-			&quot;&quot;,
-			&quot;&lt;body&gt;&quot;,
-			&quot;\t&lt;!-- JS --&gt;&quot;,
-			&quot;\t&lt;script&gt;&quot;,
-			&quot;&quot;,		
-			&quot;\t&lt;/script&gt;&quot;,
-			&quot;&lt;/body&gt;&quot;,
-			&quot;&quot;,
-			&quot;&lt;/html&gt;&quot;
-		],
-		&quot;description&quot;: &quot;create HTML5 templete&quot;
-	}
-}
+<h1 id="3-array">3. {Array}</h1>
+<pre><code class="language-js">Array.isArray();
+toString();
+Array.from(arrayLike);
+Array.of(val1,val2,val3);
+
+// push():向数组最后插入N个元素
+@params:(items)
+@return:new length;
+// pop():删除数组的最后一个元素 
+@params:()
+@return:delete item;
+
+// unshift():向数组最前插入N个元素
+@params:(items)
+@return:new length;
+// shift():删除数组中的第一个元素
+@params:()
+@return:delete item;
+
+// slice():从数组中提取指定的一个或者多个元素
+@params:(startIndex,endIndex)
+@return:new Array;
+@notes: arrayLike =&gt; Array
+// 方式1
+array = Array.prototype.slice.call(arrayLike);
+// 方式2
+array = [].slice.call(arrayLike);
+// splice():从数组中删除指定的一个或多个元素，
+@params:(startIndex,num,[item1,item2...])
+@return:delete item;
+
+// fill():
+@params:(content,startIndex,endIndex)
+@return:new Array;
+
+// concat():
+@params:(Array1,Array2...)
+@return:new Array;
+// join():
+@params:(params)
+@return:str;
+// split():
+// reverse():
+
+// sort():
+// 浏览器根据回调函数的返回值来决定元素的排序：（重要）
+
+// 如果返回一个大于 0 的值，则元素会交换位置
+
+// 如果返回一个小于 0 的值，则元素位置不变
+
+// 如果返回一个等于 0 的值，则认为两个元素相等，则不交换位置
+arr.sort((a, b) =&gt; a - b);
+
+// indexOf/lastIndexOf/includes
+
+// find():找出第一个满足「指定条件返回 true」的元素；如果没找到，则返回 undefined。
+find((item, index, arr) =&gt; {
+    return true;
+});
+// findIndex():找出第一个满足「指定条件返回 true」的元素的 index。
+
+// every()/some()
+
+// 遍历
+// for
+// forEach 用arr和index修改引用类型以修改原数组
+// map map方法如果是修改整个item的值，则不会改变原数组。但如果是修改 item 里面的某个属性，那就会改变原数组。
+// filter() 
+// reduce(function (previous,current,currentIndex,arr){},initial)
 </code></pre>
 
         </div>
-        
-        <div class="my-4">
-    
-    <a href="/zh/tags/visual-studio-code/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#visual studio code</a>
-    
-</div>
         
         
         
@@ -374,13 +416,13 @@ description：代码段描述,在使用智能感知时的描述
     <div>
         
         <span class="block font-bold">上一页</span>
-        <a href="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" class="block">JavaScript 内置对象</a>
+        <a href="/zh/posts/javascript-dom/" class="block">JavaScript DOM</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/" class="block">Github 远端仓库download不同本地</a>
+        <a href="/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/" class="block">VS Code自定义快捷模块</a>
         
     </div>
 </div>
@@ -389,24 +431,6 @@ description：代码段描述,在使用智能感知时的描述
 
 
 
-    </div>
-    
-    <div class="col-span-2">
-        
-        
-<div class="bg-secondary-bg rounded p-6">
-    <h3 class="text-lg font-semibold mb-4">系列文章</h3>
-    <div class="content">
-        
-        
-        <a href="/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/">VS Code自定义快捷模块</a>
-        <br />
-        
-        
-    </div>
-</div>
-        
-        
     </div>
     
 

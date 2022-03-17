@@ -43,7 +43,7 @@
     <loc>/zh/docs/qss-doc/</loc>
     <lastmod>2022-03-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh/posts/js_base_04/</loc>
+    <loc>/zh/posts/javascript-bom/</loc>
     <lastmod>2021-10-31T20:00:00+08:00</lastmod>
   </url><url>
     <loc>/zh/posts/</loc>
@@ -59,40 +59,40 @@
                 href="/zh/posts/"
                 />
   </url><url>
-    <loc>/zh/posts/js_base_02/</loc>
+    <loc>/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/</loc>
     <lastmod>2021-10-30T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/js_base_03/</loc>
+    <loc>/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</loc>
     <lastmod>2021-10-30T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/js_base_01/</loc>
+    <loc>/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/</loc>
     <lastmod>2021-10-29T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/datastructure_01/</loc>
+    <loc>/zh/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-10-13T18:02:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/css_item_06/</loc>
+    <loc>/zh/posts/css-sass/</loc>
     <lastmod>2021-10-08T22:02:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/css_item_03/</loc>
+    <loc>/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/</loc>
     <lastmod>2021-10-03T22:02:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/css_item_05/</loc>
+    <loc>/zh/posts/css-%E5%8A%A8%E7%94%BB/</loc>
     <lastmod>2021-10-02T22:02:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/css_item_04/</loc>
+    <loc>/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2021-10-02T22:02:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/css_item_02/</loc>
+    <loc>/zh/posts/css-%E5%B8%83%E5%B1%80/</loc>
     <lastmod>2021-10-02T22:02:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/css_item_01/</loc>
+    <loc>/zh/posts/css-less/</loc>
     <lastmod>2021-10-01T22:02:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/node_01/</loc>
+    <loc>/zh/posts/node.js/</loc>
     <lastmod>2021-09-30T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/webpack_01/</loc>
+    <loc>/zh/posts/webpack/</loc>
     <lastmod>2021-09-30T20:00:00+08:00</lastmod>
   </url><url>
     <loc>/zh/posts/js_items_17/</loc>
@@ -146,10 +146,10 @@
     <loc>/zh/posts/js_items_01/</loc>
     <lastmod>2021-09-07T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/js_items_a/</loc>
+    <loc>/zh/posts/javascript-dom/</loc>
     <lastmod>2021-09-01T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/js_items_b/</loc>
+    <loc>/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2021-09-01T20:00:00+08:00</lastmod>
   </url><url>
     <loc>/zh/categories/</loc>
