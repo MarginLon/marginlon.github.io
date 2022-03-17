@@ -2,32 +2,32 @@
 title: Experience
 draft: false
 experiences:
-  - title: 软件开发工程师
+  - title: Software Engineer
     organization:
-      name: 中国赛宝实验室
+      name: Ceprei
       url: https://www.ceprei.com/
     dates: "2022 - Present"
-    location: 广东广州
+    location: GuangZhou, China
     writeup: >
-      - 某软件前端开发
+      - Front-End Engineer
 
-  - title: 硕士
+  - title: Master
     organization:
-      name: 大连理工大学
+      name: DLUT
       url: https://www.dlut.edu.cn/
     dates: "2019 - 2021"
-    location: 辽宁大连
+    location: Dalian, China
     writeup: >
-      - 软件工程专业硕士
+      - Master of Software Engineering
 
-  - title: 本科
+  - title: Bachelor
     organization:
-      name: 大连理工大学
+      name: DLUT
       url: https://www.dlut.edu.cn/
     dates: "2015 - 2019"
-    location: 辽宁大连
+    location: Dalian, China
     writeup: >
-      - 数字媒体技术专业硕士
+      - Bachelor degree in Digital Media Technology
 
 weight: 3
 widget:

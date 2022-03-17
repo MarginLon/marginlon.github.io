@@ -27,7 +27,7 @@ experiences:
     dates: "2015 - 2019"
     location: 辽宁大连
     writeup: >
-      - 数字媒体技术专业硕士
+      - 数字媒体技术专业学士
 
 weight: 3
 widget:
