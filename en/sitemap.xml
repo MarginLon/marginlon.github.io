@@ -2,6 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/en/docs/example-doc/chapter-1/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/en/docs/example-doc/nested-chapter/chapter-1/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/en/docs/example-doc/chapter-2/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/en/docs/example-doc/nested-chapter/chapter-2/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/en/docs/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/docs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/"
+                />
+  </url><url>
+    <loc>/en/docs/example-doc/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/en/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/"
+                />
+  </url><url>
+    <loc>/en/docs/example-doc/nested-chapter/</loc>
+    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/en/authors/</loc>
     <xhtml:link
                 rel="alternate"
@@ -26,28 +70,28 @@
                 href="/en/categories/"
                 />
   </url><url>
-    <loc>/en/docs/</loc>
+    <loc>/en/authors/example-author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/zh/docs/"
+                href="/zh/authors/example-author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/"
+                href="/en/authors/example-author/"
                 />
   </url><url>
-    <loc>/en/</loc>
+    <loc>/en/authors/hugo-authors/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/zh/"
+                href="/zh/authors/hugo-authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="/en/authors/hugo-authors/"
                 />
   </url><url>
     <loc>/en/posts/</loc>

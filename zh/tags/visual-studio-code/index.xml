@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 08 Dec 2020 18:02:39 +0800</lastBuildDate><atom:link href="/zh/tags/visual-studio-code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VS Code自定义快捷模块</title>
-      <link>/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/</link>
+      <link>/zh/posts/20.12.8/</link>
       <pubDate>Tue, 08 Dec 2020 18:02:39 +0800</pubDate>
       
-      <guid>/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/</guid>
+      <guid>/zh/posts/20.12.8/</guid>
       <description>VS Code自定义快捷模块 //1.&amp;lt;ctrl&amp;gt;+&amp;lt;shift&amp;gt;+&amp;lt;p&amp;gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如</description>
     </item>
     

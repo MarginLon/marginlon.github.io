@@ -43,22 +43,28 @@
     <loc>/zh/docs/qss-doc/</loc>
     <lastmod>2022-03-07T00:00:00+00:00</lastmod>
   </url><url>
+<<<<<<< Updated upstream
     <loc>/zh/posts/javascript-bom/</loc>
     <lastmod>2021-10-31T20:00:00+08:00</lastmod>
   </url><url>
     <loc>/zh/posts/</loc>
     <lastmod>2021-10-31T20:00:00+08:00</lastmod>
+=======
+    <loc>/zh/categories/</loc>
+    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
+>>>>>>> Stashed changes
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/"
+                href="/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/zh/posts/"
+                href="/zh/categories/"
                 />
   </url><url>
+<<<<<<< Updated upstream
     <loc>/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/</loc>
     <lastmod>2021-10-30T20:00:00+08:00</lastmod>
   </url><url>
@@ -153,16 +159,19 @@
     <lastmod>2021-09-01T20:00:00+08:00</lastmod>
   </url><url>
     <loc>/zh/categories/</loc>
+=======
+    <loc>/zh/posts/</loc>
+>>>>>>> Stashed changes
     <lastmod>2020-12-08T18:02:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/"
+                href="/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/zh/categories/"
+                href="/zh/posts/"
                 />
   </url><url>
     <loc>/zh/series/</loc>
@@ -200,7 +209,7 @@
     <loc>/zh/categories/visual-studio-code/</loc>
     <lastmod>2020-12-08T18:02:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/</loc>
+    <loc>/zh/posts/20.12.8/</loc>
     <lastmod>2020-12-08T18:02:39+08:00</lastmod>
   </url><url>
     <loc>/zh/tags/github/</loc>
@@ -212,20 +221,8 @@
     <loc>/zh/categories/github/</loc>
     <lastmod>2020-11-20T18:28:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/</loc>
+    <loc>/zh/posts/20.11.20/</loc>
     <lastmod>2020-11-20T18:28:39+08:00</lastmod>
-  </url><url>
-    <loc>/zh/tags/html/</loc>
-    <lastmod>2020-10-01T22:02:39+08:00</lastmod>
-  </url><url>
-    <loc>/zh/series/html/</loc>
-    <lastmod>2020-10-01T22:02:39+08:00</lastmod>
-  </url><url>
-    <loc>/zh/categories/html/</loc>
-    <lastmod>2020-10-01T22:02:39+08:00</lastmod>
-  </url><url>
-    <loc>/zh/posts/html%E9%80%9F%E6%9F%A5/</loc>
-    <lastmod>2020-10-01T22:02:39+08:00</lastmod>
   </url><url>
     <loc>/zh/tags/github-page/</loc>
     <lastmod>2020-09-18T16:28:39+08:00</lastmod>
@@ -233,13 +230,13 @@
     <loc>/zh/categories/github-page/</loc>
     <lastmod>2020-09-18T16:28:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/github-pages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</loc>
+    <loc>/zh/posts/20.9.18/</loc>
     <lastmod>2020-09-18T16:28:39+08:00</lastmod>
   </url><url>
     <loc>/zh/tags/meme/</loc>
     <lastmod>2020-09-17T16:28:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/meme%E4%B8%BB%E9%A2%98%E9%83%A8%E7%BD%B2%E5%88%B0github-pages/</loc>
+    <loc>/zh/posts/20.9.17/</loc>
     <lastmod>2020-09-17T16:28:39+08:00</lastmod>
   </url><url>
     <loc>/zh/authors/</loc>
@@ -255,7 +252,27 @@
                 />
   </url><url>
     <loc>/zh/authors/example-author/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/authors/example-author/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/authors/example-author/"
+                />
   </url><url>
     <loc>/zh/authors/hugo-authors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/authors/hugo-authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/authors/hugo-authors/"
+                />
   </url>
 </urlset>
