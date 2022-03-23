@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qt文档 on Marginlon</title>
+    <link>/zh/docs/qtdoc/</link>
+    <description>Recent content in Qt文档 on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 07 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/zh/docs/qtdoc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qt多语言</title>
+      <link>/zh/docs/qtdoc/chapter1/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/docs/qtdoc/chapter1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QString</title>
+      <link>/zh/docs/qtdoc/chapter2/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/docs/qtdoc/chapter2/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
