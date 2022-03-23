@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>文档 | Marginlon</title>
+<title>QSS文档 | Qt文档 | Marginlon</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,32 +58,56 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="Marginlon.">
-
+  content="QSS，即Qt样式表（Qt Style Sheet），Qt 样式表是允许定制 Widget 外观的强大机制，Qt 样式表的概念、术语和语法深受HTML CSS (级联样式表)启发，其语法与">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文档",
+      "item":"/zh/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Qt文档",
+      "item":"/zh/docs/qtdoc/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"QSS文档",
+      "item":"/zh/docs/qtdoc/qssdoc/"}]
+}
+</script>
 
 
 
 <script type="application/ld+json">
 {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[{
-            "@type":"ListItem",
-            "position":  1 ,
-            "name": "Qt文档",
-            "description": "Referrence [1] https://qtdebug.com/all/ [2] 《Qt Style Sheet 开发总结》 \u0026ndash;张涛",
-            "url": "/zh/docs/qtdoc/"
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/docs/qtdoc/qssdoc/"
+    },
+    "headline": "QSS文档 | Qt文档 | Marginlon","wordCount":  218 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
         }
-    ]
+        },
+    "description": "QSS，即Qt样式表（Qt Style Sheet），Qt 样式表是允许定制 Widget 外观的强大机制，Qt 样式表的概念、术语和语法深受HTML CSS (级联样式表)启发，其语法与"
 }
-</script><meta property="og:title" content="文档 | Marginlon" />
+</script><meta property="og:title" content="QSS文档 | Qt文档 | Marginlon" />
 <meta property="og:type" content="website" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/zh/docs/" />
+<meta property="og:url" content="/zh/docs/qtdoc/qssdoc/" />
 
 
 
@@ -99,10 +123,6 @@
 
 
 
-<meta property="og:locale:alternate" content="en" />
-
-
-
 
 <meta property="og:site_name" content="Marginlon" />
 
@@ -111,14 +131,14 @@
 
 
 
-<meta property="og:updated_time" content="2022-03-23T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2022-03-07T00:00:00&#43;00:00" />
 
 
 
 <meta property="article:section" content="docs" />
 
 
-<link rel="alternate" type="application/rss+xml" href="/zh/docs/index.xml" title="Marginlon" />
+<link rel="alternate" type="application/rss+xml" href="/zh/docs/qtdoc/qssdoc/index.xml" title="Marginlon" />
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -156,19 +176,6 @@
                     <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
                 </div>
             </div>
-            <div class="relative pt-4 ps-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="languageMode">
-                    <i class="fas fa-globe"></i>
-                    <span class="ps-1">简体中文</span>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open-lang">
-                </div>
-                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='languageOptions'>
-                    <a class="px-4 py-1 hover:text-eureka" href="/zh/docs/">简体中文</a>
-                    <a class="px-4 py-1 hover:text-eureka" href="/en/docs/">English</a>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -195,7 +202,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         getcolorscheme();
         switchBurger();
-        switchLanguage()
     });
 </script>
 </div>
@@ -203,77 +209,208 @@
   <main class="grow pt-16">
     <div class="ps-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-<article class="mx-6 my-8">
-  <h1 class="font-bold text-3xl text-primary-text">文档</h1>
-  
-</article>
-<div class="bg-secondary-bg rounded px-6">
-  <div class="overflow-hidden divide-y">
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/docs/qtdoc/" class="font-bold text-xl hover:text-eureka">Qt文档</a>
-</div>
-<div class="content">
-  
-    Referrence [1] https://qtdebug.com/all/ [2] 《Qt Style Sheet 开发总结》 –张涛
-  
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-e">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class='fas fa-caret-right ms-1'></i>
 </div>
 
-<div class="px-6 pt-4">
-  
-  <div class="">
-      <div class="mb-2">
-          <a href="/zh/docs/qtdoc/chapter1/" class="font-semibold hover:text-eureka">Qt多语言</a>
-      </div>
-      <div class="">
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="/zh/docs/qtdoc/">Qt文档</a>
         
-      </div>
-  </div>
-  
-  
-  <div class="-mx-4 my-4 border-t"></div>
-  <div class="">
-      <div class="mb-2">
-          <a href="/zh/docs/qtdoc/chapter2/" class="font-semibold hover:text-eureka">QString</a>
-      </div>
-      <div class="">
         
-      </div>
-  </div>
-  
-  
-  <div class="-mx-4 my-4 border-t"></div>
-  <div class="">
-      <div class="mb-2">
-          <a href="/zh/docs/qtdoc/qssdoc/" class="font-semibold hover:text-eureka">QSS文档</a>
-      </div>
-      <div class="">
         
-          QSS，即Qt样式表（Qt Style Sheet），Qt 样式表是允许定制 Widget 外观的强大机制，Qt 样式表的概念、术语和语法深受HTML CSS (级联样式表)启发，其语法与
+
+
+    </div>
+    
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/chapter1/">Qt多语言</a>
+        </div>
         
-      </div>
-  </div>
-  
-  <div class="pt-6 hover:text-eureka">
-      <a href="/zh/docs/qtdoc/" class="font-semibold">阅读更多</a>
-      <i class='fas fa-caret-right ms-1'></i>
-  </div>
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/chapter2/">QString</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class=" pb-2 ">
+            <a class=" text-eureka  hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/">QSS文档</a>
+        </div>
+        
+        
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-1/">QSS加载</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-2/">QSS基础</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-3/">QSS控件</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-4/">QSS案例</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+        
+    </li>
+    
+    
+</ul>
+
 </div>
 
-  </div>
-
-  
-</div>
-  </div>
-  
-</div>
 
 
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="w-full lg:w-3/4 ps-6 ms-0 me-auto">
+                <h1 class="font-bold text-3xl text-primary-text">QSS文档</h1>
+                <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2022-03-07</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
 </div>
+            </div>
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    
+                    
+                    <div class="content">
+                        <p>QSS，即Qt样式表（Qt Style Sheet），Qt 样式表是允许定制 Widget 外观的强大机制，Qt 样式表的概念、术语和语法深受HTML CSS (级联样式表)启发，其语法与CSS相似。</p>
+<p>Qt 提供的 widget 的默认外观很多时候都不符合项目的界面需求，必须要改，修改一个 widget 的外观（Look and Feel）有以下的方法：<br>
+  - 继承 Widget，然后在 paintEvent() 里绘制<br>
+  - 继承 QStyle<br>
+  - 使用 QSS（Qt Style Sheet）<br>
+  - 对于 item view 来说还有一种方式，还可以使用 Delegate</p>
+<ul>
+<li>Referrence<br>
+[1] <a href="https://qtdebug.com/all/">https://qtdebug.com/all/</a><br>
+[2] 《Qt Style Sheet 开发总结》 &ndash;张涛</li>
+</ul>
+
+                    </div>
+                    
+                    
+
+                    
+
+
+
+                    
+                    
+
+
+
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
 
 
       </div>

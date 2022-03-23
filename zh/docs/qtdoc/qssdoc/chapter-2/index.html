@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>QSS基础 | Qt文档 | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="QSS基础">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文档",
+      "item":"/zh/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Qt文档",
+      "item":"/zh/docs/qtdoc/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"QSS文档",
+      "item":"/zh/docs/qtdoc/qssdoc/"},{
+      "@type": "ListItem",
+      "position": 4 ,
+      "name":"QSS基础",
+      "item":"/zh/docs/qtdoc/qssdoc/chapter-2/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/docs/qtdoc/qssdoc/chapter-2/"
+    },
+    "headline": "QSS基础 | Qt文档 | Marginlon","datePublished": "2022-03-08T00:00:00+00:00",
+    "dateModified": "2022-03-09T00:00:00+00:00",
+    "wordCount":  3600 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "QSS基础"
+}
+</script><meta property="og:title" content="QSS基础 | Qt文档 | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/docs/qtdoc/qssdoc/chapter-2/" />
+
+
+
+<meta property="og:description" content="QSS基础" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-03-08T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-03-09T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-e">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class='fas fa-caret-right ms-1'></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="/zh/docs/qtdoc/">Qt文档</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/chapter1/">Qt多语言</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/chapter2/">QString</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class=" pb-2 ">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/">QSS文档</a>
+        </div>
+        
+        
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-1/">QSS加载</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-2/">QSS基础</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-3/">QSS控件</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-4/">QSS案例</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="w-full lg:w-3/4 ps-6 ms-0 me-auto">
+                <h1 class="font-bold text-3xl text-primary-text">QSS基础</h1>
+                <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2022-03-08</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>8分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+            </div>
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    
+                    
+                    <div class="content">
+                        <p>QSS基础</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-css">selector { attribute:value; }
+</code></pre>
+<p>  <code>selector</code>代表选择器，指明了哪种控件将会受到规则影响。<code>attribute:value</code>代表声明语句，其中<code>attribute</code>表示属性，<code>value</code>表示该属性的值，属性与它的值之间必须以冒号隔开，属性值后面必须以分号结束。</p>
+<h2 id="选择器">选择器</h2>
+<h3 id="通用选择器">通用选择器</h3>
+<p>  通用选择器(*)表示匹配程序中所有的<code>widget</code>，效率较低，尽量减少使用。</p>
+<pre><code class="language-css">* { 
+	font:normal 20px &quot;微软雅黑&quot;; 
+}
+</code></pre>
+<hr>
+<h3 id="类型选择器">类型选择器</h3>
+<p>  类名即Widget类名, 由<code>QObject :: metaObject() :: className()</code>获取, 类型选择器匹配所有该类以及该类的派生类的对象。</p>
+<pre><code class="language-css">QPushButton { 
+	color:blue; 
+}
+</code></pre>
+<p>  如果想要为相似控件提供统一样式，则可以如下使用：</p>
+<pre><code class="language-css">QAbstractSpinBox { //QSpinBox, QDateTimeEdit, QTimeEdit, QDateEdit
+	min-height: 30px;
+	max-height: 30px;
+	border-width: 1px;
+	order-style:solid;
+	order-color:gray;
+	padding: 0px;
+}
+</code></pre>
+<p>  注意：当自定义控件在命名空间中（或是一个嵌套类），<code>QObject::className()</code>会返回( :: )，与子控件选择器冲突。解决该问题的方法是要将<code>::</code>替换为<code>--</code>。</p>
+<pre><code class="language-cpp">namespace ns {
+	class MyPushButton : public QPushButton {
+		// ...
+	}
+}
+
+// ...
+qApp-&gt;setStyleSheet(&quot;ns-MyPushButton { background: yellow; }&quot;)
+</code></pre>
+<hr>
+<h3 id="类选择器">类选择器</h3>
+<p>  类选择器与类型选择器相似，不同点在于类选择器不会匹配其派生类的对象。</p>
+<pre><code class="language-css">.QPushButton {
+	color:blue;
+}
+</code></pre>
+<hr>
+<h3 id="id选择器">ID选择器</h3>
+<p>  id指的是<code>objectName</code>，一般情况下，<code>objectName</code>唯一且不要在运行时改变。</p>
+<pre><code class="language-css">#button_1 {
+	color:red;
+}
+.QLabel#button_1 { //CSS中的交集选择器
+	color:red;
+}
+</code></pre>
+<p>  注意：</p>
+<ol>
+<li><code>objectName</code>大小写敏感</li>
+<li>&ldquo;#&ldquo;与ID之间没有空格</li>
+<li>由于<code>objectName</code>允许字符串中含有空格，但是由于第2条的影响，为了使用ID选择器，<code>	objectName</code>不能含有空格</li>
+<li>实际开发建议使用如上的第2种方式，是Qt官方给出的ID选择器格式，增强可读性。</li>
+</ol>
+<hr>
+<h3 id="后代选择器">后代选择器</h3>
+<p>  在<code>BaseDialog</code>匹配的所有对象中, 找到<code>QPushButton</code>所匹配的所有后代对象, 并给它们设置样式。</p>
+<pre><code class="language-css">BaseDialog QPushButton {
+	min-width: 120px;
+	min-height: 40px;
+	max-width: 120px;
+	min-height: 40px;
+	font-size:20px;
+	padding: 0px;
+}
+</code></pre>
+<p>  注意:</p>
+<ol>
+<li>后代选择器必须用空格隔开每个选择器，单个选择器可以使用各种类型的选择器。</li>
+<li>后代选择器可以通过空格一直延续。</li>
+<li>Qt中控件的父子关系取决于如何布局。</li>
+</ol>
+<hr>
+<h3 id="子元素选择器">子元素选择器</h3>
+<p>  子元素选择器表示找到指定选择器所匹配的对象中的所有特定直接子元素然后设置属性, 即找到<code>.QGroupBox</code>匹配到的对象中的<code>.QCheckBox</code>匹配到的直接子元素然后设置属性<code>color:blue;</code></p>
+<pre><code class="language-css">.QGroupBox &gt; .QCheckBox {
+	color:blue;
+}
+</code></pre>
+<p>  注意：</p>
+<ol>
+<li>子元素选择器与后代选择器的不同在于只会查找“儿子”，不会查找其他后代。</li>
+<li>子元素选择器可以使用各种类型的选择器。</li>
+<li>只能有一个&rdquo;&gt;&quot;，不能延续。</li>
+<li>使用子元素选择器时，推荐使用类选择器替代类型选择器。</li>
+</ol>
+<hr>
+<h3 id="属性选择器">属性选择器</h3>
+<p>  匹配特定属性设置样式的选择器。通常情况下, 这里的属性指的是, 使用<code>Q_PROPERTY</code>宏所声明的属性, 并且属性类型
+要受<code> QVariant::toString()</code>支持.</p>
+<pre><code class="language-css">[objectName=&quot;button&quot;] {	// 值为button的objectName属性
+	color:red;
+}
+
+[objectName|=&quot;button&quot;] { // 值以button开头的objectName属性
+	color:red;
+}
+
+[objectName~=&quot;button&quot;] { // 值包含button的objectName属性，且是以空格隔开的button
+	color:red;
+}
+</code></pre>
+<p>  在设置了样式表后，相应的属性值发生了改变，则有必要重新加载样式表</p>
+<pre><code class="language-cpp">style()-&gt;unpolish(this); 
+style()-&gt;polish(this); 
+</code></pre>
+<hr>
+<h3 id="并集选择器">并集选择器</h3>
+<p>  并集选择器表示，将每个单独选择器匹配的控件放在同一个集合中设置样式。</p>
+<pre><code class="language-css">.QLineEdit, .QcomboBox {
+	border: 1px solid gray;
+	background-color: white;
+}
+</code></pre>
+<hr>
+<h3 id="子控件选择器">子控件选择器</h3>
+<p>  子控件选择器（Sub-Control）表示对类型选择器或类选择器指定的所有控件的子控件设置样式，注意与CSS3的伪元素不同。</p>
+<pre><code class="language-css">QComboBox::down-arrow {
+	image:url(:/res/arrowdown.png);
+	subcontrol-origin:margin;
+}
+</code></pre>
+<p>  注意：</p>
+<ol>
+<li>Sub-Controls始终相对于另一个参考元素来定位。<code>QComboBox</code>的<code>::down-arrow</code>会默认置于<code>QComboBox</code>的Padding右上角，<code>::down-arrow</code>默认置于另一个<code>::drop-down Sub-Control</code>的中心，<code>subcontrol-origin</code>可以改变其默认位置。</li>
+<li><code>width</code>和<code>height</code>属性用来控制Sub-Controls的size，而设置了<code>image</code>就隐式设置了size。</li>
+<li><code>position:relative</code>，允许Sub-Controls从初始化位置便宜。</li>
+<li><code>position:absolute</code>，使Sub-Controls的positon和size基于参考元素改变。</li>
+<li>像 QComboBox 和 QScrollBar 这样的复杂部件，如果sub-control的一项属性是自定义的，那么其他所有的属性跟sub-control也都应该自定义。</li>
+</ol>
+<hr>
+<h3 id="伪类选择器">伪类选择器</h3>
+<p>  表示对类型选择器或类选择器指定的所有控件设置它在指定状态时的样式。</p>
+<pre><code class="language-css">.QPushButton:hover {
+	color:white;
+}
+.QPushButton:hover:checked {
+	color:white;
+}
+</code></pre>
+<p>  注意：</p>
+<ol>
+<li><code>!</code>表示取反</li>
+<li>伪装态可以链接，隐式包含逻辑与</li>
+</ol>
+<hr>
+<h3 id="不使用选择器不推荐">不使用选择器（不推荐）</h3>
+<pre><code class="language-cpp">pBtn1-&gt;setStyleSheet(&quot;color:green;&quot;)
+</code></pre>
+<p>  这条语句等价于（假设pBtn1是QPushButton对象的指针）</p>
+<pre><code class="language-cpp">pBtn1-&gt;setStyleSheet(&quot;QPushButton, QPushBtton *{color:green;}&quot;)
+</code></pre>
+<hr>
+<h3 id="选择器匹配规则">选择器匹配规则</h3>
+<pre><code class="language-css">Qdialog QComboBox, QLineEdit { //wrong
+	border: 1px solid blue;
+}
+
+Qdialog&gt;QComboBox, QLineEdit { //wrong
+	border: 1px solid blue;
+}
+
+Qdialog QComboBox, QDiaLog QLineEdit { //right
+	border: 1px solid blue;
+}
+
+Qdialog&gt;QComboBox, QDialog&gt;QLineEdit { //right
+	border: 1px solid blue;
+}
+</code></pre>
+<p>  情景：父控件QDiaLog有子控件QComboBox和QLineEdit，如果使用前两种的写法，QComboBox正常，但程序所有的QLineEdit的边框都变成了1px的蓝色实线。基于以上，多个选择器组合使用时，它们会从右到左进行结合，即<code>Qdialog QComboBox, QLineEdit</code>，<code>Qdialog&gt;QComboBox, QLineEdit</code>。</p>
+<h2 id="qss特性">QSS特性</h2>
+<h3 id="层叠性">层叠性</h3>
+<p>  层叠性用以处理冲突，只有多个选择器匹配到同一个控件时才发生层叠性，两个选择器匹配到同一个按钮，结果是后面的样式覆盖掉前面的。</p>
+<pre><code class="language-css">pBtn1-&gt;setStyleSheet(&quot;QPushButton{color:green;}&quot;)
+pBtn1-&gt;setStyleSheet(&quot;.QPushButton{color:green;}&quot;)
+</code></pre>
+<h3 id="继承性qt-version57">继承性(Qt-Version&gt;=5.7)</h3>
+<p>  CSS中，如果一个标签的字体和颜色没有显式设置，会自动从父亲获得。而QSS中，控件不会从其父亲继承字体和颜色的设置。</p>
+<pre><code class="language-cpp">qApp-&gt;setStyleSheet(&quot;QGroupBox{ color: red; }&quot;);
+qApp-&gt;setStyleSheet(&quot;QGroupBox, QGroupBox * { color: red; }&quot;); //让孩子也获得其属性
+</code></pre>
+<p>  但要注意的是<code>QWidget::setFont()</code>可以设置包括孩子在内的字体，<code>QWidget::setPalette()</code>可以设置调色板包括孩子在内的调色板。如果想要字体和调色板被孩子继承，可以给QApplication设置<code>Qt::AA_UseStyleSheetPropagationInWidgetStyles</code>(Qt5.7加入)属性。</p>
+<pre><code class="language-cpp">QCoreApplication::setAttribute(Qt::AA_UseStyleSheetPropagationInWidgetStyles, true);
+</code></pre>
+<h3 id="优先级">优先级</h3>
+<p>  当一个控件被多个选择器选中并且设置了相同的属性（值不同）时， 不能仅仅根据设置样式语句出现的先后顺序进行层叠, 那么控件的样式如何确定，于是引出了选择器的优先级问题。</p>
+<ol>
+<li>设置方式的优先级：控件直接设置的样式 &gt; QApplication设置的样式</li>
+<li>样式表本身的优先级：一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。
+<ul>
+<li>继承：最终样式为离目标最近的样式</li>
+<li>相同选择器：写在后面的会覆盖掉前面的</li>
+<li>不同选择器：Id &gt; 类 &gt; 类型 &gt; 通配符 &gt; 继承 &gt;默认</li>
+</ul>
+</li>
+<li>优先级权重：
+<ul>
+<li>计算id选择器数量[=a]</li>
+<li>计算类选择器数量+属性选择器数量[=b]</li>
+<li>计算类型选择器数量[=c]</li>
+<li>忽略子控件选择器</li>
+<li>串联上述abc，数字越大权重越大，优先级越高。</li>
+</ul>
+</li>
+</ol>
+<h2 id="盒子模型">盒子模型</h2>
+<center>
+<p><img src="https://qtdebug.com/img/qtbook/qss/QSS-BoxModel-1.png" alt="盒模型"></p>
+</center>
+<center>
+<p><img src="https://qtdebug.com/img/qtbook/qss/QSS-BoxModel-2.png" alt="盒模型"></p>
+</center>
+<h2 id="属性">属性</h2>
+<p>  属性即控件的外观样式。</p>
+<h3 id="背景属性background">背景属性（background）</h3>
+<ol>
+<li>background-color:
+<ul>
+<li>取值类型：<code>Brush</code></li>
+<li>默认设置border内的背景颜色</li>
+</ul>
+</li>
+<li>background-image:
+<ul>
+<li>取值类型：<code>Url</code></li>
+<li>格式：<code>url(filename)</code></li>
+<li>背景图像会覆盖背景颜色</li>
+</ul>
+</li>
+<li>background-repeat:
+<ul>
+<li>取值：
+<ul>
+<li>repeat-x: 水平平铺</li>
+<li>repeat-y: 垂直平铺</li>
+<li>repeat: 两方向平铺</li>
+<li>no-repeat: 不平铺</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>background-position:
+<ul>
+<li>取值：
+<ul>
+<li>top:</li>
+<li>bottom:</li>
+<li>center:</li>
+<li>left:</li>
+<li>right</li>
+</ul>
+</li>
+<li>对齐方式：
+<ul>
+<li>background-position: 水平对齐方式 垂直对齐方式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>background-attachment:
+<ul>
+<li>取值
+<ul>
+<li>scroll: (default)滚动</li>
+<li>fixed: 固定</li>
+</ul>
+</li>
+<li>设置背景图片在带滚动条的控件(QAbstractScrollArea)中是固定在一个位置还是随着滚动条滚动.</li>
+</ul>
+</li>
+<li>background-clip:
+<ul>
+<li>取值:
+<ul>
+<li>margin</li>
+<li>border</li>
+<li>padding</li>
+<li>content</li>
+</ul>
+</li>
+<li>作用: 设置背景颜色覆盖的区域, 默认情况下背景只覆盖内边距矩形, 如果没有指定, 默认值为border</li>
+<li>background-clip 属性只对背景的渲染区域有关系, 背景图片始终是靠在padding 边上</li>
+</ul>
+</li>
+<li>background-origin
+<ul>
+<li>取值:
+<ul>
+<li>margin</li>
+<li>border</li>
+<li>padding</li>
+<li>content</li>
+</ul>
+</li>
+<li>作用:
+<ul>
+<li>与 background-position 和background-image 一起使用, 指明背景图片的覆盖范围矩形, 如果没有指定, 默认为 padding</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>背景连写格式：background</li>
+</ol>
+<pre><code class="language-css">background:color image repeat position; // 连写最多包含此4个
+</code></pre>
+<h3 id="前景属性color">前景属性（color）</h3>
+<p>  即控件文字的颜色，取值类型：<code>Brush</code>。</p>
+<h3 id="边框属性border">边框属性（border）</h3>
+<ol>
+<li>border-width:
+<ul>
+<li>取值: <code>(num)px</code></li>
+</ul>
+</li>
+<li>border-style:
+<ul>
+<li>取值:
+<ul>
+<li>dashed</li>
+<li>dot-dash</li>
+<li>dot-dot-dash</li>
+<li>dotted</li>
+<li>double</li>
+<li>groove</li>
+<li>inset</li>
+<li>outset</li>
+<li>ridge</li>
+<li>solid</li>
+<li>none</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>border-color:
+<ul>
+<li>取值类型：<code>Brush</code></li>
+</ul>
+</li>
+<li>border-radius:
+<ul>
+<li>取值: 水平半径 垂直半径</li>
+</ul>
+</li>
+<li>border-image: (一般不用)
+<ul>
+<li>border-image-source: 图片路径，只支持本地和Qt资源路径</li>
+<li>border-image-slice: 图片切片，单位只能是像素值，数值不必带单位px</li>
+<li>border-image-repeat:
+<ul>
+<li>stretch</li>
+<li>round</li>
+<li>repeat</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-css">border-image: border-image-source border-image-slice border-image-repeat
+</code></pre>
+<ol start="6">
+<li>边框连写格式：border</li>
+</ol>
+<pre><code class="language-css">// 1.
+border: width style color;
+// 2. 四方向
+border-top: width style color;
+// 3. 
+border-style: top right bottom left;
+border-width: top right bottom left;
+border-color: top right bottom left;
+
+// 单写: top width 可替换成对应词条
+border-top-width: 
+</code></pre>
+<h3 id="字体属性font">字体属性（font）</h3>
+<ol>
+<li>font-style
+<ul>
+<li>normal</li>
+<li>italic</li>
+<li>oblique</li>
+</ul>
+</li>
+<li>font-weight
+<ul>
+<li>normal</li>
+<li>bold</li>
+</ul>
+</li>
+<li>font-size</li>
+<li>font-family</li>
+<li>字体连写格式：font</li>
+</ol>
+<pre><code class="language-css">font: style weight size family
+</code></pre>
+<h3 id="文本属性">文本属性</h3>
+<ul>
+<li>text-align: 只支持<code>QPushButton</code>和<code>QProgressBar</code>,<code>text-align: center center</code>
+<ul>
+<li>top</li>
+<li>bottom</li>
+<li>left</li>
+<li>right</li>
+<li>center</li>
+</ul>
+</li>
+<li>text-decoration
+<ul>
+<li>none</li>
+<li>underline</li>
+<li>overline</li>
+<li>line-through</li>
+</ul>
+</li>
+<li>padding</li>
+<li>margin</li>
+<li>width|height</li>
+<li>max-width|max-height|min-height|min-height
+<ul>
+<li>当最小宽度与最大宽度相等时, 意味着给这个盒子的内容设置了一个固定宽度.</li>
+<li>当最小高度与最大高度相等时, 意味着给这个盒子的内容设置了一个固定高度.</li>
+</ul>
+</li>
+<li>outline
+<ul>
+<li>是控件有焦点时, 绘制在边框边缘的外围,可起到突出作用,轮廓线不占据控件, 也不一定是矩形.</li>
+<li><code>outline:none; // 有焦点时不绘制轮廓 </code></li>
+</ul>
+</li>
+</ul>
+<h2 id="brush类型">Brush类型</h2>
+<p>  brush 一般用来设置颜色，有3种取值：<code>Color</code>, <code>Gradient</code>, <code>PaletteRole</code>。</p>
+<ul>
+<li>Color
+<ul>
+<li>rgb(r,g,b)</li>
+<li>rgba(r,g,b,a)</li>
+<li>hsv(h,s,v)</li>
+<li>hsva(h,s,v,a)</li>
+<li>#rgb</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Gradient
+<ul>
+<li>qlineargradient 线性渐变</li>
+<li>qradialgradient 径向渐变</li>
+<li>qconicalgradient 锥形渐变</li>
+</ul>
+</li>
+<li>PaletteRole</li>
+</ul>
+                    </div>
+                    
+                    
+
+                    
+
+
+
+                    
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/docs/qtdoc/qssdoc/chapter-1/" class="block">QSS加载</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/docs/qtdoc/qssdoc/chapter-3/" class="block">QSS控件</a>
+        
+    </div>
+</div>
+
+                    
+
+
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-s ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#语法">语法</a></li>
+    <li><a href="#选择器">选择器</a>
+      <ul>
+        <li><a href="#通用选择器">通用选择器</a></li>
+        <li><a href="#类型选择器">类型选择器</a></li>
+        <li><a href="#类选择器">类选择器</a></li>
+        <li><a href="#id选择器">ID选择器</a></li>
+        <li><a href="#后代选择器">后代选择器</a></li>
+        <li><a href="#子元素选择器">子元素选择器</a></li>
+        <li><a href="#属性选择器">属性选择器</a></li>
+        <li><a href="#并集选择器">并集选择器</a></li>
+        <li><a href="#子控件选择器">子控件选择器</a></li>
+        <li><a href="#伪类选择器">伪类选择器</a></li>
+        <li><a href="#不使用选择器不推荐">不使用选择器（不推荐）</a></li>
+        <li><a href="#选择器匹配规则">选择器匹配规则</a></li>
+      </ul>
+    </li>
+    <li><a href="#qss特性">QSS特性</a>
+      <ul>
+        <li><a href="#层叠性">层叠性</a></li>
+        <li><a href="#继承性qt-version57">继承性(Qt-Version&gt;=5.7)</a></li>
+        <li><a href="#优先级">优先级</a></li>
+      </ul>
+    </li>
+    <li><a href="#盒子模型">盒子模型</a></li>
+    <li><a href="#属性">属性</a>
+      <ul>
+        <li><a href="#背景属性background">背景属性（background）</a></li>
+        <li><a href="#前景属性color">前景属性（color）</a></li>
+        <li><a href="#边框属性border">边框属性（border）</a></li>
+        <li><a href="#字体属性font">字体属性（font）</a></li>
+        <li><a href="#文本属性">文本属性</a></li>
+      </ul>
+    </li>
+    <li><a href="#brush类型">Brush类型</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

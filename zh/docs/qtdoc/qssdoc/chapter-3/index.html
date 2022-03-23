@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>QSS控件 | Qt文档 | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="QSS控件">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文档",
+      "item":"/zh/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Qt文档",
+      "item":"/zh/docs/qtdoc/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"QSS文档",
+      "item":"/zh/docs/qtdoc/qssdoc/"},{
+      "@type": "ListItem",
+      "position": 4 ,
+      "name":"QSS控件",
+      "item":"/zh/docs/qtdoc/qssdoc/chapter-3/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/docs/qtdoc/qssdoc/chapter-3/"
+    },
+    "headline": "QSS控件 | Qt文档 | Marginlon","datePublished": "2022-03-09T00:00:00+00:00",
+    "dateModified": "2022-03-09T00:00:00+00:00",
+    "wordCount":  210 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "QSS控件"
+}
+</script><meta property="og:title" content="QSS控件 | Qt文档 | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/docs/qtdoc/qssdoc/chapter-3/" />
+
+
+
+<meta property="og:description" content="QSS控件" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-03-09T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-03-09T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-e">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class='fas fa-caret-right ms-1'></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="/zh/docs/qtdoc/">Qt文档</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/chapter1/">Qt多语言</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/chapter2/">QString</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class=" pb-2 ">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/">QSS文档</a>
+        </div>
+        
+        
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-1/">QSS加载</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-2/">QSS基础</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-3/">QSS控件</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/zh/docs/qtdoc/qssdoc/chapter-4/">QSS案例</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="w-full lg:w-3/4 ps-6 ms-0 me-auto">
+                <h1 class="font-bold text-3xl text-primary-text">QSS控件</h1>
+                <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2022-03-09</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+            </div>
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    
+                    
+                    <div class="content">
+                        <p>QSS控件</p>
+<h2 id="重置元素">重置元素</h2>
+<p>  重置所有内容有助于在不同操作系统之间统一风格</p>
+<pre><code class="language-css">* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  border-style: none;
+  border-image: none;
+  outline: 0;
+}
+/* specific reset for elements inside QToolBar */
+QToolBar * {
+  margin: 0px;
+  padding: 0px;
+}
+</code></pre>
+<h2 id="视图控件">视图控件</h2>
+<h3 id="qheaderview">QHeaderView</h3>
+<h3 id="qlistview">QListView</h3>
+<h3 id="qtableview">QTableView</h3>
+<h3 id="qtreeview">QTreeView</h3>
+<h2 id="窗口控件">窗口控件</h2>
+<h3 id="qdockwidget">QDockWidget</h3>
+<h3 id="qlistwidget">QListWidget</h3>
+<h3 id="qtablewidget">QTableWidget</h3>
+<h3 id="qtreewidget">QTreeWidget</h3>
+<h3 id="qtabwidget">QTabWidget</h3>
+<h3 id="qmainwindow">QMainWindow</h3>
+<h2 id="对话框控件">对话框控件</h2>
+<h3 id="qdialog">QDialog</h3>
+<h2 id="功能条控件">功能条控件</h2>
+<h3 id="qtoolbar">QToolBar</h3>
+<h3 id="qtabbar">QTabBar</h3>
+<h3 id="qmenubar">QMenuBar</h3>
+<h2 id="按钮控件">按钮控件</h2>
+<h3 id="qabstractbutton">QAbstractButton</h3>
+<h3 id="qpushbutton">QPushButton</h3>
+<h3 id="qcheckbox">QCheckBox</h3>
+<pre><code></code></pre>
+<h3 id="qradiobutton">QRadioButton</h3>
+<h3 id="qtoolbutton">QToolButton</h3>
+<h3 id="qtablecornerbutton">QTableCornerButton</h3>
+<h2 id="容器控件">容器控件</h2>
+<h3 id="qdialogbuttonbox">QDialogButtonBox</h3>
+<h3 id="qbuttongroup">QButtonGroup</h3>
+<h3 id="qgroupbox">QGroupBox</h3>
+<h3 id="qtoolbox">QToolBox</h3>
+<h3 id="qmenubar-1">QMenuBar</h3>
+<h2 id="带边框控件">带边框控件</h2>
+<h3 id="qframe">QFrame</h3>
+<h3 id="qlabel">QLabel</h3>
+<h3 id="qlcdnumberlcd">QLCDNumberLCD</h3>
+<h2 id="输入控件">输入控件</h2>
+<h3 id="qcombobox">QComboBox</h3>
+<h3 id="qlineedit">QLineEdit</h3>
+<h3 id="qvalidator">QValidator</h3>
+<h2 id="微调控件">微调控件</h2>
+<h3 id="qabstractspinbox">QAbstractSpinBox</h3>
+<h3 id="qspinbox">QSpinBox</h3>
+<h3 id="qdoublespinbox">QDoubleSpinBox</h3>
+<h2 id="时间控件">时间控件</h2>
+<h3 id="qdate">QDate</h3>
+<h3 id="qtime">QTime</h3>
+<h3 id="qdatetime">QDateTime</h3>
+<h3 id="qdatetimeedit">QDateTimeEdit</h3>
+<h3 id="qdateedit和qtimeedit">QDateEdit和QTimeEdit</h3>
+<h3 id="qtimer">QTimer</h3>
+<h3 id="qcalendarwidget">QCalendarWidget</h3>
+<h2 id="滚动控件">滚动控件</h2>
+<h3 id="qabstractscrollarea">QAbstractScrollArea</h3>
+<h3 id="qscrollbar">QScrollBar</h3>
+<h3 id="qslider">QSlider</h3>
+<h3 id="qmdiarea">QMdiArea</h3>
+<h2 id="qtitancomponents控件">QtitanComponents控件</h2>
+<p><a href="https://www.devmachines.com/documentation/QtitanComponents/html/index.html">QtitanComponents控件官网</a></p>
+                    </div>
+                    
+                    
+
+                    
+
+
+
+                    
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/docs/qtdoc/qssdoc/chapter-2/" class="block">QSS基础</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/docs/qtdoc/qssdoc/chapter-4/" class="block">QSS案例</a>
+        
+    </div>
+</div>
+
+                    
+
+
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-s ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#重置元素">重置元素</a></li>
+    <li><a href="#视图控件">视图控件</a>
+      <ul>
+        <li><a href="#qheaderview">QHeaderView</a></li>
+        <li><a href="#qlistview">QListView</a></li>
+        <li><a href="#qtableview">QTableView</a></li>
+        <li><a href="#qtreeview">QTreeView</a></li>
+      </ul>
+    </li>
+    <li><a href="#窗口控件">窗口控件</a>
+      <ul>
+        <li><a href="#qdockwidget">QDockWidget</a></li>
+        <li><a href="#qlistwidget">QListWidget</a></li>
+        <li><a href="#qtablewidget">QTableWidget</a></li>
+        <li><a href="#qtreewidget">QTreeWidget</a></li>
+        <li><a href="#qtabwidget">QTabWidget</a></li>
+        <li><a href="#qmainwindow">QMainWindow</a></li>
+      </ul>
+    </li>
+    <li><a href="#对话框控件">对话框控件</a>
+      <ul>
+        <li><a href="#qdialog">QDialog</a></li>
+      </ul>
+    </li>
+    <li><a href="#功能条控件">功能条控件</a>
+      <ul>
+        <li><a href="#qtoolbar">QToolBar</a></li>
+        <li><a href="#qtabbar">QTabBar</a></li>
+        <li><a href="#qmenubar">QMenuBar</a></li>
+      </ul>
+    </li>
+    <li><a href="#按钮控件">按钮控件</a>
+      <ul>
+        <li><a href="#qabstractbutton">QAbstractButton</a></li>
+        <li><a href="#qpushbutton">QPushButton</a></li>
+        <li><a href="#qcheckbox">QCheckBox</a></li>
+        <li><a href="#qradiobutton">QRadioButton</a></li>
+        <li><a href="#qtoolbutton">QToolButton</a></li>
+        <li><a href="#qtablecornerbutton">QTableCornerButton</a></li>
+      </ul>
+    </li>
+    <li><a href="#容器控件">容器控件</a>
+      <ul>
+        <li><a href="#qdialogbuttonbox">QDialogButtonBox</a></li>
+        <li><a href="#qbuttongroup">QButtonGroup</a></li>
+        <li><a href="#qgroupbox">QGroupBox</a></li>
+        <li><a href="#qtoolbox">QToolBox</a></li>
+        <li><a href="#qmenubar-1">QMenuBar</a></li>
+      </ul>
+    </li>
+    <li><a href="#带边框控件">带边框控件</a>
+      <ul>
+        <li><a href="#qframe">QFrame</a></li>
+        <li><a href="#qlabel">QLabel</a></li>
+        <li><a href="#qlcdnumberlcd">QLCDNumberLCD</a></li>
+      </ul>
+    </li>
+    <li><a href="#输入控件">输入控件</a>
+      <ul>
+        <li><a href="#qcombobox">QComboBox</a></li>
+        <li><a href="#qlineedit">QLineEdit</a></li>
+        <li><a href="#qvalidator">QValidator</a></li>
+      </ul>
+    </li>
+    <li><a href="#微调控件">微调控件</a>
+      <ul>
+        <li><a href="#qabstractspinbox">QAbstractSpinBox</a></li>
+        <li><a href="#qspinbox">QSpinBox</a></li>
+        <li><a href="#qdoublespinbox">QDoubleSpinBox</a></li>
+      </ul>
+    </li>
+    <li><a href="#时间控件">时间控件</a>
+      <ul>
+        <li><a href="#qdate">QDate</a></li>
+        <li><a href="#qtime">QTime</a></li>
+        <li><a href="#qdatetime">QDateTime</a></li>
+        <li><a href="#qdatetimeedit">QDateTimeEdit</a></li>
+        <li><a href="#qdateedit和qtimeedit">QDateEdit和QTimeEdit</a></li>
+        <li><a href="#qtimer">QTimer</a></li>
+        <li><a href="#qcalendarwidget">QCalendarWidget</a></li>
+      </ul>
+    </li>
+    <li><a href="#滚动控件">滚动控件</a>
+      <ul>
+        <li><a href="#qabstractscrollarea">QAbstractScrollArea</a></li>
+        <li><a href="#qscrollbar">QScrollBar</a></li>
+        <li><a href="#qslider">QSlider</a></li>
+        <li><a href="#qmdiarea">QMdiArea</a></li>
+      </ul>
+    </li>
+    <li><a href="#qtitancomponents控件">QtitanComponents控件</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

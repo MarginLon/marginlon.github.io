@@ -6,40 +6,58 @@
     <description>Recent content on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 09 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qt多语言</title>
+      <link>/zh/docs/qtdoc/chapter1/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/docs/qtdoc/chapter1/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>QSS加载</title>
-      <link>/zh/docs/qss-doc/chapter-1/</link>
+      <link>/zh/docs/qtdoc/qssdoc/chapter-1/</link>
       <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/zh/docs/qss-doc/chapter-1/</guid>
+      <guid>/zh/docs/qtdoc/qssdoc/chapter-1/</guid>
       <description>&lt;p&gt;QSS加载&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>QString</title>
+      <link>/zh/docs/qtdoc/chapter2/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/docs/qtdoc/chapter2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>QSS基础</title>
-      <link>/zh/docs/qss-doc/chapter-2/</link>
+      <link>/zh/docs/qtdoc/qssdoc/chapter-2/</link>
       <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/zh/docs/qss-doc/chapter-2/</guid>
+      <guid>/zh/docs/qtdoc/qssdoc/chapter-2/</guid>
       <description>&lt;p&gt;QSS基础&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>QSS控件</title>
-      <link>/zh/docs/qss-doc/chapter-3/</link>
+      <link>/zh/docs/qtdoc/qssdoc/chapter-3/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/zh/docs/qss-doc/chapter-3/</guid>
+      <guid>/zh/docs/qtdoc/qssdoc/chapter-3/</guid>
       <description>&lt;p&gt;QSS控件&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>QSS案例</title>
-      <link>/zh/docs/qss-doc/chapter-4/</link>
+      <link>/zh/docs/qtdoc/qssdoc/chapter-4/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/zh/docs/qss-doc/chapter-4/</guid>
+      <guid>/zh/docs/qtdoc/qssdoc/chapter-4/</guid>
       <description>&lt;p&gt;QSS案例&lt;/p&gt;</description>
     </item>
     

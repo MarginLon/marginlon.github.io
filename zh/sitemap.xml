@@ -2,20 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/zh/docs/qss-doc/chapter-1/</loc>
+    <loc>/zh/docs/qtdoc/chapter1/</loc>
+    <lastmod>2022-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh/docs/qtdoc/qssdoc/chapter-1/</loc>
     <lastmod>2022-03-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh/docs/qss-doc/chapter-2/</loc>
+    <loc>/zh/docs/qtdoc/chapter2/</loc>
+    <lastmod>2022-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh/docs/qtdoc/qssdoc/chapter-2/</loc>
     <lastmod>2022-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh/docs/qss-doc/chapter-3/</loc>
+    <loc>/zh/docs/qtdoc/qssdoc/chapter-3/</loc>
     <lastmod>2022-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh/docs/qss-doc/chapter-4/</loc>
+    <loc>/zh/docs/qtdoc/qssdoc/chapter-4/</loc>
     <lastmod>2022-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/zh/</loc>
-    <lastmod>2022-03-09T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,7 +34,7 @@
                 />
   </url><url>
     <loc>/zh/docs/</loc>
-    <lastmod>2022-03-09T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -40,7 +46,10 @@
                 href="/zh/docs/"
                 />
   </url><url>
-    <loc>/zh/docs/qss-doc/</loc>
+    <loc>/zh/docs/qtdoc/qssdoc/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh/docs/qtdoc/</loc>
     <lastmod>2022-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/zh/posts/javascript-bom/</loc>
