@@ -352,8 +352,8 @@
 <li>块内同时有同名的默认变量和函数声明
 <ul>
 <li>块内的函数声明每次执行的时候都会给全局那个同名的变量赋值一次，并且，只有执行那个定义函数声明的代码才会触发赋值，你写的函数声明就相当于setter,每执行一次就给外部的那个同名的变量赋值一次</li>
-<li>如果块内同时有同名的函数声明和默认的变量声明，那给默认的变量赋值时其实相当于赋值给那个同名的函数，因为查找块内的作用域链时找到了,就不会往全局声明了。
-<img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%8F%98%E9%87%8F.png?raw=true" alt="块级作用域_变量">
+<li>如果块内同时有同名的函数声明和默认的变量声明，那给默认的变量赋值时其实相当于赋值给那个同名的函数，因为查找块内的作用域链时找到了,就不会往全局声明了。 
+<img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%8F%98%E9%87%8F.png?raw=true" alt="块级作用域_变量"> 
 <img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%87%BD%E6%95%B0.png?raw=true" alt="块级作用域_函数"></li>
 </ul>
 </li>
