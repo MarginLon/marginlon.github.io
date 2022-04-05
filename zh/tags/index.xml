@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 08 Dec 2020 18:02:39 +0800</lastBuildDate><atom:link href="/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 16:28:39 +0800</lastBuildDate><atom:link href="/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AJAX</title>
+      <link>/zh/tags/ajax/</link>
+      <pubDate>Fri, 24 Sep 2021 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/tags/ajax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>/zh/tags/javascript/</link>
+      <pubDate>Fri, 24 Sep 2021 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>visual studio code</title>
       <link>/zh/tags/visual-studio-code/</link>

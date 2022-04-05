@@ -189,11 +189,11 @@
     
     <item>
       <title>JavaScript AJAX</title>
-      <link>/zh/posts/js_items_16/</link>
-      <pubDate>Thu, 23 Sep 2021 20:00:00 +0800</pubDate>
+      <link>/zh/posts/javascript-ajax/</link>
+      <pubDate>Fri, 24 Sep 2021 16:28:39 +0800</pubDate>
       
-      <guid>/zh/posts/js_items_16/</guid>
-      <description>1. AJAX 1. AJAX AJAX解决网页异步刷新 同步刷新 异步刷新 浏览器可以从服务器同时请求多项内容； 浏览器请求返回的速度会快得多； 只有页面中真正改变的部分得到更新； 能</description>
+      <guid>/zh/posts/javascript-ajax/</guid>
+      <description>1. AJAX 1. AJAX AJAX解决网页异步刷新 同步刷新 异步刷新 1. 浏览器可以从服务器同时请求多项内容； 2. 浏览器请求返回的速度会快得多； 3. 只有页面中真正改变的部分得到更</description>
     </item>
     
     <item>

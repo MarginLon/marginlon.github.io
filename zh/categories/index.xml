@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 08 Dec 2020 18:02:39 +0800</lastBuildDate><atom:link href="/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 16:28:39 +0800</lastBuildDate><atom:link href="/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>/zh/categories/javascript/</link>
+      <pubDate>Fri, 24 Sep 2021 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>visual studio code</title>
       <link>/zh/categories/visual-studio-code/</link>

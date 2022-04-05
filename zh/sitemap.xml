@@ -107,8 +107,59 @@
     <loc>/zh/posts/js_items_17/</loc>
     <lastmod>2021-09-24T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/js_items_16/</loc>
-    <lastmod>2021-09-23T20:00:00+08:00</lastmod>
+    <loc>/zh/tags/ajax/</loc>
+    <lastmod>2021-09-24T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/categories/</loc>
+    <lastmod>2021-09-24T16:28:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/categories/"
+                />
+  </url><url>
+    <loc>/zh/tags/javascript/</loc>
+    <lastmod>2021-09-24T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/series/javascript/</loc>
+    <lastmod>2021-09-24T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/categories/javascript/</loc>
+    <lastmod>2021-09-24T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/javascript-ajax/</loc>
+    <lastmod>2021-09-24T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/series/</loc>
+    <lastmod>2021-09-24T16:28:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/series/"
+                />
+  </url><url>
+    <loc>/zh/tags/</loc>
+    <lastmod>2021-09-24T16:28:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/zh/tags/"
+                />
   </url><url>
     <loc>/zh/posts/js_items_15/</loc>
     <lastmod>2021-09-23T20:00:00+08:00</lastmod>
@@ -160,45 +211,6 @@
   </url><url>
     <loc>/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2021-09-01T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>/zh/categories/</loc>
-    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/categories/"
-                />
-  </url><url>
-    <loc>/zh/series/</loc>
-    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/series/"
-                />
-  </url><url>
-    <loc>/zh/tags/</loc>
-    <lastmod>2020-12-08T18:02:39+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/"
-                />
   </url><url>
     <loc>/zh/tags/visual-studio-code/</loc>
     <lastmod>2020-12-08T18:02:39+08:00</lastmod>

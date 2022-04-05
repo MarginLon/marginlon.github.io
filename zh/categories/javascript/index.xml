@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on Marginlon</title>
+    <link>/zh/categories/javascript/</link>
+    <description>Recent content in JavaScript on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 24 Sep 2021 16:28:39 +0800</lastBuildDate><atom:link href="/zh/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript AJAX</title>
+      <link>/zh/posts/javascript-ajax/</link>
+      <pubDate>Fri, 24 Sep 2021 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-ajax/</guid>
+      <description>1. AJAX 1. AJAX AJAX解决网页异步刷新 同步刷新 异步刷新 1. 浏览器可以从服务器同时请求多项内容； 2. 浏览器请求返回的速度会快得多； 3. 只有页面中真正改变的部分得到更</description>
+    </item>
+    
+  </channel>
+</rss>
