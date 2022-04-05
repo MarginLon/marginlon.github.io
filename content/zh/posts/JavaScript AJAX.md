@@ -1,26 +1,59 @@
 ---
 title: "JavaScript AJAX"
-date: 2021-09-23T20:00:00+08:00
+description:
+toc: true
+authors:
+tags: 
+  - JavaScript
+  - AJAX 
+categories:
+  - JavaScript
+series:
+  - JavaScript
+date: "2021-09-24T16:28:39+08:00"
+lastmode: "2022-04-14T16:28:39+08:00"
+featuredImage: 
+featuredVideo: 
 draft: false
 ---
 
 - [1. AJAX](#1-ajax)
 
-# 1. AJAX
+## 1. AJAX
+
 - AJAX解决网页异步刷新
-    - 同步刷新
-    - 异步刷新
+  - 同步刷新
+  - 异步刷新
         1. 浏览器可以从服务器同时请求多项内容；
         2. 浏览器请求返回的速度会快得多；
         3. 只有页面中真正改变的部分得到更新；
         4. 能够减少服务器数据流量；
         5. 用户可以在页面更新的同时继续工作；
         6. 有些改变无须与服务器往返通信就可以处理。
+
 ```js
 // AJAX :基于XMLHttpRequest创建HTTP请求
 //      + 创建xml实例
 //      + open 打开一个url地址 [ 发送请求前的配置]
 //          + method 请求方式：GET(get/delete/head/options...)/POST(post/put/patch...)
+//          + url 请求的URL地址
+//          + async 是否异步(默认true)
+//          + username userpass ...
+//      + onreadystatechange 监听请求过程，不同阶段不同处理
+//      + send 发送请求，[设置请求的主体信息]
+let xhr = new XMLHttpRequest; // ie6 7 8 : ActiveXObject
+xhr.open('GET','./1.json',true);
+xhr.setRequestHeader('Content-Type','multipart/form-data');
+xhr.onreadystatechange = function () {
+    if(xhr.readyState === 4 && xhr.status === 200){
+        console.log(xhr.rensponseText);
+    }
+};
+xhr.send(Qs.stringify({
+    lx:0,
+    name:xxx
+}));
+
     /*
             GET和POST
             -   GET请求传递给服务器的信息，除了请求头传递外，要求基于URL问号传参传递给服务器
@@ -32,10 +65,7 @@ draft: false
                 xhr.open('GET','./1.json?lx=1&name=xxx'+Math.random());
             3)POST相对安全: GET传递的信息基于URL末尾拼接，劫持或修改.
     */
-//          + url 请求的URL地址
-//          + async 是否异步(默认true)
-//          + username userpass ...
-//      + onreadystatechange 监听请求过程，不同阶段不同处理
+
     /*    - AJAX状态 
             - xhr.readyState  
             1. UNSENT 未发送,默认  [0]
@@ -55,6 +85,7 @@ draft: false
             JSON字符串 XML格式 文件流[binary]
           - 获取响应头信息 xhr.getResponseHeader/getAllResponseHeaders
     */
+
 //      + send 发送请求，[设置请求的主体信息]
 //          基于请求主体传递给服务器的数据格式有要求 [postman：接口测试工具]
 //          1.form-data 文件上传
@@ -83,19 +114,6 @@ draft: false
 //          xhr.setRequestHeader('Content-Type','image/jpeg');
 //          5.GraphQL
 
-
-let xhr = new XMLHttpRequest;
-xhr.open('GET','./1.json');
-xhr.setRequestHeader('Content-Type','multipart/form-data');
-xhr.onreadystatechange = function () {
-    if(xhr.readyState === 4 && xhr.status === 200){
-        console.log(xhr.rensponseText);
-    }
-};
-xhr.send(Qs.stringify({
-    lx:0,
-    name:xxx
-}));
 // xhr.abort() 中断，onabort
 // xhr.timeout 设置超时时间 ontimeout
 // xhr.withCredentials CORS跨域允许携带cookies等
