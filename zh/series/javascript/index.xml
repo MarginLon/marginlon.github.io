@@ -16,5 +16,14 @@
       <description>1. AJAX 1. AJAX AJAX解决网页异步刷新 同步刷新 异步刷新 1. 浏览器可以从服务器同时请求多项内容； 2. 浏览器请求返回的速度会快得多； 3. 只有页面中真正改变的部分得到更</description>
     </item>
     
+    <item>
+      <title>JavaScript 数据类型 类型检测 类型转换</title>
+      <link>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 24 Sep 2021 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <description>1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: // NaN 非有效数字、Infinity 无穷大 // Number.MIN_SAFE_INTERGER // NaN == NaN false // NaN === NaN false =&amp;gt; NaN !== NaN // =&amp;gt; isNaN([value]); // Object.is(NaN,NaN); true string: &amp;lsquo;&amp;rsquo;, &amp;ldquo;&amp;rdquo;,`` boolean: true、f</description>
+    </item>
+    
   </channel>
 </rss>
