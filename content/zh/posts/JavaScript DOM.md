@@ -1,11 +1,24 @@
 ---
 title: "JavaScript DOM"
-date: 2021-09-01T20:00:00+08:00
+description:
+toc: true
+authors:
+tags:
+- JavaScript
+- DOM
+categories:
+- JavaScript
+series:
+- JavaScript
+date: "2022-04-17T16:28:39+08:00"
+lastmode: "2022-04-06T16:28:39+08:00"
+featuredImage:
+featuredVideo:
 draft: false
----
 
+---
 - [1. {DOM}](#1-dom)
- 
+
 ## 1. {DOM}
 
 - 基本类型
@@ -25,18 +38,18 @@ draft: false
   6. <font color="00ffff">[context].querySelector([selector])</font>
   7. <font color="00ffff">[context].querySelectorAll([selector])</font>
 - 关系属性
-  + 类型 
-    + Node
-    + NodeList(ByTagName/ByClassName/querySelectorAll)   
-  + nodeType:元素1/属性2/文本3/注释8/文档9
-  + nodeName:
-  + nodeValue:
-  + childNodes:获得所有子节点
-  + children:获得所有元素子节点
-  + firstChild/lastChild:
-  + firstElementChild/lastElementChild:
-  + previousSibling/nextSibing:
-  + previousElementSibling/nextElementSibling:
+  - 类型
+    - Node
+    - NodeList(ByTagName/ByClassName/querySelectorAll)
+  - nodeType:元素1/属性2/文本3/注释8/文档9
+  - nodeName:
+  - nodeValue:
+  - childNodes:获得所有子节点
+  - children:获得所有元素子节点
+  - firstChild/lastChild:
+  - firstElementChild/lastElementChild:
+  - previousSibling/nextSibing:
+  - previousElementSibling/nextElementSibling:
 - 增删改
   - createElement
   - createTextNode

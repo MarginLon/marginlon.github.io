@@ -1,7 +1,21 @@
 ---
 title: "JavaScript 事件绑定 事件对象 事件传播 事件委托"
-date: 2021-10-30T20:00:00+08:00
+description:
+toc: true
+authors:
+tags:
+- JavaScript
+- 事件
+categories:
+- JavaScript
+series:
+- JavaScript
+date: "2022-04-17T16:28:39+08:00"
+lastmode: "2022-04-06T16:28:39+08:00"
+featuredImage:
+featuredVideo:
 draft: false
+
 ---
 
 - [1. 事件绑定](#1-事件绑定)

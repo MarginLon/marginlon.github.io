@@ -20,6 +20,7 @@ draft: false
 - [3.html5骨架](#3html5骨架)
 
 ## 1.HTML速查
+
 ```html
 <!-- 文档 -->
 <!DOCTYPE html>
@@ -181,11 +182,13 @@ draft: false
 ```
 
 ## 2.规范
+
 - div和p，尽量⽤p，因为p在默认情况下有上下间距，对兼容特殊终端有利。
 - 需要强调的⽂本，可以使⽤ strong 或 em 标签。
 - 使⽤表格时，标题⽤ caption，表头⽤ thead，主体部分⽤ tbody 包围，尾部⽤ tfoot 包围。表头
 和⼀般单元格要区分开，表头⽤ th，单元格⽤ td。
 - 表单域要⽤ fieldset 标签包起来，并⽤ legend 标签说明表单的⽤途（可理解为表单标题）。
+
 ```html
 <form>
 <fieldset>
@@ -196,8 +199,10 @@ Date of birth: <input type="text">
 </fieldset>
 </form>
 ```
+
 - 每个input标签对应的说明⽂本都需要使⽤label标签，并且通过为input设置id属性，在lable标签中
 设置for来让说明⽂本和相对应的input关联起来。或者直接在label中内嵌控件。
+
 ```html
 <label for="username">请输⼊⽤户名: </label>
 <input type="text" id="username" name="username">
@@ -205,16 +210,18 @@ Date of birth: <input type="text">
 <label>请输⼊⽤户名<input type="text" id="username" name="usern
 ame"></label>
 ```
+
 - 嵌套规范：
-   + 内联元素不能包含块元素
-   + 块元素不能放在\<p\>内
-   + h1~h6,dt不能包含块元素
+  - 内联元素不能包含块元素
+  - 块元素不能放在\<p\>内
+  - h1~h6,dt不能包含块元素
 - title, keywords, description精简全面
 - a标签设置title;外部链接设置rel; rel="nofollow"
 - 所有标题使用h1
 - br只用于文本换行
 - img设置alt
 - meta
+
 ```html
 <!-- 编码 -->
 <meta charset="UTF-8" />
@@ -238,14 +245,15 @@ ame"></label>
 ```
 
 ## 3.html5骨架
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	      <meta name="Author" content="">
+       <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+       <meta name="Author" content="">
     <meta name="Keywords" content="Margin" />
     <meta name="Description" content="Description Words." />
     <title>Document</title>

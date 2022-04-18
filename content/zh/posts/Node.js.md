@@ -1,15 +1,28 @@
 ---
 title: "Node.js"
-date: 2021-09-30T20:00:00+08:00
+description:
+toc: true
+authors:
+tags:
+- Node.js
+categories:
+- Node.js
+series:
+- Node.js
+date: '2020-10-01T22:02:39+08:00'
+lastmode: "2020-10-01T22:02:39+08:00"
+featuredImage:
+featuredVideo:
 draft: false
 ---
 - [1. 模块化规范](#1-模块化规范)
 - [2. Node 内置包](#2-node-内置包)
 - [3. 登录流程](#3-登录流程)
 
-# 1. 模块化规范
+## 1. 模块化规范
+
 - CommonJS
-  - require exports module __dirname __filename
+  - require exports module __dirname__filename
   - 导入：= require('')
   - 导出：module.exports =
 - ES6Module
@@ -17,9 +30,11 @@ draft: false
   - 导入： import {} from '' /import xxx from ''
   - 导出： export {let var const function class}/export default
 
---- 
-# 2. Node 内置包
-- 全局变量 : global process 
+---
+
+## 2. Node 内置包
+
+- 全局变量 : global process
 - commander.js
   - npm i commander
 - path
@@ -28,22 +43,23 @@ draft: false
   - 文件系统:
 - http
 - Buffer
-  - 缓冲区，暂时存放输入输出数据的一段内存 
+  - 缓冲区，暂时存放输入输出数据的一段内存
 - 流
 - egg
 
-# 3. 登录流程
+## 3. 登录流程
+
 - Web Storage
-  + cookie   
+  - cookie
     1. 大小：4kb
     2. 带宽：访问消耗
     3. 安全风险
-  + Web Storage
+  - Web Storage
     1. 存储大小：5~10MB
     2. 不发送至服务器
     3. 更丰富的接口
     4. localStorage,sessionStorage
-  + localStorage
+  - localStorage
     - 持久化的本地存储，不手动删除不会过期
     - 存储：localStorage.setItem(key,value);
     - 读取：localStorage.getItem(key);
@@ -59,18 +75,20 @@ draft: false
     - '.'分割 三部分：Header.Payload.Signnature
     - Header：{"alg": "HS256","typ": "JWT"}
     - Payload:
-      ```
-      {
-      iss (issuer)：签发人,
-      exp (expiration time)：过期时间
-      sub (subject)：主题
-      aud (audience)：受众
-      nbf (Not Before)：生效时间
-      iat (Issued At)：签发时间
-      jti (JWT ID)：编号
-      私有字段...
-      }
-      ```
+
+    ```js
+    {
+    iss (issuer)：签发人,
+    exp (expiration time)：过期时间
+    sub (subject)：主题
+    aud (audience)：受众
+    nbf (Not Before)：生效时间
+    iat (Issued At)：签发时间
+    jti (JWT ID)：编号
+    私有字段...
+    }
+    ```
+
     - Signature:HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload),secret)
     - （1）JWT 默认是不加密，但也是可以加密的。生成原始 Token 以后，可以用密钥再加密一次。
 

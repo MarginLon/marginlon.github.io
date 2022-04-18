@@ -6,10 +6,12 @@ draft: false
 - [1.工厂设计模式](#1工厂设计模式)
 - [2.数组和对象的深浅拷贝](#2数组和对象的深浅拷贝)
 - [3.深比较浅比较合并](#3深比较浅比较合并)
-# 1.工厂设计模式
+
+## 1.工厂设计模式
+
 ```js
     var jQuery = function( selector, context ) {
-		return new jQuery.fn.init( selector, context );
+  return new jQuery.fn.init( selector, context );
         };
     jQuery.fn = jQuery.prototype = {
         jquery: "3.6.0",
@@ -18,11 +20,15 @@ draft: false
     init = jQuery.fn.init = function( selector, context, root ){};
     init.prototype = jQuery.fn;
 ```
+
 ![工厂设计模式](https://github.com/MarginLon/MarginPostImage/blob/master/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png?raw=true)
 
 ---
-# 2.数组和对象的深浅拷贝
+
+## 2.数组和对象的深浅拷贝
+
 ![深浅拷贝](https://github.com/MarginLon/MarginPostImage/blob/master/%E6%B7%B1%E6%B5%85%E5%85%8B%E9%9A%86.png?raw=true)
+
 ```js
 
 //======================浅克隆：只克隆第一级信息，第二级及以后的信息共用
@@ -80,5 +86,5 @@ draft: false
     //      5. arrayBuffer等也存在问题
     let obj2 = JSON.parse(JSON.stringfy(obj1));
 ```
- 
-# 3.深比较浅比较合并
+
+## 3.深比较浅比较合并

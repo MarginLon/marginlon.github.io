@@ -1,14 +1,27 @@
 ---
-title: "JavaScript 内置对象"
-date: 2021-09-01T20:00:00+08:00
+title: "JS内置对象"
+description:
+toc: true
+authors:
+tags: 
+  - JS内置对象
+  - JavaScript
+categories:
+  - JavaScript
+series:
+  - JavaScript
+date: '2020-10-01T22:02:39+08:00'
+lastmode: "2020-10-01T22:02:39+08:00"
+featuredImage: 
+featuredVideo: 
 draft: false
 ---
 
 - [1. {String}](#1-string)
 - [2. {Number}](#2-number)
 - [3. {Array}](#3-array)
- 
-# 1. {String}
+
+## 1. {String}
 
 - 字符串的方法不会改变原串，会返回一个新值
 
@@ -80,7 +93,7 @@ draft: false
 // toUpperCase()
 ```
 
-# 2. {Number}
+## 2. {Number}
 
 ```js
 // isInteger():
@@ -104,7 +117,7 @@ pow()
 sqrt()
 ```
 
-# 3. {Array}
+## 3. {Array}
 
 ```js
 Array.isArray();

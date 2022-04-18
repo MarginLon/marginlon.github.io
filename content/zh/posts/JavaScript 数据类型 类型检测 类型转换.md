@@ -10,7 +10,7 @@ categories:
   - JavaScript
 series:
   - JavaScript
-date: "2021-09-24T16:28:39+08:00"
+date: "2022-04-17T16:28:39+08:00"
 lastmode: "2022-04-06T16:28:39+08:00"
 featuredImage: 
 featuredVideo: 
@@ -45,7 +45,7 @@ draft: false
   - Symbol:
 
   ```js
-  // 1. 对象的唯一属性名 (属性名类型：string && symbol)
+  // 1. 对象的唯一属性名 (属性名类型：string && symbol && Map允许属性名是对象)
   //console.log(Symbol()===Symbol()); // false
 
   let key = Symbol();
@@ -131,15 +131,22 @@ Object(Symbol()) // pass
 
 ## 3. 类型转换
 
+- <span style="color:#cc0033">Object => Number/String</span>
+  1. 检测```Symbol.toPrimitive```，获得原始值
+  2. 第一步没有，```valueOf```获取原始值，不是原始值则继续第三步
+  3. 第二步没有，调用```toString```，字符串
+  4. 第三步后，若有需要，基于```Number()```，数字
+
 - <span style="color:#cc0033">Others => Number</span>
   - Number([val])
-    - 隐式转换的调用方法（如```isNaN()```）
-    - String:出现非有效数字字符即为```NaN```，空串为```0```
-    - null:```0```
-    - undefined:```NaN```
-    - boolean:```true==1 false==0```
-    - BigInt:去除```n```, 超过安全数字处理为科学计数法
-    - Symbol->Uncaught TypeError: Cannot convert a Symbol value to a number
+    - 隐式转换的调用方法（如```isNaN(), ==, 数学运算```）
+    - 规则:
+      - String:出现非有效数字字符即为```NaN```，空串为```0```
+      - null:```0```
+      - undefined:```NaN```
+      - boolean:```true==1 false==0```
+      - BigInt:去除```n```, 超过安全数字处理为科学计数法
+      - Symbol->Uncaught TypeError: Cannot convert a Symbol value to a number
   - parseInt([val],[radix])/parseFloat([val])
     - [val] 必须是一个字符串，否则隐式转换
     - [radix] 不设置或为0，按照10处理，若字符串'0x'开头，按照16处理
@@ -149,16 +156,12 @@ Object(Symbol()) // pass
     - inNaN()
     - <span style="color:#2a5caa">数学运算(特殊："+"的字符串拼接)</span>
     - "=="
-- <span style="color:#cc0033">Object => Number/String</span>
-  1. 检测```Symbol.toPrimitive```，获得原始值
-  2. 第一步没有，```valueOf```获取原始值，不是原始值则继续第三步
-  3. 第二步没有，调用```toString```，字符串
-  4. 第三步后，若有需要，基于```Number()```，数字
+
 - <span style="color:#cc0033">Others => String</span>
   - 规则:
     - 原始值，其他对象用引号包含
     - 标准普通对象 => ```"[object Object]"```
-    - 标准普通对象 => 字符串
+    - 标准非普通对象 => 字符串
     - JSON.stringify <=> JSON.parse
     - Qs.stringify <=>  
   - 隐式转换：
@@ -168,6 +171,7 @@ Object(Symbol()) // pass
         - 按Object => Number/String处理, toString获取了字符串则拼接
       - 一边：左边为空
         - 数学运算
+
 - <span style="color:#cc0033">Others => Boolean</span>
   - 规则：只有``` 0,NaN,null,undefined,"" ```为```false```
   - ! !!

@@ -1,16 +1,28 @@
 ---
 title: "CSS 动画"
-date: 2021-10-02T22:02:39+08:00
+description:
+toc: true
+authors:
+tags:
+- 动画
+- CSS
+categories:
+- CSS
+series:
+- CSS
+date: '2020-10-01T22:02:39+08:00'
+lastmode: "2020-10-01T22:02:39+08:00"
+featuredImage:
+featuredVideo:
 draft: false
 ---
 - [1.动画](#1动画)
 
-
-# 1.动画
+## 1.动画
 
 - 过渡： transition
   - ```transition-property:all```
-  - ```transition-duration:1s;
+  - ```transition-duration:1s```;
   - ```transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out```
   - ```transition-delay:1s;```
 - 2D&3D： transform

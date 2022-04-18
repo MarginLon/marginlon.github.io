@@ -1,23 +1,39 @@
 ---
 title: "CSS 属性 选择器 浮动"
-date: 2021-10-03T22:02:39+08:00
+description:
+toc: true
+authors:
+tags:
+- 属性
+- 选择器
+- 浮动
+- CSS
+categories:
+- CSS
+series:
+- CSS
+date: '2020-10-01T22:02:39+08:00'
+lastmode: "2020-10-01T22:02:39+08:00"
+featuredImage:
+featuredVideo:
 draft: false
+
 ---
 - [1.字体，文本，背景](#1字体文本背景)
 - [2.CSS变量](#2css变量)
 - [3.选择器](#3选择器)
 - [4.浮动](#4浮动)
 
-# 1.字体，文本，背景
+## 1.字体，文本，背景
 
 ```css
 p{
-	font-size: 50px; 		/*字体大小*/
-	line-height: 30px;      /*行高*/
-	font-family: 幼圆,黑体; 	/*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/
-	font-style: italic ;		/*italic表示斜体，normal表示不倾斜*/
-	font-weight: bold;	/*粗体*/
-	font-variant: small-caps;  /*小写变大写*/
+ font-size: 50px;   /*字体大小*/
+ line-height: 30px;      /*行高*/
+ font-family: 幼圆,黑体;  /*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/
+ font-style: italic ;  /*italic表示斜体，normal表示不倾斜*/
+ font-weight: bold; /*粗体*/
+ font-variant: small-caps;  /*小写变大写*/
 }
 vertical-align: middle; /*指定行级元素的垂直对齐方式。 内元素（inline）、行内块元素（inline-block）、表格的单元格（table-cell） */
 
@@ -44,8 +60,11 @@ body {
   background-image: linear-gradient(to direction | angle, color-stop1, color-stop2...);background-image: radial-gradient(shape size at position,start-color,...,last-color);
 }
 ```
-# 2.CSS变量
+
+## 2.CSS变量
+
  全局/局部
+
 ```css
 /*全局变量*/
 :root { --color: blue; }
@@ -57,10 +76,12 @@ body {
 color: var(--color);
 }
 ```
+
 - 拼接
-   + 如果变量值是⼀个字符串，可以与其他字符串拼接；
-   + 如果变量值是数值，不能与数值单位直接连⽤，使用calc()函数；
-   + 如果变量值带有单位，就不能写成字符串;
+  - 如果变量值是⼀个字符串，可以与其他字符串拼接；
+  - 如果变量值是数值，不能与数值单位直接连⽤，使用calc()函数；
+  - 如果变量值带有单位，就不能写成字符串;
+
 ```css
 /*字符串拼接*/
 .foo {
@@ -79,41 +100,44 @@ color: var(--color);
 }
 ```
 
+## 3.选择器
 
-# 3.选择器
 - 基础选择器：#id, .class, element, *
 - 组合选择器：并列, 后代(e1 e2, e1>e2), 兄弟(e1+e2, e1~e2)
 - 属性选择器
-    - E[attr]
-    - E[attr=val]
-    - E[attr~=val]:其中一个等于"val"
-    - E[attr|=val]:其中之一以"val"开头
-    - E[attr^="val"]:以val开头
-    - E[attr$="val"]:以val结尾    
-    - E[attr*="val"]：包含val
+  - E[attr]
+  - E[attr=val]
+  - E[attr~=val]:其中一个等于"val"
+  - E[attr|=val]:其中之一以"val"开头
+  - E[attr^="val"]:以val开头
+  - E[attr$="val"]:以val结尾
+  - E[attr*="val"]：包含val
 - 伪类选择器
-    - a:
-      - :link
-      - :hover
-      - :active
-      - :visited
-    - input:
-      - :focus
-      - :enabled
-      - :disabled
-      - :checked 
+  - a:
+    - :link
+    - :hover
+    - :active
+    - :visited
+  - input:
+    - :focus
+    - :enabled
+    - :disabled
+    - :checked
 - 伪元素
-  - ::after 
-    - ```css
-      <!-- 清除浮动 -->
-      .clearfix::after{
-        content:'';
-        display:block;
-        clear:both;
-      }
-      ```  
 
-# 4.浮动
+- ::after
+
+  ```css
+    <!-- 清除浮动 -->
+    .clearfix::after{
+      content:'';
+      display:block;
+      clear:both;
+    }
+  ```  
+
+## 4.浮动
+
 - 标准文档流
   - 1) 空白折叠
   - 2) 底边对齐
@@ -128,8 +152,8 @@ color: var(--color);
 - 浮动：脱标，贴靠，字围，收缩
 - 清除浮动
   1. 给浮动元素的祖先加高度
-  2. ```clear:both;```; 
-     - margin失效 
+  2. ```clear:both;```;
+     - margin失效
   3. 隔墙（外墙，内墙）
   4. ```overflow:hidden;```;（偏方）
      - ie6: ```_zoom:1;```

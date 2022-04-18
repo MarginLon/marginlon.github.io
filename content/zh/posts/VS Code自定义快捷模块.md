@@ -16,7 +16,9 @@ featuredVideo:
 draft: false
 ---
 ## VS Code自定义快捷模块
+
 ---
+
 ```js
 //1.<ctrl>+<shift>+<p>
 //2. snippets
@@ -83,34 +85,34 @@ description：代码段描述,在使用智能感知时的描述
 
 ```json
 {
-	"h5 sample":{
-		"prefix": "MYH5",
-		"body": [
-			"<!DOCTYPE html>",
-			"<html>",
-			"<head>",
-			"\t<meta charset=\"UTF-8\">",
-			"\t<meta name=\"keywords\" content=\"\">",
-			"\t<meta name=\"description\" content=\"\">",
-			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-			"\t<title>Document</title>",
-			"\t<!-- CSS -->",
-			"\t<link rel=\"stylesheet\" type=\"text\\css\" href=\"\">",
-			"\t<style>",
-			"",
-			"\t</style>",
-			"</head>",
-			"",
-			"<body>",
-			"\t<!-- JS -->",
-			"\t<script>",
-			"",		
-			"\t</script>",
-			"</body>",
-			"",
-			"</html>"
-		],
-		"description": "create HTML5 templete"
-	}
+ "h5 sample":{
+  "prefix": "MYH5",
+  "body": [
+   "<!DOCTYPE html>",
+   "<html>",
+   "<head>",
+   "\t<meta charset=\"UTF-8\">",
+   "\t<meta name=\"keywords\" content=\"\">",
+   "\t<meta name=\"description\" content=\"\">",
+   "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+   "\t<title>Document</title>",
+   "\t<!-- CSS -->",
+   "\t<link rel=\"stylesheet\" type=\"text\\css\" href=\"\">",
+   "\t<style>",
+   "",
+   "\t</style>",
+   "</head>",
+   "",
+   "<body>",
+   "\t<!-- JS -->",
+   "\t<script>",
+   "",  
+   "\t</script>",
+   "</body>",
+   "",
+   "</html>"
+  ],
+  "description": "create HTML5 templete"
+ }
 }
 ```
