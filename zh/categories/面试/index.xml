@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面试 on Marginlon</title>
+    <link>/zh/categories/%E9%9D%A2%E8%AF%95/</link>
+    <description>Recent content in 面试 on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Oct 2020 22:02:39 +0800</lastBuildDate><atom:link href="/zh/categories/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web面试资料</title>
+      <link>/zh/posts/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/</guid>
+      <description>1.HTML5 2.CSS3 3.JavaScript 4.Vue.js 5.Webpack 1.HTML5 问：语义化 答： 指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DOM on Marginlon</title>
+    <link>/zh/tags/dom/</link>
+    <description>Recent content in DOM on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 17 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/tags/dom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript DOM</title>
+      <link>/zh/posts/javascript-dom/</link>
+      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-dom/</guid>
+      <description>1. {DOM} 1. {DOM} 基本类型 Document DocumentType:doctype标签 Element:H5标签 Attr:元素的属性 Text:标签内文本 Comment:注释 Do</description>
+    </item>
+    
+  </channel>
+</rss>

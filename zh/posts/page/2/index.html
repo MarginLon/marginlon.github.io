@@ -70,63 +70,63 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "CSS Less",
-            "description": "// 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width + 10px; #header { width: @width; height: @height; } // Mixins // () -\u0026gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }",
-            "url": "/zh/posts/css-less/"
-        },{
-            "@type":"ListItem",
-            "position":  2 ,
-            "name": "Node.js",
-            "description": "1. 模块化规范 2. Node 内置包 3. 登录流程 1. 模块化规范 CommonJS require exports module __dirname __filename 导入：= require(\u0026rsquo;') 导出：module.exports = ES6Module \u0026lt;script type='module'\u0026gt;\u0026lt;/script\u0026gt; 导入： import {} from \u0026rsquo;\u0026rsquo; /import xxx from '' 导出： export {let var const function class}/export default",
-            "url": "/zh/posts/node.js/"
-        },{
-            "@type":"ListItem",
-            "position":  3 ,
-            "name": "Webpack",
-            "description": "1. Webpack 1. Webpack // npx webpack =\u0026gt; npm run build // package.json \u0026quot;scripts\u0026quot;: { \u0026quot;build\u0026quot;: \u0026quot;webpack\u0026quot; } // module.exports = { entry: './src/index.js', output: { filename: 'bundle.js', path: path.resolve(__dirname, 'dist') } module: { rules: [ { test: /\\.(js|jsx)$/, use: 'babel-loader' } ] }, plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin({template: './src/index.html'}) ] }; 面试 Loader css-loader: 加载CSS，支持模块化，压缩，文件导",
-            "url": "/zh/posts/webpack/"
-        },{
-            "@type":"ListItem",
-            "position":  4 ,
-            "name": "JavaScript axios",
-            "description": " 1.axios  1.axios ",
-            "url": "/zh/posts/js_items_17/"
-        },{
-            "@type":"ListItem",
-            "position":  5 ,
             "name": "JavaScript AJAX",
             "description": "1. AJAX 1. AJAX AJAX解决网页异步刷新 同步刷新 异步刷新 1. 浏览器可以从服务器同时请求多项内容； 2. 浏览器请求返回的速度会快得多； 3. 只有页面中真正改变的部分得到更",
             "url": "/zh/posts/javascript-ajax/"
         },{
             "@type":"ListItem",
-            "position":  6 ,
-            "name": "JavaScript 数据类型 类型检测 类型转换",
-            "description": "1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: // NaN 非有效数字、Infinity 无穷大 // Number.MIN_SAFE_INTERGER // NaN == NaN false // NaN === NaN false =\u0026gt; NaN !== NaN // =\u0026gt; isNaN([value]); // Object.is(NaN,NaN); true string: \u0026lsquo;\u0026rsquo;, \u0026ldquo;\u0026rdquo;,`` boolean: true、f",
-            "url": "/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"
-        },{
-            "@type":"ListItem",
-            "position":  7 ,
+            "position":  2 ,
             "name": "JavaScript HTTP网络层 跨域方案",
             "description": "1. HTTP网络层 2. 跨域方案 1. HTTP网络层 http vs https 超文本传输协议(s: ssl加密) 端口号:80 443 ftp:文件上传下载协议 端口号: 21 页面 [第一次访问] UR",
             "url": "/zh/posts/js_items_15/"
         },{
             "@type":"ListItem",
-            "position":  8 ,
+            "position":  3 ,
             "name": "JavaScript Iterator Generator",
             "description": "1. Iterator 2. Generator 1. Iterator Iterator是一种机制，遍历各种不同的数据，依次处理成员 next方法遍历 每次遍历返回一个对象 { done:false, value: xxx} done：记录是否完成 value：",
             "url": "/zh/posts/js_items_14/"
         },{
             "@type":"ListItem",
-            "position":  9 ,
+            "position":  4 ,
             "name": "JavaScript Promise Async/Await",
             "description": "1. Promise 2. Async/Await 1. Promise Promise // PromiseState: pending/fulfilled/rejected // PromiseResult: undefined // new Promise 立即执行传递的executor函数 /* 实例.then(onfulfilled,onrejected) 1. 观察实例状态，如果",
             "url": "/zh/posts/js_items_13/"
         },{
             "@type":"ListItem",
-            "position":  10 ,
+            "position":  5 ,
             "name": "JavaScript 浏览器渲染机制 CRP优化 事件循环机制",
             "description": "1.浏览器渲染机制 CRP优化 2.事件循环机制 1.浏览器渲染机制 CRP优化 从服务器基于HTTP网络请求回来的数据 16进制的文件流 浏览器解析 =\u0026gt; HTML字符",
             "url": "/zh/posts/js_items_12/"
+        },{
+            "@type":"ListItem",
+            "position":  6 ,
+            "name": "JavaScript 工厂设计模式 数组和对象的深浅拷贝 深浅合并",
+            "description": "1.工厂设计模式 2.数组和对象的深浅拷贝 3.深比较浅比较合并 1.工厂设计模式 var jQuery = function( selector, context ) { return new jQuery.fn.init( selector, context ); }; jQuery.fn = jQuery.prototype = { jquery: \u0026quot;3.6.0\u0026quot;, constructor: jQuery }; init = jQuery.fn.init = function( selector, context, root ){}; init.prototype = jQuery.fn;",
+            "url": "/zh/posts/js_items_11/"
+        },{
+            "@type":"ListItem",
+            "position":  7 ,
+            "name": "JavaScript CLASS 继承",
+            "description": "1.CLASS 2.类的继承 1.CLASS //ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; // this.n = 100; } // 给实例的私有属性和方法 n = 100; // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） // 增加",
+            "url": "/zh/posts/js_items_10/"
+        },{
+            "@type":"ListItem",
+            "position":  8 ,
+            "name": "JavaScript 面向对象[构造函数 原型和原型链 面向对象基础]",
+            "description": "1. 构造函数 2. 原型和原型链 3. 面向对象基础 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function \u0026hellip; DOM HTML标签 -\u0026gt; HTMLXXXElement -\u0026gt; HTMLElement -\u0026gt; Element -\u0026gt; Node -\u0026gt; EventTarget -\u0026gt; Object HTMLDocument -\u0026gt; Document -\u0026gt; Node -\u0026gt; \u0026hellip; Window -\u0026gt; WindowProperties -\u0026gt; EventTarget -\u0026gt; Object 元素集合 -\u0026gt;",
+            "url": "/zh/posts/js_items_09/"
+        },{
+            "@type":"ListItem",
+            "position":  9 ,
+            "name": "JavaScript 函数防抖 函数节流",
+            "description": "1. 函数防抖 2. 函数节流 1. 函数防抖 防抖：只识别一次 \u0026ndash;点击事件 let submit = document.querySelector(\u0026quot;#submit\u0026quot;); //简易处理:加标识 不适于通用 submit.isLoading = false; submit.onclick = function () { if (this.isLoading) return; this.isLoading = true; console.",
+            "url": "/zh/posts/js_items_08/"
+        },{
+            "@type":"ListItem",
+            "position":  10 ,
+            "name": "JavaScript 闭包应用",
+            "description": "1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 1.2. 循环定时器 1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 var buttons = document.querySelectorAll('button'); for (var i = 0; i \u0026lt; buttons.length; i++) { // i=0 buttons[0] 第一个按钮 //",
+            "url": "/zh/posts/js_items_06/"
         }
     ]
 }
@@ -165,7 +165,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-10-31T20:00:00&#43;08:00" />
+<meta property="og:updated_time" content="2022-04-17T16:28:39&#43;08:00" />
 
 
 
@@ -269,142 +269,6 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/css-less/" class="font-bold text-xl hover:text-eureka">CSS Less</a>
-</div>
-<div class="content">
-  
-    // 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width &#43; 10px; #header { width: @width; height: @height; } // Mixins // () -&gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2021-10-01</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/node.js/" class="font-bold text-xl hover:text-eureka">Node.js</a>
-</div>
-<div class="content">
-  
-    1. 模块化规范 2. Node 内置包 3. 登录流程 1. 模块化规范 CommonJS require exports module __dirname __filename 导入：= require(’&#39;) 导出：module.exports = ES6Module &lt;script type=&#39;module&#39;&gt;&lt;/script&gt; 导入： import {} from ’’ /import xxx from &#39;&#39; 导出： export {let var const function class}/export default
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-30</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>2分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/webpack/" class="font-bold text-xl hover:text-eureka">Webpack</a>
-</div>
-<div class="content">
-  
-    1. Webpack 1. Webpack // npx webpack =&gt; npm run build // package.json &#34;scripts&#34;: { &#34;build&#34;: &#34;webpack&#34; } // module.exports = { entry: &#39;./src/index.js&#39;, output: { filename: &#39;bundle.js&#39;, path: path.resolve(__dirname, &#39;dist&#39;) } module: { rules: [ { test: /\.(js|jsx)$/, use: &#39;babel-loader&#39; } ] }, plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin({template: &#39;./src/index.html&#39;}) ] }; 面试 Loader css-loader: 加载CSS，支持模块化，压缩，文件导
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-30</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>3分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/js_items_17/" class="font-bold text-xl hover:text-eureka">JavaScript axios</a>
-</div>
-<div class="content">
-  
-     1.axios  1.axios 
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-24</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
   <a href="/zh/posts/javascript-ajax/" class="font-bold text-xl hover:text-eureka">JavaScript AJAX</a>
 </div>
 <div class="content">
@@ -421,54 +285,6 @@
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
         <span>3分钟阅读时长</span>
-    </div>
-    
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
-        
-        <a href="/zh/categories/javascript/" class="hover:text-eureka">JavaScript</a>
-        
-    </div>
-    
-
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
-        
-    </div>
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="font-bold text-xl hover:text-eureka">JavaScript 数据类型 类型检测 类型转换</a>
-</div>
-<div class="content">
-  
-    1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: // NaN 非有效数字、Infinity 无穷大 // Number.MIN_SAFE_INTERGER // NaN == NaN false // NaN === NaN false =&gt; NaN !== NaN // =&gt; isNaN([value]); // Object.is(NaN,NaN); true string: ‘’, “”,`` boolean: true、f
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-24</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>4分钟阅读时长</span>
     </div>
     
     
@@ -615,6 +431,176 @@
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
         <span>2021-09-17</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/js_items_11/" class="font-bold text-xl hover:text-eureka">JavaScript 工厂设计模式 数组和对象的深浅拷贝 深浅合并</a>
+</div>
+<div class="content">
+  
+    1.工厂设计模式 2.数组和对象的深浅拷贝 3.深比较浅比较合并 1.工厂设计模式 var jQuery = function( selector, context ) { return new jQuery.fn.init( selector, context ); }; jQuery.fn = jQuery.prototype = { jquery: &#34;3.6.0&#34;, constructor: jQuery }; init = jQuery.fn.init = function( selector, context, root ){}; init.prototype = jQuery.fn;
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-16</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/js_items_10/" class="font-bold text-xl hover:text-eureka">JavaScript CLASS 继承</a>
+</div>
+<div class="content">
+  
+    1.CLASS 2.类的继承 1.CLASS //ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; // this.n = 100; } // 给实例的私有属性和方法 n = 100; // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） // 增加
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-15</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/js_items_09/" class="font-bold text-xl hover:text-eureka">JavaScript 面向对象[构造函数 原型和原型链 面向对象基础]</a>
+</div>
+<div class="content">
+  
+    1. 构造函数 2. 原型和原型链 3. 面向对象基础 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function … DOM HTML标签 -&gt; HTMLXXXElement -&gt; HTMLElement -&gt; Element -&gt; Node -&gt; EventTarget -&gt; Object HTMLDocument -&gt; Document -&gt; Node -&gt; … Window -&gt; WindowProperties -&gt; EventTarget -&gt; Object 元素集合 -&gt;
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-14</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/js_items_08/" class="font-bold text-xl hover:text-eureka">JavaScript 函数防抖 函数节流</a>
+</div>
+<div class="content">
+  
+    1. 函数防抖 2. 函数节流 1. 函数防抖 防抖：只识别一次 –点击事件 let submit = document.querySelector(&#34;#submit&#34;); //简易处理:加标识 不适于通用 submit.isLoading = false; submit.onclick = function () { if (this.isLoading) return; this.isLoading = true; console.
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-13</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/js_items_06/" class="font-bold text-xl hover:text-eureka">JavaScript 闭包应用</a>
+</div>
+<div class="content">
+  
+    1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 1.2. 循环定时器 1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 var buttons = document.querySelectorAll(&#39;button&#39;); for (var i = 0; i &lt; buttons.length; i&#43;&#43;) { // i=0 buttons[0] 第一个按钮 //
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-09-11</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>

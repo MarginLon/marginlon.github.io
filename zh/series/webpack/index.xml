@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webpack on Marginlon</title>
+    <link>/zh/series/webpack/</link>
+    <description>Recent content in Webpack on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Oct 2020 22:02:39 +0800</lastBuildDate><atom:link href="/zh/series/webpack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webpack</title>
+      <link>/zh/posts/webpack/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/webpack/</guid>
+      <description>1. Webpack 1. Webpack // npx webpack =&amp;gt; npm run build // package.json &amp;quot;scripts&amp;quot;: { &amp;quot;build&amp;quot;: &amp;quot;webpack&amp;quot; } // module.exports = { entry: &#39;./src/index.js&#39;, output: { filename: &#39;bundle.js&#39;, path: path.resolve(__dirname, &#39;dist&#39;) } module: { rules: [ { test: /\.(js|jsx)$/, use: &#39;babel-loader&#39; } ] }, plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin({template: &#39;./src/index.html&#39;}) ] }; 面试 Loader css-loader: 加载CSS，支持模块化，压缩，文件导</description>
+    </item>
+    
+  </channel>
+</rss>

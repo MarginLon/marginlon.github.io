@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>css | Marginlon</title>
+<title>CSS | Marginlon</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="Eureka is a elegant and powerful theme for Hugo.">
+  content="Marginlon.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,7 +70,7 @@
       "item":"/zh/tags/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"css",
+      "name":"CSS",
       "item":"/zh/tags/css/"}]
 }
 </script>
@@ -85,13 +85,43 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "Markdown Syntax Guide",
-            "description": "Sample article showcasing basic Markdown syntax and formatting for HTML elements.",
-            "url": "/zh/posts/markdown-syntax/"
+            "name": "CSS Less",
+            "description": "// 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width + 10px; #header { width: @width; height: @height; } // Mixins // () -\u0026gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }",
+            "url": "/zh/posts/css-less/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
+            "name": "CSS Sass",
+            "description": "// 变量 $nav-color: #F90; nav { $width: 100px; width: $width; color: $nav-color; } //编译后 nav { width: 100px; color: #F90; } // @mixin @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } //sass最终生成： .notice { background-color: green; border: 2px solid #00aa00; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }",
+            "url": "/zh/posts/css-sass/"
+        },{
+            "@type":"ListItem",
+            "position":  3 ,
+            "name": "CSS 动画",
+            "description": "1.动画 1.动画 过渡： transition transition-property:all transition-duration:1s; transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D\u0026amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;",
+            "url": "/zh/posts/css-%E5%8A%A8%E7%94%BB/"
+        },{
+            "@type":"ListItem",
+            "position":  4 ,
+            "name": "CSS 定位和层叠上下文原理",
+            "description": "1.定位 1.定位 position static(default) relative 参照物：自身 不脱标 使用情形： 微调元素，方位和z-index能够生效 做absolute的参考，子绝父相 absolute 参照物：父 脱标 top:参照",
+            "url": "/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/"
+        },{
+            "@type":"ListItem",
+            "position":  5 ,
+            "name": "CSS 属性 选择器 浮动",
+            "description": "1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆",
+            "url": "/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/"
+        },{
+            "@type":"ListItem",
+            "position":  6 ,
+            "name": "CSS 布局",
+            "description": "1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp",
+            "url": "/zh/posts/css-%E5%B8%83%E5%B1%80/"
         }
     ]
 }
-</script><meta property="og:title" content="css | Marginlon" />
+</script><meta property="og:title" content="CSS | Marginlon" />
 <meta property="og:type" content="website" />
 
 
@@ -104,7 +134,7 @@
 
 
 
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
+<meta property="og:description" content="Marginlon." />
 
 
 
@@ -122,7 +152,7 @@
 
 
 
-<meta property="og:updated_time" content="2019-03-11T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2020-10-01T22:02:39&#43;08:00" />
 
 
 
@@ -201,7 +231,7 @@
     <div class="ps-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
 <article class="mx-6 my-8">
-    <h1 class="font-bold text-3xl text-primary-text">css</h1>
+    <h1 class="font-bold text-3xl text-primary-text">CSS</h1>
     
 </article>
 <div class="bg-secondary-bg rounded px-6">
@@ -212,33 +242,29 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/markdown-syntax/" class="font-bold text-xl hover:text-eureka">Markdown Syntax Guide</a>
+  <a href="/zh/posts/css-less/" class="font-bold text-xl hover:text-eureka">CSS Less</a>
 </div>
 <div class="content">
   
-    Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+    // 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width &#43; 10px; #header { width: @width; height: @height; } // Mixins // () -&gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2019-03-11</span>
+        <span>2020-10-01</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>3分钟阅读时长</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/themes/" class="hover:text-eureka">themes</a>
-        
-        
-        <span>, </span>
-        <a href="/zh/categories/syntax/" class="hover:text-eureka">syntax</a>
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
         
     </div>
     
@@ -247,7 +273,247 @@
     <div class="me-6 my-2">
         <i class="fas fa-th-list me-1"></i>
         
-        <a href="/zh/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-sass/" class="font-bold text-xl hover:text-eureka">CSS Sass</a>
+</div>
+<div class="content">
+  
+    // 变量 $nav-color: #F90; nav { $width: 100px; width: $width; color: $nav-color; } //编译后 nav { width: 100px; color: #F90; } // @mixin @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } //sass最终生成： .notice { background-color: green; border: 2px solid #00aa00; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%8A%A8%E7%94%BB/" class="font-bold text-xl hover:text-eureka">CSS 动画</a>
+</div>
+<div class="content">
+  
+    1.动画 1.动画 过渡： transition transition-property:all transition-duration:1s; transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D&amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/" class="font-bold text-xl hover:text-eureka">CSS 定位和层叠上下文原理</a>
+</div>
+<div class="content">
+  
+    1.定位 1.定位 position static(default) relative 参照物：自身 不脱标 使用情形： 微调元素，方位和z-index能够生效 做absolute的参考，子绝父相 absolute 参照物：父 脱标 top:参照
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/" class="font-bold text-xl hover:text-eureka">CSS 属性 选择器 浮动</a>
+</div>
+<div class="content">
+  
+    1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%B8%83%E5%B1%80/" class="font-bold text-xl hover:text-eureka">CSS 布局</a>
+</div>
+<div class="content">
+  
+    1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
         
     </div>
     

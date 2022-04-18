@@ -70,42 +70,54 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "JavaScript DOM",
-            "description": "1. {DOM} 1. {DOM} 基本类型 Document DocumentType:doctype标签 Element:H5标签 Attr:元素的属性 Text:标签内文本 Comment:注释 Do",
-            "url": "/zh/posts/javascript-dom/"
+            "name": "CSS 布局",
+            "description": "1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp",
+            "url": "/zh/posts/css-%E5%B8%83%E5%B1%80/"
         },{
             "@type":"ListItem",
             "position":  2 ,
-            "name": "JavaScript 内置对象",
-            "description": "1. {String} 2. {Number} 3. {Array} 1. {String} 字符串的方法不会改变原串，会返回一个新值 //查找 // indexOf()/lastIndexOf(): @params:(str,startIndex); @return:index|-1; // search(): @params:(Reg|str); @return:index|-1; // includes(): @params:(str,[position|0]); @return:Boolean; //startsWith()/endsWith(): @params:(str,[position|0]); @return:Boolean; //获取字符 // charAt(): = str[index] @params:(index); @return:str|''; // charCodeAt(): @params:(index); @return:str|''; // 截取 // slice(): @params:(startIndex,endIndex); @return:str; @note",
-            "url": "/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"
-        },{
-            "@type":"ListItem",
-            "position":  3 ,
-            "name": "VS Code自定义快捷模块",
-            "description": "VS Code自定义快捷模块 //1.\u0026lt;ctrl\u0026gt;+\u0026lt;shift\u0026gt;+\u0026lt;p\u0026gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\\r\\n换行符隔开.如",
-            "url": "/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/"
-        },{
-            "@type":"ListItem",
-            "position":  4 ,
-            "name": "Github 远端仓库download不同本地",
-            "description": "仅此记录过程，供日后复用。 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C \u0026quot;example@example.com\u0026quot; ssh -v git@github.com // No more authentication methods",
-            "url": "/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/"
-        },{
-            "@type":"ListItem",
-            "position":  5 ,
             "name": "HTML速查",
             "description": "1.HTML速查 2.规范 3.html5骨架 1.HTML速查 \u0026lt;!-- 文档 --\u0026gt; \u0026lt;!DOCTYPE html\u0026gt; \u0026lt;html\u0026gt; \u0026lt;head\u0026gt; \u0026lt;title\u0026gt;文档标题\u0026lt;/title\u0026gt; \u0026lt;/head\u0026gt; \u0026lt;body\u0026gt; 可见文本.",
             "url": "/zh/posts/html%E9%80%9F%E6%9F%A5/"
         },{
             "@type":"ListItem",
+            "position":  3 ,
+            "name": "JS内置对象",
+            "description": "1. {String} 2. {Number} 3. {Array} 1. {String} 字符串的方法不会改变原串，会返回一个新值 //查找 // indexOf()/lastIndexOf(): @params:(str,startIndex); @return:index|-1; // search(): @params:(Reg|str); @return:index|-1; // includes(): @params:(str,[position|0]); @return:Boolean; //startsWith()/endsWith(): @params:(str,[position|0]); @return:Boolean; //获取字符 // charAt(): = str[index] @params:(index); @return:str|''; // charCodeAt(): @params:(index); @return:str|''; // 截取 // slice(): @params:(startIndex,endIndex); @return:str; @note",
+            "url": "/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"
+        },{
+            "@type":"ListItem",
+            "position":  4 ,
+            "name": "Node.js",
+            "description": "1. 模块化规范 2. Node 内置包 3. 登录流程 1. 模块化规范 CommonJS require exports module __dirname__filename 导入：= require(\u0026rsquo;') 导出：module.exports = ES6Module \u0026lt;script type='module'\u0026gt;\u0026lt;/script\u0026gt; 导入： import {} from \u0026rsquo;\u0026rsquo; /import xxx from '' 导出： export {let var const function class}/export default 2.",
+            "url": "/zh/posts/node.js/"
+        },{
+            "@type":"ListItem",
+            "position":  5 ,
+            "name": "Webpack",
+            "description": "1. Webpack 1. Webpack // npx webpack =\u0026gt; npm run build // package.json \u0026quot;scripts\u0026quot;: { \u0026quot;build\u0026quot;: \u0026quot;webpack\u0026quot; } // module.exports = { entry: './src/index.js', output: { filename: 'bundle.js', path: path.resolve(__dirname, 'dist') } module: { rules: [ { test: /\\.(js|jsx)$/, use: 'babel-loader' } ] }, plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin({template: './src/index.html'}) ] }; 面试 Loader css-loader: 加载CSS，支持模块化，压缩，文件导",
+            "url": "/zh/posts/webpack/"
+        },{
+            "@type":"ListItem",
             "position":  6 ,
+            "name": "Web面试资料",
+            "description": "1.HTML5 2.CSS3 3.JavaScript 4.Vue.js 5.Webpack 1.HTML5 问：语义化 答： 指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器",
+            "url": "/zh/posts/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"
+        },{
+            "@type":"ListItem",
+            "position":  7 ,
+            "name": "数据结构和算法",
+            "description": "1.数据结构 数据结构 具体内容 题目 备注 线性表：向量Vector 单链表Singly Linked List 1. 双向链表 Double Linked Lists2. 静态链表 Static List3. 对称矩阵 Symmetric Matrix4. 稀疏矩阵 Sparse Matrix",
+            "url": "/zh/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"
+        },{
+            "@type":"ListItem",
+            "position":  8 ,
             "name": "GitHub Pages绑定个人域名",
             "description": "简单叙述一下Github Pages换域名的流程，以供日后使用。 域名解析配置 注册域名，实名认证 域名解析： 增加新纪录 记录类型：CNAME 主机记录：@ 记录值",
             "url": "/zh/posts/github-pages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/"
         },{
             "@type":"ListItem",
-            "position":  7 ,
+            "position":  9 ,
             "name": "Meme主题部署到GitHub Pages",
             "description": "本地运行Meme主题使用正常Hugo流程即可，注意使用__Extended__版本Hugo即可。简单叙述一下部署到Github Pages的流程，以供日",
             "url": "/zh/posts/meme%E4%B8%BB%E9%A2%98%E9%83%A8%E7%BD%B2%E5%88%B0github-pages/"
@@ -147,7 +159,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-10-31T20:00:00&#43;08:00" />
+<meta property="og:updated_time" content="2022-04-17T16:28:39&#43;08:00" />
 
 
 
@@ -251,86 +263,18 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/javascript-dom/" class="font-bold text-xl hover:text-eureka">JavaScript DOM</a>
+  <a href="/zh/posts/css-%E5%B8%83%E5%B1%80/" class="font-bold text-xl hover:text-eureka">CSS 布局</a>
 </div>
 <div class="content">
   
-    1. {DOM} 1. {DOM} 基本类型 Document DocumentType:doctype标签 Element:H5标签 Attr:元素的属性 Text:标签内文本 Comment:注释 Do
+    1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-01</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" class="font-bold text-xl hover:text-eureka">JavaScript 内置对象</a>
-</div>
-<div class="content">
-  
-    1. {String} 2. {Number} 3. {Array} 1. {String} 字符串的方法不会改变原串，会返回一个新值 //查找 // indexOf()/lastIndexOf(): @params:(str,startIndex); @return:index|-1; // search(): @params:(Reg|str); @return:index|-1; // includes(): @params:(str,[position|0]); @return:Boolean; //startsWith()/endsWith(): @params:(str,[position|0]); @return:Boolean; //获取字符 // charAt(): = str[index] @params:(index); @return:str|&#39;&#39;; // charCodeAt(): @params:(index); @return:str|&#39;&#39;; // 截取 // slice(): @params:(startIndex,endIndex); @return:str; @note
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-01</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>2分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/" class="font-bold text-xl hover:text-eureka">VS Code自定义快捷模块</a>
-</div>
-<div class="content">
-  
-    VS Code自定义快捷模块 //1.&lt;ctrl&gt;&#43;&lt;shift&gt;&#43;&lt;p&gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2020-12-08</span>
+        <span>2020-10-01</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -341,7 +285,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
         
     </div>
     
@@ -350,55 +294,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-th-list me-1"></i>
         
-        <a href="/zh/series/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
-        
-    </div>
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/" class="font-bold text-xl hover:text-eureka">Github 远端仓库download不同本地</a>
-</div>
-<div class="content">
-  
-    仅此记录过程，供日后复用。 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C &#34;example@example.com&#34; ssh -v git@github.com // No more authentication methods
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2020-11-20</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
-    </div>
-    
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-folder me-1"></i>
-        
-        <a href="/zh/categories/github/" class="hover:text-eureka">github</a>
-        
-    </div>
-    
-
-    
-    <div class="me-6 my-2">
-        <i class="fas fa-th-list me-1"></i>
-        
-        <a href="/zh/series/github/" class="hover:text-eureka">github</a>
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
         
     </div>
     
@@ -447,6 +343,246 @@
         <i class="fas fa-th-list me-1"></i>
         
         <a href="/zh/series/html/" class="hover:text-eureka">html</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" class="font-bold text-xl hover:text-eureka">JS内置对象</a>
+</div>
+<div class="content">
+  
+    1. {String} 2. {Number} 3. {Array} 1. {String} 字符串的方法不会改变原串，会返回一个新值 //查找 // indexOf()/lastIndexOf(): @params:(str,startIndex); @return:index|-1; // search(): @params:(Reg|str); @return:index|-1; // includes(): @params:(str,[position|0]); @return:Boolean; //startsWith()/endsWith(): @params:(str,[position|0]); @return:Boolean; //获取字符 // charAt(): = str[index] @params:(index); @return:str|&#39;&#39;; // charCodeAt(): @params:(index); @return:str|&#39;&#39;; // 截取 // slice(): @params:(startIndex,endIndex); @return:str; @note
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/node.js/" class="font-bold text-xl hover:text-eureka">Node.js</a>
+</div>
+<div class="content">
+  
+    1. 模块化规范 2. Node 内置包 3. 登录流程 1. 模块化规范 CommonJS require exports module __dirname__filename 导入：= require(’&#39;) 导出：module.exports = ES6Module &lt;script type=&#39;module&#39;&gt;&lt;/script&gt; 导入： import {} from ’’ /import xxx from &#39;&#39; 导出： export {let var const function class}/export default 2.
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/node.js/" class="hover:text-eureka">Node.js</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/node.js/" class="hover:text-eureka">Node.js</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/webpack/" class="font-bold text-xl hover:text-eureka">Webpack</a>
+</div>
+<div class="content">
+  
+    1. Webpack 1. Webpack // npx webpack =&gt; npm run build // package.json &#34;scripts&#34;: { &#34;build&#34;: &#34;webpack&#34; } // module.exports = { entry: &#39;./src/index.js&#39;, output: { filename: &#39;bundle.js&#39;, path: path.resolve(__dirname, &#39;dist&#39;) } module: { rules: [ { test: /\.(js|jsx)$/, use: &#39;babel-loader&#39; } ] }, plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin({template: &#39;./src/index.html&#39;}) ] }; 面试 Loader css-loader: 加载CSS，支持模块化，压缩，文件导
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/webpack/" class="hover:text-eureka">Webpack</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/webpack/" class="hover:text-eureka">Webpack</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/" class="font-bold text-xl hover:text-eureka">Web面试资料</a>
+</div>
+<div class="content">
+  
+    1.HTML5 2.CSS3 3.JavaScript 4.Vue.js 5.Webpack 1.HTML5 问：语义化 答： 指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/%E9%9D%A2%E8%AF%95/" class="hover:text-eureka">面试</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/%E9%9D%A2%E8%AF%95/" class="hover:text-eureka">面试</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="font-bold text-xl hover:text-eureka">数据结构和算法</a>
+</div>
+<div class="content">
+  
+    1.数据结构 数据结构 具体内容 题目 备注 线性表：向量Vector 单链表Singly Linked List 1. 双向链表 Double Linked Lists2. 静态链表 Static List3. 对称矩阵 Symmetric Matrix4. 稀疏矩阵 Sparse Matrix
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/" class="hover:text-eureka">数据结构和算法</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/" class="hover:text-eureka">数据结构和算法</a>
         
     </div>
     

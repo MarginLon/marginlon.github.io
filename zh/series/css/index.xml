@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on Marginlon</title>
+    <link>/zh/series/css/</link>
+    <description>Recent content in CSS on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Oct 2020 22:02:39 +0800</lastBuildDate><atom:link href="/zh/series/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS Less</title>
+      <link>/zh/posts/css-less/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-less/</guid>
+      <description>// 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width + 10px; #header { width: @width; height: @height; } // Mixins // () -&amp;gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }</description>
+    </item>
+    
+    <item>
+      <title>CSS Sass</title>
+      <link>/zh/posts/css-sass/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-sass/</guid>
+      <description>// 变量 $nav-color: #F90; nav { $width: 100px; width: $width; color: $nav-color; } //编译后 nav { width: 100px; color: #F90; } // @mixin @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } //sass最终生成： .notice { background-color: green; border: 2px solid #00aa00; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }</description>
+    </item>
+    
+    <item>
+      <title>CSS 动画</title>
+      <link>/zh/posts/css-%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-%E5%8A%A8%E7%94%BB/</guid>
+      <description>1.动画 1.动画 过渡： transition transition-property:all transition-duration:1s; transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D&amp;amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;</description>
+    </item>
+    
+    <item>
+      <title>CSS 定位和层叠上下文原理</title>
+      <link>/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/</guid>
+      <description>1.定位 1.定位 position static(default) relative 参照物：自身 不脱标 使用情形： 微调元素，方位和z-index能够生效 做absolute的参考，子绝父相 absolute 参照物：父 脱标 top:参照</description>
+    </item>
+    
+    <item>
+      <title>CSS 属性 选择器 浮动</title>
+      <link>/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/</guid>
+      <description>1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆</description>
+    </item>
+    
+    <item>
+      <title>CSS 布局</title>
+      <link>/zh/posts/css-%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-%E5%B8%83%E5%B1%80/</guid>
+      <description>1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp</description>
+    </item>
+    
+  </channel>
+</rss>

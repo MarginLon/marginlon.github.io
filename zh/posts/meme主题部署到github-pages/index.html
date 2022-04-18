@@ -87,7 +87,7 @@
     },
     "headline": "Meme主题部署到GitHub Pages | Marginlon","datePublished": "2020-09-17T16:28:39+08:00",
     "dateModified": "2020-09-17T16:28:39+08:00",
-    "wordCount":  487 ,
+    "wordCount":  495 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -273,7 +273,7 @@
         <div class="content">
             <p>本地运行<a href="https://github.com/reuixiy/hugo-theme-meme">Meme主题</a>使用正常Hugo流程即可，注意使用__Extended__版本Hugo即可。简单叙述一下部署到Github Pages的流程，以供日后使用。</p>
 <hr>
-<h1 id="本地安装hugo以windows例">本地安装Hugo（以windows例）</h1>
+<h2 id="本地安装hugo以windows例">本地安装Hugo（以windows例）</h2>
 <ul>
 <li>安装扩展版Hugo</li>
 <li>检查命令：</li>
@@ -308,7 +308,7 @@
 <blockquote>
 <p>hugo server -D</p>
 </blockquote>
-<h1 id="部署github流程以workflow方法">部署Github流程（以workflow方法）</h1>
+<h2 id="部署github流程以workflow方法">部署Github流程（以workflow方法）</h2>
 <ul>
 <li>正常部署hugo的命令：</li>
 </ul>
@@ -328,16 +328,14 @@ git push -u origin master<br/></p>
 <ol>
 <li>推送源码而非<code>public</code></li>
 </ol>
-<blockquote>
-<p>//在blog下运行<br/>
-git remote add origin <a href="http://github.com/username/username.github.io">http://github.com/username/username.github.io</a><br/>
-git push -u origin master<br/></p>
-</blockquote>
+<pre><code class="language-git">//在blog下运行&lt;br/&gt;
+git remote add origin &lt;http://github.com/username/username.github.io&gt;&lt;br/&gt;
+git push -u origin master&lt;br/&gt;
+</code></pre>
 <ol start="2">
-<li>新建workflow</li>
-</ol>
-<pre><code>```yml
-#.github/workflows/build.yml
+<li>
+<p>新建workflow</p>
+<pre><code class="language-yml">#.github/workflows/build.yml
 name: build
 
 on:
@@ -358,10 +356,10 @@ jobs:
         # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         TZ: Asia/Shanghai
   # DEPLOY_REPO为仓库 DEPLOY_BRANCH为分支 DEPLOY_KEY为私钥
-```
 </code></pre>
-<ol start="3">
-<li>生成公私钥
+</li>
+<li>
+<p>生成公私钥</p>
 <ul>
 <li>公钥(id_rsa.pub)<br/>
 Settings &gt; Deploy keys &gt; Add deploy key<br/>
@@ -371,17 +369,18 @@ Settings &gt; Secrets &gt; New secret<br/>
 Name: DEPLOY_KEY<br/></li>
 </ul>
 </li>
-<li>push
+<li>
+<p>push</p>
 <pre><code>git add -A
 git commit -m &quot;refactor: use hugo-deploy action&quot;
 git push
 </code></pre>
 </li>
-<li>Action处查看日志，Settings &gt; Options &gt; Github Pages，Source中的Branch选为build，完成即可上线。
-<br/></li>
+<li>
+<p>Action处查看日志，Settings &gt; Options &gt; Github Pages，Source中的Branch选为build，完成即可上线。
+<br/></p>
+</li>
 </ol>
-<hr>
-<p><a href="https://marginlon.github.io/">Margin</a></p>
 
         </div>
         
@@ -442,6 +441,23 @@ git push
     </div>
 </div>
         
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#本地安装hugo以windows例">本地安装Hugo（以windows例）</a></li>
+    <li><a href="#部署github流程以workflow方法">部署Github流程（以workflow方法）</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
         
     </div>
     

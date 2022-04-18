@@ -85,8 +85,8 @@
         "@type": "WebPage",
         "@id": "/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/"
     },
-    "headline": "CSS 属性 选择器 浮动 | Marginlon","datePublished": "2021-10-03T22:02:39+08:00",
-    "dateModified": "2021-10-03T22:02:39+08:00",
+    "headline": "CSS 属性 选择器 浮动 | Marginlon","datePublished": "2020-10-01T22:02:39+08:00",
+    "dateModified": "2020-10-01T22:02:39+08:00",
     "wordCount":  816 ,
     "publisher": {
         "@type": "Person",
@@ -127,14 +127,52 @@
 
 
 
-<meta property="article:published_time" content="2021-10-03T22:02:39&#43;08:00" />
+<meta property="article:published_time" content="2020-10-01T22:02:39&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2021-10-03T22:02:39&#43;08:00" />
+<meta property="article:modified_time" content="2020-10-01T22:02:39&#43;08:00" />
 
 
 
 <meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="属性" />
+
+<meta property="article:tag" content="选择器" />
+
+<meta property="article:tag" content="浮动" />
+
+<meta property="article:tag" content="CSS" />
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/zh/posts/css-less/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/css-sass/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/css-%E5%8A%A8%E7%94%BB/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/" />
+
+
+
+
+
+<meta property="og:see_also" content="/zh/posts/css-%E5%B8%83%E5%B1%80/" />
+
 
 
 
@@ -212,12 +250,12 @@
 
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
         <h1 class="font-bold text-3xl text-primary-text">CSS 属性 选择器 浮动</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2021-10-03</span>
+        <span>2020-10-01</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -225,7 +263,21 @@
     </div>
     
     
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
 
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
     
 </div>
         
@@ -239,14 +291,14 @@
 <li><a href="#3%E9%80%89%E6%8B%A9%E5%99%A8">3.选择器</a></li>
 <li><a href="#4%E6%B5%AE%E5%8A%A8">4.浮动</a></li>
 </ul>
-<h1 id="1字体文本背景">1.字体，文本，背景</h1>
+<h2 id="1字体文本背景">1.字体，文本，背景</h2>
 <pre><code class="language-css">p{
-	font-size: 50px; 		/*字体大小*/
-	line-height: 30px;      /*行高*/
-	font-family: 幼圆,黑体; 	/*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/
-	font-style: italic ;		/*italic表示斜体，normal表示不倾斜*/
-	font-weight: bold;	/*粗体*/
-	font-variant: small-caps;  /*小写变大写*/
+ font-size: 50px;   /*字体大小*/
+ line-height: 30px;      /*行高*/
+ font-family: 幼圆,黑体;  /*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/
+ font-style: italic ;  /*italic表示斜体，normal表示不倾斜*/
+ font-weight: bold; /*粗体*/
+ font-variant: small-caps;  /*小写变大写*/
 }
 vertical-align: middle; /*指定行级元素的垂直对齐方式。 内元素（inline）、行内块元素（inline-block）、表格的单元格（table-cell） */
 
@@ -271,7 +323,7 @@ div{
   background-image: linear-gradient(to direction | angle, color-stop1, color-stop2...);background-image: radial-gradient(shape size at position,start-color,...,last-color);
 }
 </code></pre>
-<h1 id="2css变量">2.CSS变量</h1>
+<h2 id="2css变量">2.CSS变量</h2>
 <p>全局/局部</p>
 <pre><code class="language-css">/*全局变量*/
 :root { --color: blue; }
@@ -308,11 +360,16 @@ color: var(--color);
    font-size: var(--foo);
 }
 </code></pre>
-<h1 id="3选择器">3.选择器</h1>
+<h2 id="3选择器">3.选择器</h2>
 <ul>
-<li>基础选择器：#id, .class, element, *</li>
-<li>组合选择器：并列, 后代(e1 e2, e1&gt;e2), 兄弟(e1+e2, e1~e2)</li>
-<li>属性选择器
+<li>
+<p>基础选择器：#id, .class, element, *</p>
+</li>
+<li>
+<p>组合选择器：并列, 后代(e1 e2, e1&gt;e2), 兄弟(e1+e2, e1~e2)</p>
+</li>
+<li>
+<p>属性选择器</p>
 <ul>
 <li>E[attr]</li>
 <li>E[attr=val]</li>
@@ -323,7 +380,8 @@ color: var(--color);
 <li>E[attr*=&ldquo;val&rdquo;]：包含val</li>
 </ul>
 </li>
-<li>伪类选择器
+<li>
+<p>伪类选择器</p>
 <ul>
 <li>a:
 <ul>
@@ -343,25 +401,21 @@ color: var(--color);
 </li>
 </ul>
 </li>
-<li>伪元素
-<ul>
-<li>::after
-<ul>
 <li>
-<pre><code class="language-css">&lt;!-- 清除浮动 --&gt;
-.clearfix::after{
-  content:'';
-  display:block;
-  clear:both;
-}
+<p>伪元素</p>
+</li>
+<li>
+<p>::after</p>
+<pre><code class="language-css">  &lt;!-- 清除浮动 --&gt;
+  .clearfix::after{
+    content:'';
+    display:block;
+    clear:both;
+  }
 </code></pre>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="4浮动">4.浮动</h1>
+<h2 id="4浮动">4.浮动</h2>
 <ul>
 <li>标准文档流
 <ul>
@@ -420,6 +474,18 @@ color: var(--color);
 
         </div>
         
+        <div class="my-4">
+    
+    <a href="/zh/tags/%E5%B1%9E%E6%80%A7/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#属性</a>
+    
+    <a href="/zh/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#选择器</a>
+    
+    <a href="/zh/tags/%E6%B5%AE%E5%8A%A8/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#浮动</a>
+    
+    <a href="/zh/tags/css/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#CSS</a>
+    
+</div>
+        
         
         
 
@@ -432,13 +498,13 @@ color: var(--color);
     <div>
         
         <span class="block font-bold">上一页</span>
-        <a href="/zh/posts/css-sass/" class="block">CSS3 Sass</a>
+        <a href="/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/" class="block">CSS 定位和层叠上下文原理</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/zh/posts/css-%E5%8A%A8%E7%94%BB/" class="block">CSS 动画</a>
+        <a href="/zh/posts/css-%E5%B8%83%E5%B1%80/" class="block">CSS 布局</a>
         
     </div>
 </div>
@@ -449,8 +515,83 @@ color: var(--color);
 
     </div>
     
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">系列文章</h3>
+    <div class="content">
+        
+        
+        <a href="/zh/posts/css-less/">CSS Less</a>
+        <br />
+        
+        <a href="/zh/posts/css-sass/">CSS Sass</a>
+        <br />
+        
+        <a href="/zh/posts/css-%E5%8A%A8%E7%94%BB/">CSS 动画</a>
+        <br />
+        
+        <a href="/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/">CSS 定位和层叠上下文原理</a>
+        <br />
+        
+        <a href="/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/">CSS 属性 选择器 浮动</a>
+        <br />
+        
+        <a href="/zh/posts/css-%E5%B8%83%E5%B1%80/">CSS 布局</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1字体文本背景">1.字体，文本，背景</a></li>
+    <li><a href="#2css变量">2.CSS变量</a></li>
+    <li><a href="#3选择器">3.选择器</a></li>
+    <li><a href="#4浮动">4.浮动</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
 
     
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="/zh/posts/css-less/">CSS Less</a>
+            <br />
+            
+            <a href="/zh/posts/css-sass/">CSS Sass</a>
+            <br />
+            
+            <a href="/zh/posts/css-%E5%8A%A8%E7%94%BB/">CSS 动画</a>
+            <br />
+            
+            <a href="/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/">CSS 定位和层叠上下文原理</a>
+            <br />
+            
+            <a href="/zh/posts/css-%E5%B8%83%E5%B1%80/">CSS 布局</a>
+            <br />
+            
+        </div>
+    </div>
     
 </div>
 <script>

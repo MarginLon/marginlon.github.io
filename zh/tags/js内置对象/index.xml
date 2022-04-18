@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JS内置对象 on Marginlon</title>
+    <link>/zh/tags/js%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</link>
+    <description>Recent content in JS内置对象 on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Oct 2020 22:02:39 +0800</lastBuildDate><atom:link href="/zh/tags/js%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS内置对象</title>
+      <link>/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</guid>
+      <description>1. {String} 2. {Number} 3. {Array} 1. {String} 字符串的方法不会改变原串，会返回一个新值 //查找 // indexOf()/lastIndexOf(): @params:(str,startIndex); @return:index|-1; // search(): @params:(Reg|str); @return:index|-1; // includes(): @params:(str,[position|0]); @return:Boolean; //startsWith()/endsWith(): @params:(str,[position|0]); @return:Boolean; //获取字符 // charAt(): = str[index] @params:(index); @return:str|&#39;&#39;; // charCodeAt(): @params:(index); @return:str|&#39;&#39;; // 截取 // slice(): @params:(startIndex,endIndex); @return:str; @note</description>
+    </item>
+    
+  </channel>
+</rss>

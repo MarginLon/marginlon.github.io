@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>JavaScript 堆栈内存 函数底层运行机制 块级作用域 | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="1. 堆栈内存 2. 函数底层运行机制 3. 块级作用域 1. 堆栈内存 栈内存(Stack) 执行环境栈 EC stack (execution context stack) EC(G) 全局执行上下文，全局代码执行 VO(G) 全局变量对象[存储全局上下文">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/zh/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"JavaScript 堆栈内存 函数底层运行机制 块级作用域",
+      "item":"/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/"
+    },
+    "headline": "JavaScript 堆栈内存 函数底层运行机制 块级作用域 | Marginlon","datePublished": "2022-04-17T16:28:39+08:00",
+    "dateModified": "2022-04-17T16:28:39+08:00",
+    "wordCount":  1346 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "1. 堆栈内存 2. 函数底层运行机制 3. 块级作用域 1. 堆栈内存 栈内存(Stack) 执行环境栈 EC stack (execution context stack) EC(G) 全局执行上下文，全局代码执行 VO(G) 全局变量对象[存储全局上下文"
+}
+</script><meta property="og:title" content="JavaScript 堆栈内存 函数底层运行机制 块级作用域 | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/" />
+
+
+
+
+<meta property="og:description" content="1. 堆栈内存 2. 函数底层运行机制 3. 块级作用域 1. 堆栈内存 栈内存(Stack) 执行环境栈 EC stack (execution context stack) EC(G) 全局执行上下文，全局代码执行 VO(G) 全局变量对象[存储全局上下文" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-04-17T16:28:39&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-04-17T16:28:39&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="JavaScript" />
+
+<meta property="article:tag" content="堆栈内存" />
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-bom/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-dom/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" />
+
+
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-ajax/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" />
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript 堆栈内存 函数底层运行机制 块级作用域</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2022-04-17</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <ul>
+<li><a href="#1-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98">1. 堆栈内存</a></li>
+<li><a href="#2-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6">2. 函数底层运行机制</a></li>
+<li><a href="#3-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F">3. 块级作用域</a></li>
+</ul>
+<h2 id="1-堆栈内存">1. 堆栈内存</h2>
+<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98(%E4%BE%8B).png?raw=true" alt="堆栈内存(例)"></p>
+<ul>
+<li>
+<p>栈内存(Stack)</p>
+<ul>
+<li>执行环境栈 EC stack (execution context stack)
+<ul>
+<li>EC(G) 全局执行上下文，全局代码执行
+<ul>
+<li>VO(G) 全局变量对象[存储全局上下文中声明的变量]
+<ul>
+<li>特殊性：var/function声明的变量存于GO中, let/const存于VO(G).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EC(X) 某函数的执行上下文</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>堆内存(Heap)</p>
+<ul>
+<li>赋予一个16进制地址，对象中的键值依次存储，内存地址放在栈中供变量引用。</li>
+<li>GO(global object) 全局对象 [window]</li>
+</ul>
+</li>
+<li>
+<p>等号赋值</p>
+<ol>
+<li>创建值<br>
+原始值类型的值，储存在栈内，对象数据类型单独开辟堆内存</li>
+<li>声明变量<br>
+把声明的变量存储到当前上下文的变量对象中，如EC(G)</li>
+<li>赋值<br>
+指针的指向，对象类型赋值内存地址</li>
+</ol>
+</li>
+<li>
+<p>全局上下文遇到变量</p>
+<ul>
+<li>VO(G) =&gt; GO =&gt; Error</li>
+<li>window.xxx =&gt; GO =&gt; undefined</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-函数底层运行机制">2. 函数底层运行机制</h2>
+<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6.png?raw=true" alt="函数底层运行机制"></p>
+<ul>
+<li>正常的函数创建 <code>function fn(y){...}</code></li>
+<li>匿名函数之函数表达式 <code>var fn = function(y){...};</code></li>
+<li>创建步骤：
+<ol>
+<li>开辟堆内存空间</li>
+<li>声明函数作用域scope，存储代码（字符串），存储对象键值对（函数名，形参个数）。</li>
+<li>16进制地址存入栈中以供引用</li>
+</ol>
+</li>
+<li>执行步骤
+<ol>
+<li>
+<p>形成一个全新的私有context =&gt; EC(FN) AO(FN) 进栈 （AO:ActiveObject 变量对象）</p>
+</li>
+<li>
+<p>初始化作用域链[Scope-chain]</p>
+<ul>
+<li>&lt;当前自己的私有context，函数的作用域&gt; =&gt; 链的右侧是当前context的“上级”context</li>
+</ul>
+</li>
+<li>
+<p>初始化this</p>
+</li>
+<li>
+<p>初始化arguments</p>
+</li>
+<li>
+<p>形参赋值：当前上下文声明一个形参变量，并传递实参值，非严格模式建立映射机制：集合中的每一项和对应的形参变量绑定（只在代码执行之前）。</p>
+</li>
+<li>
+<p>变量提升</p>
+<ul>
+<li>var/function 提前声明/定义</li>
+<li>基于var/function 全局context 声明的变量映射到GO(window)一份，并随动。</li>
+<li>if 无论条件是否成立，都变量提升（条件中带function在新浏览器只提前声明，不提前赋值）</li>
+</ul>
+<pre><code class="language-js">var func = function AAA() {
+ // 函数表达式匿名函数“具名化”，不能外部访问
+ // 函数内部私有context会把名字作为context的变量
+ // AAA(); 递归调用 而非arguments.callee
+}
+</code></pre>
+</li>
+<li>
+<p>代码执行</p>
+<ul>
+<li>变量：私有则只操作自己，和外界无关；如果不是自己私有，则基于chain向context查找，是否为上级私有，如果不是，继续向上查找，直到EC(G)，即<span style="color:red">作用域链查找机制</span></li>
+</ul>
+</li>
+<li>
+<p>出栈 or 不出栈</p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="3-块级作用域">3. 块级作用域</h2>
+<ul>
+<li>除“函数和对象”的大括号外,出现了 let/const/function/class 等关键词声明变量，产生一个“块级私有context”</li>
+<li>块级作用域内默认变量
+<ul>
+<li>不带var，let，const，只有执行过定义的变量的代码后才可以访问，之前会报错,window对象上为undefined</li>
+<li>块内默认变量依旧是全局变量</li>
+<li>在块内的默认变量没执行之前不可以访问这个变量</li>
+</ul>
+</li>
+<li>块级作用域函数声明
+<ul>
+<li><span style="color:red">块内函数声明会提升到块顶部，也会在全局作用域用var声明一个同名的undefined变量</span></li>
+<li>块外的全局同名变量的赋值时机是执行完块内函数声明语句</li>
+<li><span style="color:red">执行到函数声明时，这行代码以前的所有操作同步给全局一份，之后的操作只与私有context有关。</span></li>
+</ul>
+</li>
+<li>块内同时有同名的默认变量和函数声明
+<ul>
+<li>块内的函数声明每次执行的时候都会给全局那个同名的变量赋值一次，并且，只有执行那个定义函数声明的代码才会触发赋值，你写的函数声明就相当于setter,每执行一次就给外部的那个同名的变量赋值一次</li>
+<li>如果块内同时有同名的函数声明和默认的变量声明，那给默认的变量赋值时其实相当于赋值给那个同名的函数，因为查找块内的作用域链时找到了,就不会往全局声明了。
+<img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%8F%98%E9%87%8F.png?raw=true" alt="块级作用域_变量">
+<img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F_%E5%87%BD%E6%95%B0.png?raw=true" alt="块级作用域_函数"></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/zh/tags/javascript/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#JavaScript</a>
+    
+    <a href="/zh/tags/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#堆栈内存</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="block">JavaScript 事件绑定 事件对象 事件传播 事件委托</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="block">JavaScript 数据类型 类型检测 类型转换</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">系列文章</h3>
+    <div class="content">
+        
+        
+        <a href="/zh/posts/javascript-bom/">JavaScript BOM</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/">JavaScript client offset相关属性和对比</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-dom/">JavaScript DOM</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/">JavaScript scroll相关属性和缓动动画</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">JavaScript 事件绑定 事件对象 事件传播 事件委托</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/">JavaScript 堆栈内存 函数底层运行机制 块级作用域</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">JavaScript 数据类型 类型检测 类型转换</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/">JavaScript 模块化编程 进阶技巧</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/">JavaScript 精度问题</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-ajax/">JavaScript AJAX</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">JS内置对象</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-堆栈内存">1. 堆栈内存</a></li>
+    <li><a href="#2-函数底层运行机制">2. 函数底层运行机制</a></li>
+    <li><a href="#3-块级作用域">3. 块级作用域</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="/zh/posts/javascript-bom/">JavaScript BOM</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-dom/">JavaScript DOM</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/">JavaScript client offset相关属性和对比</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/">JavaScript scroll相关属性和缓动动画</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">JavaScript 事件绑定 事件对象 事件传播 事件委托</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">JavaScript 数据类型 类型检测 类型转换</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

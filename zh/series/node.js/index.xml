@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node.js on Marginlon</title>
+    <link>/zh/series/node.js/</link>
+    <description>Recent content in Node.js on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Oct 2020 22:02:39 +0800</lastBuildDate><atom:link href="/zh/series/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.js</title>
+      <link>/zh/posts/node.js/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/node.js/</guid>
+      <description>1. 模块化规范 2. Node 内置包 3. 登录流程 1. 模块化规范 CommonJS require exports module __dirname__filename 导入：= require(&amp;rsquo;&#39;) 导出：module.exports = ES6Module &amp;lt;script type=&#39;module&#39;&amp;gt;&amp;lt;/script&amp;gt; 导入： import {} from &amp;rsquo;&amp;rsquo; /import xxx from &#39;&#39; 导出： export {let var const function class}/export default 2.</description>
+    </item>
+    
+  </channel>
+</rss>

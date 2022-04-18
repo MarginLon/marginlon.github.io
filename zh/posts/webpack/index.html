@@ -85,8 +85,8 @@
         "@type": "WebPage",
         "@id": "/zh/posts/webpack/"
     },
-    "headline": "Webpack | Marginlon","datePublished": "2021-09-30T20:00:00+08:00",
-    "dateModified": "2021-09-30T20:00:00+08:00",
+    "headline": "Webpack | Marginlon","datePublished": "2020-10-01T22:02:39+08:00",
+    "dateModified": "2020-10-01T22:02:39+08:00",
     "wordCount":  1466 ,
     "publisher": {
         "@type": "Person",
@@ -127,14 +127,26 @@
 
 
 
-<meta property="article:published_time" content="2021-09-30T20:00:00&#43;08:00" />
+<meta property="article:published_time" content="2020-10-01T22:02:39&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2021-09-30T20:00:00&#43;08:00" />
+<meta property="article:modified_time" content="2020-10-01T22:02:39&#43;08:00" />
 
 
 
 <meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="Webpack" />
+
+
+
+
+
+
+
+
+
 
 
 
@@ -212,12 +224,12 @@
 
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
         <h1 class="font-bold text-3xl text-primary-text">Webpack</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-30</span>
+        <span>2020-10-01</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -225,7 +237,21 @@
     </div>
     
     
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/webpack/" class="hover:text-eureka">Webpack</a>
+        
+    </div>
+    
 
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/webpack/" class="hover:text-eureka">Webpack</a>
+        
+    </div>
     
 </div>
         
@@ -236,7 +262,7 @@
             <ul>
 <li><a href="#1-webpack">1. Webpack</a></li>
 </ul>
-<h1 id="1-webpack">1. Webpack</h1>
+<h2 id="1-webpack">1. Webpack</h2>
 <pre><code class="language-js"> // npx webpack =&gt; npm run build   
     // package.json
  &quot;scripts&quot;: {
@@ -267,8 +293,7 @@
 <ul>
 <li>面试
 <ol>
-<li>Loader</li>
-</ol>
+<li>Loader
 <ul>
 <li>css-loader: 加载CSS，支持模块化，压缩，文件导入等</li>
 <li>style-loader: 把CSS注入JS中，通过DOM操作加载CSS</li>
@@ -278,18 +303,16 @@
 <li>url-loader:base64url编码 -&gt; 去掉尾部的&quot;=&quot; , &ldquo;+&rdquo; 替换成 &ldquo;-&rdquo;</li>
 <li>vue-loader: 加载Vue.js单文件组件</li>
 </ul>
-<ol start="2">
-<li>Plugin</li>
-</ol>
+</li>
+<li>Plugin
 <ul>
 <li>html-webpack-plugin:设置渲染页面的模板</li>
 <li>clean-webpack-plugin:目录清理</li>
 <li>define-plugin:定义环境变量</li>
 <li>DllPlugin:减少构建时间，进行分离打包</li>
 </ul>
-<ol start="3">
-<li>Loader和Plugin</li>
-</ol>
+</li>
+<li>Loader和Plugin
 <ul>
 <li>Loader本质是function，返回转换的结果，Webpack只认识JavaScript，Loader负责其他类型的资源的转译
 <ul>
@@ -302,7 +325,7 @@
 </ul>
 </li>
 </ul>
-<ol start="4">
+</li>
 <li>Webpack构建流程
 <ol>
 <li>初始化参数：从配置文件和Shell读取合并参数</li>
@@ -314,13 +337,12 @@
 <li>输出完成：确定内容后，根据出口配置输出的路径和文件名，把文件写入文件系统</li>
 </ol>
 </li>
-<li>Webpack热更新</li>
-</ol>
+<li>Webpack热更新
 <ul>
 <li>Webpack的模块热更新(HMR)，功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载整个页面。主要是通过以下几种方式，来显著加快开发速度：(1)保留在完全重新加载页面时丢失的应用程序状态。(2)只更新变更内容，以节省宝贵的开发时间。(3)调整样式更加快速 - 几乎相当于在浏览器调试器中更改样式。</li>
 <li>维护一个Websocket，本地资源变化，客户端会进行资源对比，发送Ajax请求获取更新内容，再借助这些信息继续发送jsonp请求获取增量更新，后续部分交给HotModulePlugin更新</li>
 </ul>
-<ol start="6">
+</li>
 <li>优化构建速度
 <ol>
 <li>使用最新的webpack版本</li>
@@ -338,6 +360,12 @@
 </ul>
 
         </div>
+        
+        <div class="my-4">
+    
+    <a href="/zh/tags/webpack/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Webpack</a>
+    
+</div>
         
         
         
@@ -357,7 +385,7 @@
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/zh/posts/js_items_17/" class="block">JavaScript axios</a>
+        <a href="/zh/posts/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/" class="block">Web面试资料</a>
         
     </div>
 </div>
@@ -366,6 +394,40 @@
 
 
 
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">系列文章</h3>
+    <div class="content">
+        
+        
+        <a href="/zh/posts/webpack/">Webpack</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-webpack">1. Webpack</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
     </div>
     
 

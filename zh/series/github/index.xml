@@ -13,7 +13,7 @@
       <pubDate>Fri, 20 Nov 2020 18:28:39 +0800</pubDate>
       
       <guid>/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/</guid>
-      <description>仅此记录过程，供日后复用。 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C &amp;quot;example@example.com&amp;quot; ssh -v git@github.com // No more authentication methods</description>
+      <description>仅此记录过程，供日后复用 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C &amp;quot;example@example.com&amp;quot; ssh -v git@github.com // No more authentication methods to</description>
     </item>
     
     <item>

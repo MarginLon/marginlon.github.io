@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>CSS | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Marginlon.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Categories",
+      "item":"/zh/categories/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"CSS",
+      "item":"/zh/categories/css/"}]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[{
+            "@type":"ListItem",
+            "position":  1 ,
+            "name": "CSS Less",
+            "description": "// 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width + 10px; #header { width: @width; height: @height; } // Mixins // () -\u0026gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }",
+            "url": "/zh/posts/css-less/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
+            "name": "CSS Sass",
+            "description": "// 变量 $nav-color: #F90; nav { $width: 100px; width: $width; color: $nav-color; } //编译后 nav { width: 100px; color: #F90; } // @mixin @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } //sass最终生成： .notice { background-color: green; border: 2px solid #00aa00; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }",
+            "url": "/zh/posts/css-sass/"
+        },{
+            "@type":"ListItem",
+            "position":  3 ,
+            "name": "CSS 动画",
+            "description": "1.动画 1.动画 过渡： transition transition-property:all transition-duration:1s; transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D\u0026amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;",
+            "url": "/zh/posts/css-%E5%8A%A8%E7%94%BB/"
+        },{
+            "@type":"ListItem",
+            "position":  4 ,
+            "name": "CSS 定位和层叠上下文原理",
+            "description": "1.定位 1.定位 position static(default) relative 参照物：自身 不脱标 使用情形： 微调元素，方位和z-index能够生效 做absolute的参考，子绝父相 absolute 参照物：父 脱标 top:参照",
+            "url": "/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/"
+        },{
+            "@type":"ListItem",
+            "position":  5 ,
+            "name": "CSS 属性 选择器 浮动",
+            "description": "1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆",
+            "url": "/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/"
+        },{
+            "@type":"ListItem",
+            "position":  6 ,
+            "name": "CSS 布局",
+            "description": "1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp",
+            "url": "/zh/posts/css-%E5%B8%83%E5%B1%80/"
+        }
+    ]
+}
+</script><meta property="og:title" content="CSS | Marginlon" />
+<meta property="og:type" content="website" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/categories/css/" />
+
+
+
+
+
+<meta property="og:description" content="Marginlon." />
+
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="og:updated_time" content="2020-10-01T22:02:39&#43;08:00" />
+
+
+
+<meta property="article:section" content="categories" />
+
+
+<link rel="alternate" type="application/rss+xml" href="/zh/categories/css/index.xml" title="Marginlon" />
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<article class="mx-6 my-8">
+    <h1 class="font-bold text-3xl text-primary-text">CSS</h1>
+    
+</article>
+<div class="bg-secondary-bg rounded px-6">
+    <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-less/" class="font-bold text-xl hover:text-eureka">CSS Less</a>
+</div>
+<div class="content">
+  
+    // 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width &#43; 10px; #header { width: @width; height: @height; } // Mixins // () -&gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-sass/" class="font-bold text-xl hover:text-eureka">CSS Sass</a>
+</div>
+<div class="content">
+  
+    // 变量 $nav-color: #F90; nav { $width: 100px; width: $width; color: $nav-color; } //编译后 nav { width: 100px; color: #F90; } // @mixin @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } //sass最终生成： .notice { background-color: green; border: 2px solid #00aa00; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%8A%A8%E7%94%BB/" class="font-bold text-xl hover:text-eureka">CSS 动画</a>
+</div>
+<div class="content">
+  
+    1.动画 1.动画 过渡： transition transition-property:all transition-duration:1s; transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D&amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/" class="font-bold text-xl hover:text-eureka">CSS 定位和层叠上下文原理</a>
+</div>
+<div class="content">
+  
+    1.定位 1.定位 position static(default) relative 参照物：自身 不脱标 使用情形： 微调元素，方位和z-index能够生效 做absolute的参考，子绝父相 absolute 参照物：父 脱标 top:参照
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/" class="font-bold text-xl hover:text-eureka">CSS 属性 选择器 浮动</a>
+</div>
+<div class="content">
+  
+    1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%B8%83%E5%B1%80/" class="font-bold text-xl hover:text-eureka">CSS 布局</a>
+</div>
+<div class="content">
+  
+    1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+</div>
+
+
+</div>
+
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

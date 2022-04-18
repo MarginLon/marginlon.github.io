@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Less on Marginlon</title>
+    <link>/zh/tags/less/</link>
+    <description>Recent content in Less on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Oct 2020 22:02:39 +0800</lastBuildDate><atom:link href="/zh/tags/less/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS Less</title>
+      <link>/zh/posts/css-less/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-less/</guid>
+      <description>// 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width + 10px; #header { width: @width; height: @height; } // Mixins // () -&amp;gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }</description>
+    </item>
+    
+  </channel>
+</rss>

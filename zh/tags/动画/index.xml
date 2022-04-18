@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>动画 on Marginlon</title>
+    <link>/zh/tags/%E5%8A%A8%E7%94%BB/</link>
+    <description>Recent content in 动画 on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Oct 2020 22:02:39 +0800</lastBuildDate><atom:link href="/zh/tags/%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS 动画</title>
+      <link>/zh/posts/css-%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-%E5%8A%A8%E7%94%BB/</guid>
+      <description>1.动画 1.动画 过渡： transition transition-property:all transition-duration:1s; transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D&amp;amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;</description>
+    </item>
+    
+  </channel>
+</rss>
