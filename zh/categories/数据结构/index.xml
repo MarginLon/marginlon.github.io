@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on Marginlon</title>
+    <link>/zh/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 09 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 数据结构</title>
+      <link>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sat, 09 Apr 2022 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>1. 数组 Array 2. 栈 3. 队列 4. 排序 1. 数组 Array JS数组可以存储不同数据类型 容量随存储内容自动缩放 Array.prototype的API //封装数组 2. 栈 class Stack{ container = []; enter(item){ this.container.push(item);</description>
+    </item>
+    
+  </channel>
+</rss>

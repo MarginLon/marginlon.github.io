@@ -17,24 +17,6 @@
     </item>
     
     <item>
-      <title>visual studio code</title>
-      <link>/zh/series/visual-studio-code/</link>
-      <pubDate>Tue, 08 Dec 2020 18:02:39 +0800</pubDate>
-      
-      <guid>/zh/series/visual-studio-code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>/zh/series/github/</link>
-      <pubDate>Fri, 20 Nov 2020 18:28:39 +0800</pubDate>
-      
-      <guid>/zh/series/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>CSS</title>
       <link>/zh/series/css/</link>
       <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
@@ -85,6 +67,24 @@
       <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
       
       <guid>/zh/series/%E9%9D%A2%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>/zh/series/github/</link>
+      <pubDate>Sun, 20 Sep 2020 18:28:39 +0800</pubDate>
+      
+      <guid>/zh/series/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visual studio code</title>
+      <link>/zh/series/visual-studio-code/</link>
+      <pubDate>Tue, 08 Sep 2020 18:02:39 +0800</pubDate>
+      
+      <guid>/zh/series/visual-studio-code/</guid>
       <description></description>
     </item>
     

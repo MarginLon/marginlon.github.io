@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>布局 on Marginlon</title>
+    <link>/zh/categories/%E5%B8%83%E5%B1%80/</link>
+    <description>Recent content in 布局 on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Oct 2020 22:02:39 +0800</lastBuildDate><atom:link href="/zh/categories/%E5%B8%83%E5%B1%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS 布局</title>
+      <link>/zh/posts/css-%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/css-%E5%B8%83%E5%B1%80/</guid>
+      <description>1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp</description>
+    </item>
+    
+  </channel>
+</rss>

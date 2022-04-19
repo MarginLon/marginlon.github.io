@@ -70,63 +70,63 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "JavaScript 函数防抖 函数节流",
-            "description": "1. 函数防抖 2. 函数节流 1. 函数防抖 防抖：只识别一次 \u0026ndash;点击事件 let submit = document.querySelector(\u0026quot;#submit\u0026quot;); //简易处理:加标识 不适于通用 submit.isLoading = false; submit.onclick = function () { if (this.isLoading) return; this.isLoading = true; console.",
-            "url": "/zh/posts/js_items_08/"
+            "name": "JavaScript 事件绑定 事件对象 事件传播 事件委托",
+            "description": "1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener('click',function(){},false) true:捕获阶段触发 / false：冒泡阶段触发(默认) this: 事件对象 ie8",
+            "url": "/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/"
         },{
             "@type":"ListItem",
             "position":  2 ,
-            "name": "JavaScript 闭包应用",
-            "description": "1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 1.2. 循环定时器 1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 var buttons = document.querySelectorAll('button'); for (var i = 0; i \u0026lt; buttons.length; i++) { // i=0 buttons[0] 第一个按钮 //",
-            "url": "/zh/posts/js_items_06/"
+            "name": "JavaScript client offset相关属性和对比",
+            "description": "1.client 2.offset 3.offset/scroll/client对比 1.client clientWidth: width+padding; clientHeight: width+padding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width+padding+border; offsetHeight: width+padding+border; offsetPare",
+            "url": "/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/"
         },{
             "@type":"ListItem",
             "position":  3 ,
-            "name": "JavaScript 数据结构",
-            "description": "1. 数组 Array 2. 栈 3. 队列 4. 排序 1. 数组 Array JS数组可以存储不同数据类型 容量随存储内容自动缩放 Array.prototype的API //封装数组 2. 栈 class Stack{ container = []; enter(item){ this.container.push(item);",
-            "url": "/zh/posts/js_items_03/"
+            "name": "JavaScript scroll相关属性和缓动动画",
+            "description": "1.scroll 2.缓动动画 1.scroll window.onscroll(): 当我们用鼠标滚轮，滚动网页的时候，会触发 window.onscroll() 方法 scrollWidth and scrollHeight: width + padding scrollTop and scrollLeft: 当某个元素满足scrollHeight - scrollTop == clientHeight",
+            "url": "/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/"
         },{
             "@type":"ListItem",
             "position":  4 ,
-            "name": "VS Code自定义快捷模块",
-            "description": "VS Code自定义快捷模块 //1.\u0026lt;ctrl\u0026gt;+\u0026lt;shift\u0026gt;+\u0026lt;p\u0026gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\\r\\n换行符隔开.如",
-            "url": "/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/"
-        },{
-            "@type":"ListItem",
-            "position":  5 ,
-            "name": "Github 远端仓库download不同本地",
-            "description": "仅此记录过程，供日后复用 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C \u0026quot;example@example.com\u0026quot; ssh -v git@github.com // No more authentication methods to",
-            "url": "/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/"
-        },{
-            "@type":"ListItem",
-            "position":  6 ,
             "name": "CSS Less",
             "description": "// 变量 // 选择器调用 路径调用 属性调用 变量调用 @width: 10px; @height: @width + 10px; #header { width: @width; height: @height; } // Mixins // () -\u0026gt; 本体不编译 // (@color:black;@margin:10px) 指定参数 .bordered { border-top: dotted 1px black; border-bottom: solid 2px black; } #menu a { color: #111; .bordered(); } .post a { color: red; .bordered(); }",
             "url": "/zh/posts/css-less/"
         },{
             "@type":"ListItem",
-            "position":  7 ,
+            "position":  5 ,
             "name": "CSS Sass",
             "description": "// 变量 $nav-color: #F90; nav { $width: 100px; width: $width; color: $nav-color; } //编译后 nav { width: 100px; color: #F90; } // @mixin @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } //sass最终生成： .notice { background-color: green; border: 2px solid #00aa00; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }",
             "url": "/zh/posts/css-sass/"
         },{
             "@type":"ListItem",
-            "position":  8 ,
+            "position":  6 ,
             "name": "CSS 动画",
             "description": "1.动画 1.动画 过渡： transition transition-property:all transition-duration:1s; transition-timing-function:linear||ease||ease-in||ease-out||ease-in-out transition-delay:1s; 2D\u0026amp;3D： transform transform: scale(x, y); transform: translate(-50%, -50%); transform: rotate(45deg); transform-style 动画 @keyframes 定义:@keyframes xxx { from { } to { }} 调用:animation: xxx 1s;",
             "url": "/zh/posts/css-%E5%8A%A8%E7%94%BB/"
         },{
             "@type":"ListItem",
-            "position":  9 ,
+            "position":  7 ,
             "name": "CSS 定位和层叠上下文原理",
             "description": "1.定位 1.定位 position static(default) relative 参照物：自身 不脱标 使用情形： 微调元素，方位和z-index能够生效 做absolute的参考，子绝父相 absolute 参照物：父 脱标 top:参照",
             "url": "/zh/posts/css-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%9F%E7%90%86/"
         },{
             "@type":"ListItem",
-            "position":  10 ,
+            "position":  8 ,
             "name": "CSS 属性 选择器 浮动",
             "description": "1.字体，文本，背景 2.CSS变量 3.选择器 4.浮动 1.字体，文本，背景 p{ font-size: 50px; /*字体大小*/ line-height: 30px; /*行高*/ font-family: 幼圆,黑体; /*字体类型：如果没有幼圆",
             "url": "/zh/posts/css-%E5%B1%9E%E6%80%A7-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%B5%AE%E5%8A%A8/"
+        },{
+            "@type":"ListItem",
+            "position":  9 ,
+            "name": "CSS 布局",
+            "description": "1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp",
+            "url": "/zh/posts/css-%E5%B8%83%E5%B1%80/"
+        },{
+            "@type":"ListItem",
+            "position":  10 ,
+            "name": "HTML速查",
+            "description": "1.HTML速查 2.规范 3.html5骨架 1.HTML速查 \u0026lt;!-- 文档 --\u0026gt; \u0026lt;!DOCTYPE html\u0026gt; \u0026lt;html\u0026gt; \u0026lt;head\u0026gt; \u0026lt;title\u0026gt;文档标题\u0026lt;/title\u0026gt; \u0026lt;/head\u0026gt; \u0026lt;body\u0026gt; 可见文本.",
+            "url": "/zh/posts/html%E9%80%9F%E6%9F%A5/"
         }
     ]
 }
@@ -269,120 +269,18 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/js_items_08/" class="font-bold text-xl hover:text-eureka">JavaScript 函数防抖 函数节流</a>
+  <a href="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="font-bold text-xl hover:text-eureka">JavaScript 事件绑定 事件对象 事件传播 事件委托</a>
 </div>
 <div class="content">
   
-    1. 函数防抖 2. 函数节流 1. 函数防抖 防抖：只识别一次 –点击事件 let submit = document.querySelector(&#34;#submit&#34;); //简易处理:加标识 不适于通用 submit.isLoading = false; submit.onclick = function () { if (this.isLoading) return; this.isLoading = true; console.
+    1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener(&#39;click&#39;,function(){},false) true:捕获阶段触发 / false：冒泡阶段触发(默认) this: 事件对象 ie8
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-13</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>2分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/js_items_06/" class="font-bold text-xl hover:text-eureka">JavaScript 闭包应用</a>
-</div>
-<div class="content">
-  
-    1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 1.2. 循环定时器 1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 var buttons = document.querySelectorAll(&#39;button&#39;); for (var i = 0; i &lt; buttons.length; i&#43;&#43;) { // i=0 buttons[0] 第一个按钮 //
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-11</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>2分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/js_items_03/" class="font-bold text-xl hover:text-eureka">JavaScript 数据结构</a>
-</div>
-<div class="content">
-  
-    1. 数组 Array 2. 栈 3. 队列 4. 排序 1. 数组 Array JS数组可以存储不同数据类型 容量随存储内容自动缩放 Array.prototype的API //封装数组 2. 栈 class Stack{ container = []; enter(item){ this.container.push(item);
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-09</span>
-    </div>
-    <div class="me-6 my-2">
-        <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/" class="font-bold text-xl hover:text-eureka">VS Code自定义快捷模块</a>
-</div>
-<div class="content">
-  
-    VS Code自定义快捷模块 //1.&lt;ctrl&gt;&#43;&lt;shift&gt;&#43;&lt;p&gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="me-6 my-2">
-        <i class="fas fa-calendar me-1"></i>
-        <span>2020-12-08</span>
+        <span>2021-04-17</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -393,7 +291,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
+        <a href="/zh/categories/%E4%BA%8B%E4%BB%B6/" class="hover:text-eureka">事件</a>
         
     </div>
     
@@ -402,7 +300,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-th-list me-1"></i>
         
-        <a href="/zh/series/visual-studio-code/" class="hover:text-eureka">visual studio code</a>
+        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
         
     </div>
     
@@ -419,18 +317,18 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/" class="font-bold text-xl hover:text-eureka">Github 远端仓库download不同本地</a>
+  <a href="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/" class="font-bold text-xl hover:text-eureka">JavaScript client offset相关属性和对比</a>
 </div>
 <div class="content">
   
-    仅此记录过程，供日后复用 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C &#34;example@example.com&#34; ssh -v git@github.com // No more authentication methods to
+    1.client 2.offset 3.offset/scroll/client对比 1.client clientWidth: width&#43;padding; clientHeight: width&#43;padding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width&#43;padding&#43;border; offsetHeight: width&#43;padding&#43;border; offsetPare
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2020-11-20</span>
+        <span>2021-04-14</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -441,7 +339,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/github/" class="hover:text-eureka">github</a>
+        <a href="/zh/categories/client-offset/" class="hover:text-eureka">client &amp; offset</a>
         
     </div>
     
@@ -450,7 +348,55 @@
     <div class="me-6 my-2">
         <i class="fas fa-th-list me-1"></i>
         
-        <a href="/zh/series/github/" class="hover:text-eureka">github</a>
+        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/" class="font-bold text-xl hover:text-eureka">JavaScript scroll相关属性和缓动动画</a>
+</div>
+<div class="content">
+  
+    1.scroll 2.缓动动画 1.scroll window.onscroll(): 当我们用鼠标滚轮，滚动网页的时候，会触发 window.onscroll() 方法 scrollWidth and scrollHeight: width &#43; padding scrollTop and scrollLeft: 当某个元素满足scrollHeight - scrollTop == clientHeight
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2021-04-14</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/scroll/" class="hover:text-eureka">scroll</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
         
     </div>
     
@@ -489,7 +435,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        <a href="/zh/categories/less/" class="hover:text-eureka">Less</a>
         
     </div>
     
@@ -537,7 +483,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        <a href="/zh/categories/sass/" class="hover:text-eureka">Sass</a>
         
     </div>
     
@@ -585,7 +531,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        <a href="/zh/categories/%E5%8A%A8%E7%94%BB/" class="hover:text-eureka">动画</a>
         
     </div>
     
@@ -633,7 +579,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        <a href="/zh/categories/%E5%AE%9A%E4%BD%8D/" class="hover:text-eureka">定位</a>
         
     </div>
     
@@ -681,7 +627,15 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/css/" class="hover:text-eureka">CSS</a>
+        <a href="/zh/categories/%E9%80%89%E6%8B%A9%E5%99%A8/" class="hover:text-eureka">选择器</a>
+        
+        
+        <span>, </span>
+        <a href="/zh/categories/%E5%B1%9E%E6%80%A7/" class="hover:text-eureka">属性</a>
+        
+        
+        <span>, </span>
+        <a href="/zh/categories/%E6%B5%AE%E5%8A%A8/" class="hover:text-eureka">浮动</a>
         
     </div>
     
@@ -691,6 +645,102 @@
         <i class="fas fa-th-list me-1"></i>
         
         <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/css-%E5%B8%83%E5%B1%80/" class="font-bold text-xl hover:text-eureka">CSS 布局</a>
+</div>
+<div class="content">
+  
+    1.布局 1.布局 table display:table display:table-cell，相当于td元素 display:table-row，相当于tr元素 table-layout:fixed | auto(默认) flex flex-direction row|row-reverse|column|column-reverse flex-warp
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/%E5%B8%83%E5%B1%80/" class="hover:text-eureka">布局</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/css/" class="hover:text-eureka">CSS</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/html%E9%80%9F%E6%9F%A5/" class="font-bold text-xl hover:text-eureka">HTML速查</a>
+</div>
+<div class="content">
+  
+    1.HTML速查 2.规范 3.html5骨架 1.HTML速查 &lt;!-- 文档 --&gt; &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;文档标题&lt;/title&gt; &lt;/head&gt; &lt;body&gt; 可见文本.
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-10-01</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>5分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/html/" class="hover:text-eureka">html</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/html/" class="hover:text-eureka">html</a>
         
     </div>
     

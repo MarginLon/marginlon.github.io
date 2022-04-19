@@ -8,51 +8,6 @@
     <language>zh</language>
     <lastBuildDate>Sun, 17 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>JavaScript BOM</title>
-      <link>/zh/posts/javascript-bom/</link>
-      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
-      
-      <guid>/zh/posts/javascript-bom/</guid>
-      <description> 1. BOM  1. BOM  navigator.userAgent history location window screen  </description>
-    </item>
-    
-    <item>
-      <title>JavaScript client offset相关属性和对比</title>
-      <link>/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/</link>
-      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
-      
-      <guid>/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/</guid>
-      <description>1.client 2.offset 3.offset/scroll/client对比 1.client clientWidth: width+padding; clientHeight: width+padding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width+padding+border; offsetHeight: width+padding+border; offsetPare</description>
-    </item>
-    
-    <item>
-      <title>JavaScript DOM</title>
-      <link>/zh/posts/javascript-dom/</link>
-      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
-      
-      <guid>/zh/posts/javascript-dom/</guid>
-      <description>1. {DOM} 1. {DOM} 基本类型 Document DocumentType:doctype标签 Element:H5标签 Attr:元素的属性 Text:标签内文本 Comment:注释 Do</description>
-    </item>
-    
-    <item>
-      <title>JavaScript scroll相关属性和缓动动画</title>
-      <link>/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/</link>
-      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
-      
-      <guid>/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/</guid>
-      <description>1.scroll 2.缓动动画 1.scroll window.onscroll(): 当我们用鼠标滚轮，滚动网页的时候，会触发 window.onscroll() 方法 scrollWidth and scrollHeight: width + padding scrollTop and scrollLeft: 当某个元素满足scrollHeight - scrollTop == clientHeight</description>
-    </item>
-    
-    <item>
-      <title>JavaScript 事件绑定 事件对象 事件传播 事件委托</title>
-      <link>/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</link>
-      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
-      
-      <guid>/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</guid>
-      <description>1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener(&#39;click&#39;,function(){},false) true:捕获阶段触发 / false：冒泡阶段触发(默认) this: 事件对象 ie8</description>
-    </item>
-    
-    <item>
       <title>JavaScript 模块化编程 进阶技巧</title>
       <link>/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
@@ -62,12 +17,30 @@
     </item>
     
     <item>
+      <title>JavaScript 函数防抖 函数节流</title>
+      <link>/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</link>
+      <pubDate>Thu, 14 Apr 2022 16:29:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</guid>
+      <description>1. 函数防抖 2. 函数节流 1. 函数防抖 防抖：只识别一次 &amp;ndash;点击事件 let submit = document.querySelector(&amp;quot;#submit&amp;quot;); //简易处理:加标识 不适于通用 submit.isLoading = false; submit.onclick = function () { if (this.isLoading) return; this.isLoading = true; console.</description>
+    </item>
+    
+    <item>
       <title>JavaScript This指向</title>
       <link>/zh/posts/javascript-this%E6%8C%87%E5%90%91/</link>
       <pubDate>Wed, 13 Apr 2022 16:28:39 +0800</pubDate>
       
       <guid>/zh/posts/javascript-this%E6%8C%87%E5%90%91/</guid>
       <description>1. This指向: 函数执行的主体 1.1. 事件绑定 1.2. 函数执行 [普通/成员访问/匿名函数/回调函数] 1.3. 构造函数 1.4. 箭头函数 [生成器generator] 1.5. call/a</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 闭包应用</title>
+      <link>/zh/posts/javascript-%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Tue, 12 Apr 2022 16:29:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/</guid>
+      <description>1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 1.2. 循环定时器 1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 var buttons = document.querySelectorAll(&#39;button&#39;); for (var i = 0; i &amp;lt; buttons.length; i++) { // i=0 buttons[0] 第一个按钮 //</description>
     </item>
     
     <item>
@@ -104,6 +77,15 @@
       
       <guid>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
       <description>1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: // NaN 非有效数字、Infinity 无穷大 // Number.MIN_SAFE_INTERGER // NaN == NaN false // NaN === NaN false =&amp;gt; NaN !== NaN // =&amp;gt; isNaN([value]); // Object.is(NaN,NaN); true string: &amp;lsquo;&amp;rsquo;, &amp;ldquo;&amp;rdquo;,`` boolean: true、f</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 数据结构</title>
+      <link>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sat, 09 Apr 2022 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>1. 数组 Array 2. 栈 3. 队列 4. 排序 1. 数组 Array JS数组可以存储不同数据类型 容量随存储内容自动缩放 Array.prototype的API //封装数组 2. 栈 class Stack{ container = []; enter(item){ this.container.push(item);</description>
     </item>
     
     <item>
@@ -188,48 +170,48 @@
     </item>
     
     <item>
-      <title>JavaScript 函数防抖 函数节流</title>
-      <link>/zh/posts/js_items_08/</link>
-      <pubDate>Mon, 13 Sep 2021 20:00:00 +0800</pubDate>
+      <title>JavaScript BOM</title>
+      <link>/zh/posts/javascript-bom/</link>
+      <pubDate>Sat, 17 Apr 2021 16:28:39 +0800</pubDate>
       
-      <guid>/zh/posts/js_items_08/</guid>
-      <description>1. 函数防抖 2. 函数节流 1. 函数防抖 防抖：只识别一次 &amp;ndash;点击事件 let submit = document.querySelector(&amp;quot;#submit&amp;quot;); //简易处理:加标识 不适于通用 submit.isLoading = false; submit.onclick = function () { if (this.isLoading) return; this.isLoading = true; console.</description>
+      <guid>/zh/posts/javascript-bom/</guid>
+      <description> 1. BOM  1. BOM  navigator.userAgent history location window screen  </description>
     </item>
     
     <item>
-      <title>JavaScript 闭包应用</title>
-      <link>/zh/posts/js_items_06/</link>
-      <pubDate>Sat, 11 Sep 2021 20:00:00 +0800</pubDate>
+      <title>JavaScript DOM</title>
+      <link>/zh/posts/javascript-dom/</link>
+      <pubDate>Sat, 17 Apr 2021 16:28:39 +0800</pubDate>
       
-      <guid>/zh/posts/js_items_06/</guid>
-      <description>1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 1.2. 循环定时器 1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 var buttons = document.querySelectorAll(&#39;button&#39;); for (var i = 0; i &amp;lt; buttons.length; i++) { // i=0 buttons[0] 第一个按钮 //</description>
+      <guid>/zh/posts/javascript-dom/</guid>
+      <description>1. {DOM} 1. {DOM} 基本类型 Document DocumentType:doctype标签 Element:H5标签 Attr:元素的属性 Text:标签内文本 Comment:注释 Do</description>
     </item>
     
     <item>
-      <title>JavaScript 数据结构</title>
-      <link>/zh/posts/js_items_03/</link>
-      <pubDate>Thu, 09 Sep 2021 20:00:00 +0800</pubDate>
+      <title>JavaScript 事件绑定 事件对象 事件传播 事件委托</title>
+      <link>/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</link>
+      <pubDate>Sat, 17 Apr 2021 16:28:39 +0800</pubDate>
       
-      <guid>/zh/posts/js_items_03/</guid>
-      <description>1. 数组 Array 2. 栈 3. 队列 4. 排序 1. 数组 Array JS数组可以存储不同数据类型 容量随存储内容自动缩放 Array.prototype的API //封装数组 2. 栈 class Stack{ container = []; enter(item){ this.container.push(item);</description>
+      <guid>/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</guid>
+      <description>1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener(&#39;click&#39;,function(){},false) true:捕获阶段触发 / false：冒泡阶段触发(默认) this: 事件对象 ie8</description>
     </item>
     
     <item>
-      <title>VS Code自定义快捷模块</title>
-      <link>/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Tue, 08 Dec 2020 18:02:39 +0800</pubDate>
+      <title>JavaScript client offset相关属性和对比</title>
+      <link>/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Wed, 14 Apr 2021 16:28:39 +0800</pubDate>
       
-      <guid>/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/</guid>
-      <description>VS Code自定义快捷模块 //1.&amp;lt;ctrl&amp;gt;+&amp;lt;shift&amp;gt;+&amp;lt;p&amp;gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如</description>
+      <guid>/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/</guid>
+      <description>1.client 2.offset 3.offset/scroll/client对比 1.client clientWidth: width+padding; clientHeight: width+padding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width+padding+border; offsetHeight: width+padding+border; offsetPare</description>
     </item>
     
     <item>
-      <title>Github 远端仓库download不同本地</title>
-      <link>/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/</link>
-      <pubDate>Fri, 20 Nov 2020 18:28:39 +0800</pubDate>
+      <title>JavaScript scroll相关属性和缓动动画</title>
+      <link>/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Wed, 14 Apr 2021 16:28:39 +0800</pubDate>
       
-      <guid>/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/</guid>
-      <description>仅此记录过程，供日后复用 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C &amp;quot;example@example.com&amp;quot; ssh -v git@github.com // No more authentication methods to</description>
+      <guid>/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/</guid>
+      <description>1.scroll 2.缓动动画 1.scroll window.onscroll(): 当我们用鼠标滚轮，滚动网页的时候，会触发 window.onscroll() 方法 scrollWidth and scrollHeight: width + padding scrollTop and scrollLeft: 当某个元素满足scrollHeight - scrollTop == clientHeight</description>
     </item>
     
     <item>
@@ -296,7 +278,7 @@
     </item>
     
     <item>
-      <title>JS内置对象</title>
+      <title>JavaScript 内置对象</title>
       <link>/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</link>
       <pubDate>Thu, 01 Oct 2020 22:02:39 +0800</pubDate>
       
@@ -341,6 +323,15 @@
     </item>
     
     <item>
+      <title>Github 远端仓库download不同本地</title>
+      <link>/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/</link>
+      <pubDate>Sun, 20 Sep 2020 18:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/github-%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93download%E4%B8%8D%E5%90%8C%E6%9C%AC%E5%9C%B0/</guid>
+      <description>仅此记录过程，供日后复用 多主机共享ssh Public/Private Key 原本地仓库的id_rsa和id_rsa.pub打包传输到其他主机 生成 ssh key 命令： ssh-keygen -t -rsa -C &amp;quot;example@example.com&amp;quot; ssh -v git@github.com // No more authentication methods to</description>
+    </item>
+    
+    <item>
       <title>GitHub Pages绑定个人域名</title>
       <link>/zh/posts/github-pages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</link>
       <pubDate>Fri, 18 Sep 2020 16:28:39 +0800</pubDate>
@@ -356,6 +347,15 @@
       
       <guid>/zh/posts/meme%E4%B8%BB%E9%A2%98%E9%83%A8%E7%BD%B2%E5%88%B0github-pages/</guid>
       <description>本地运行Meme主题使用正常Hugo流程即可，注意使用__Extended__版本Hugo即可。简单叙述一下部署到Github Pages的流程，以供日</description>
+    </item>
+    
+    <item>
+      <title>VS Code自定义快捷模块</title>
+      <link>/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Tue, 08 Sep 2020 18:02:39 +0800</pubDate>
+      
+      <guid>/zh/posts/vs-code%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%A8%A1%E5%9D%97/</guid>
+      <description>VS Code自定义快捷模块 //1.&amp;lt;ctrl&amp;gt;+&amp;lt;shift&amp;gt;+&amp;lt;p&amp;gt; //2. snippets //3. 新建 /*4. args: prefix：使用代码段的快捷入口 body：需要设置的代码放在这里,字符串间换行的话使用\r\n换行符隔开.如</description>
     </item>
     
   </channel>

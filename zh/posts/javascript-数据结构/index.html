@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' class="dark" ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>JavaScript 数据结构 | Marginlon</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="1. 数组 Array 2. 栈 3. 队列 4. 排序 1. 数组 Array JS数组可以存储不同数据类型 容量随存储内容自动缩放 Array.prototype的API //封装数组 2. 栈 class Stack{ container = []; enter(item){ this.container.push(item);">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/zh/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"JavaScript 数据结构",
+      "item":"/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
+    },
+    "headline": "JavaScript 数据结构 | Marginlon","datePublished": "2022-04-09T16:28:39+08:00",
+    "dateModified": "2022-04-09T16:28:39+08:00",
+    "wordCount":  321 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Marginlon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "1. 数组 Array 2. 栈 3. 队列 4. 排序 1. 数组 Array JS数组可以存储不同数据类型 容量随存储内容自动缩放 Array.prototype的API \/\/封装数组 2. 栈 class Stack{ container = []; enter(item){ this.container.push(item);"
+}
+</script><meta property="og:title" content="JavaScript 数据结构 | Marginlon" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
+
+
+
+
+<meta property="og:description" content="1. 数组 Array 2. 栈 3. 队列 4. 排序 1. 数组 Array JS数组可以存储不同数据类型 容量随存储内容自动缩放 Array.prototype的API //封装数组 2. 栈 class Stack{ container = []; enter(item){ this.container.push(item);" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Marginlon" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-04-09T16:28:39&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-04-09T16:28:39&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="JavaScript" />
+
+<meta property="article:tag" content="数据结构" />
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-this%E6%8C%87%E5%90%91/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
+
+
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-ajax/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-bom/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-dom/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" />
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh" class="me-6 text-primary-text text-xl font-bold">Marginlon</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">博客</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript 数据结构</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2022-04-09</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="hover:text-eureka">数据结构</a>
+        
+    </div>
+    
+
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <ul>
+<li><a href="#1-%E6%95%B0%E7%BB%84-array">1. 数组 Array</a></li>
+<li><a href="#2-%E6%A0%88">2. 栈</a></li>
+<li><a href="#3-%E9%98%9F%E5%88%97">3. 队列</a></li>
+<li><a href="#4-%E6%8E%92%E5%BA%8F">4. 排序</a></li>
+</ul>
+<h2 id="1-数组-array">1. 数组 Array</h2>
+<ul>
+<li>JS数组可以存储不同数据类型</li>
+<li>容量随存储内容自动缩放</li>
+<li>Array.prototype的API</li>
+</ul>
+<pre><code class="language-js">//封装数组
+
+</code></pre>
+<hr>
+<h2 id="2-栈">2. 栈</h2>
+<pre><code class="language-js">class Stack{
+    container = [];
+    enter(item){
+        this.container.push(item);
+    }
+    leave(){
+        return this.container.pop();
+    }
+    size(){
+        return this.container.length;
+    }
+    value(){
+        return this.container.slice(0);
+    }
+}
+
+// 十进制转二进制
+
+Number.prototype.decimal2binary = function decimal2binary (){
+    //this-&gt; new Number()
+    let decimal = +this;
+    if(/\./.test(decimal)){
+        //包含小数
+        throw new RangeError('应传入整数');1
+    }
+    let sk = new Stack;
+    if(decimal===0) return '0';
+    while(decimal&gt;0){}
+        sk.enter(decimal%2);
+        decimal = Math.floor(decimal/2);
+    }
+    return sk.value().reverse().join('');
+};
+
+</code></pre>
+<hr>
+<h2 id="3-队列">3. 队列</h2>
+<pre><code class="language-js">class Queue{
+    container=[];
+    enter(item){
+        this.container.unshift(item);
+    }
+    leave(){
+        return this.container.pop();
+    }
+    size(){
+        return this.container.length();
+    }
+    value(){
+        return this.container.slice(0);
+    }
+}
+
+//击鼓传花
+function game(n,m){
+    let qe = new Queue;
+    for(let i = 1; i&lt;=n ; i++){
+        qe.enter(i);
+    }
+
+    //队列中存在两个及以上的人，重复
+   while (qe.size() &gt; 1) {
+        for (let i = 1; i &lt; m; i++) {
+            //前m-1个人出队列后进去队列
+            qe.enter(qe.leave());
+        }
+        //第m个人出队列
+        qe.leave();
+    }
+
+    return qe.value()[0];
+}
+console.log(game(8, 5));
+</code></pre>
+<hr>
+<h2 id="4-排序">4. 排序</h2>
+<pre><code class="language-js">
+let arr = [1,7,8,6,5];
+
+//Bubble Sort
+function bubbleSort(arr){
+    for(let i =0;i&lt;arr.length;i++){
+        for(let j=0;j&lt;arr.length-1;j++){
+            if(arr[j]&gt;arr[j+1]){
+                [arr[j],arr[j+1]]=[arr[j+1],arr[j]];
+            }
+        }
+    }
+}
+
+//Insert Sort
+function insertSortArray(arr,i,t){
+    let p = i-1;
+    while(p&gt;=0 &amp;&amp; arr[p]&gt;t){
+        arr[p+1] = arr[p];
+        p--;
+    }
+    arr[p+1] = t;
+}
+
+function insertSort(arr){
+    var j;
+    for(let i = 1;i &lt;arr.length;i++){
+        insertSortArray(arr,i,arr[i]);
+    }
+}
+</code></pre>
+<hr>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/zh/tags/javascript/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#JavaScript</a>
+    
+    <a href="/zh/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#数据结构</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="block">JavaScript 数据类型 类型检测 类型转换</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/zh/posts/js_items_17/" class="block">JavaScript axios</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">系列文章</h3>
+    <div class="content">
+        
+        
+        <a href="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/">JavaScript 模块化编程 进阶技巧</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/">JavaScript 函数防抖 函数节流</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-this%E6%8C%87%E5%90%91/">JavaScript This指向</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/">JavaScript 闭包应用</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/">JavaScript GC机制 闭包作用域 let/const/var</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/">JavaScript 堆栈内存 函数底层运行机制 块级作用域</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/">JavaScript 精度问题</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">JavaScript 数据类型 类型检测 类型转换</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">JavaScript 数据结构</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-ajax/">JavaScript AJAX</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-bom/">JavaScript BOM</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-dom/">JavaScript DOM</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">JavaScript 事件绑定 事件对象 事件传播 事件委托</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/">JavaScript client offset相关属性和对比</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/">JavaScript scroll相关属性和缓动动画</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">JavaScript 内置对象</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-数组-array">1. 数组 Array</a></li>
+    <li><a href="#2-栈">2. 栈</a></li>
+    <li><a href="#3-队列">3. 队列</a></li>
+    <li><a href="#4-排序">4. 排序</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="/zh/posts/javascript-ajax/">JavaScript AJAX</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-bom/">JavaScript BOM</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-dom/">JavaScript DOM</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">JavaScript 事件绑定 事件对象 事件传播 事件委托</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/">JavaScript client offset相关属性和对比</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/">JavaScript scroll相关属性和缓动动画</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"> Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

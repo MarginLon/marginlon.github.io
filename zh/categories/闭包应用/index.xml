@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>闭包应用 on Marginlon</title>
+    <link>/zh/categories/%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/</link>
+    <description>Recent content in 闭包应用 on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 12 Apr 2022 16:29:39 +0800</lastBuildDate><atom:link href="/zh/categories/%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 闭包应用</title>
+      <link>/zh/posts/javascript-%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Tue, 12 Apr 2022 16:29:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/</guid>
+      <description>1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 1.2. 循环定时器 1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 var buttons = document.querySelectorAll(&#39;button&#39;); for (var i = 0; i &amp;lt; buttons.length; i++) { // i=0 buttons[0] 第一个按钮 //</description>
+    </item>
+    
+  </channel>
+</rss>

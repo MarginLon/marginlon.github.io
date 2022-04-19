@@ -6,11 +6,11 @@
     <description>Recent content in BOM on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 17 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/tags/bom/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Apr 2021 16:28:39 +0800</lastBuildDate><atom:link href="/zh/tags/bom/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript BOM</title>
       <link>/zh/posts/javascript-bom/</link>
-      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
+      <pubDate>Sat, 17 Apr 2021 16:28:39 +0800</pubDate>
       
       <guid>/zh/posts/javascript-bom/</guid>
       <description> 1. BOM  1. BOM  navigator.userAgent history location window screen  </description>
