@@ -10,7 +10,7 @@ categories:
   - JavaScript
 series:
   - JavaScript
-date: "2022-04-08T16:28:39+08:00"
+date: "2022-04-11T16:27:39+08:00"
 lastmode: "2022-04-08T16:28:39+08:00"
 featuredImage: 
 featuredVideo: 
