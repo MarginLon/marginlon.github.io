@@ -1,6 +1,20 @@
 ---
 title: "JavaScript 函数防抖 函数节流"
-date: 2021-09-13T20:00:00+08:00
+description:
+toc: true
+authors:
+tags:
+- JavaScript
+- 函数防抖
+- 函数节流
+categories:
+- 防抖节流
+series:
+- JavaScript
+date: "2022-04-14T16:29:39+08:00"
+lastmode: "2022-04-06T16:28:39+08:00"
+featuredImage:
+featuredVideo:
 draft: false
 ---
 - [1. 函数防抖](#1-函数防抖)

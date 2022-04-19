@@ -7,7 +7,7 @@ tags:
   - JavaScript
   - 数据类型 
 categories:
-  - JavaScript
+  - 数据类型 
 series:
   - JavaScript
 date: "2022-04-10T16:28:39+08:00"

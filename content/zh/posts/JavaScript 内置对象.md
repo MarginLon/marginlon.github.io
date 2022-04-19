@@ -1,13 +1,13 @@
 ---
-title: "JS内置对象"
+title: "JavaScript 内置对象"
 description:
 toc: true
 authors:
 tags: 
-  - JS内置对象
+  - 内置对象
   - JavaScript
 categories:
-  - JavaScript
+  - 内置对象
 series:
   - JavaScript
 date: '2020-10-01T22:02:39+08:00'

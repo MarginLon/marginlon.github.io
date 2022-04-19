@@ -7,7 +7,7 @@ tags:
   - JavaScript
   - 精度问题 
 categories:
-  - JavaScript
+  - 精度问题 
 series:
   - JavaScript
 date: "2022-04-11T16:27:39+08:00"

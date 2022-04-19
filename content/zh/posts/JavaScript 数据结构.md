@@ -1,6 +1,19 @@
 ---
 title: "JavaScript 数据结构"
-date: 2021-09-09T20:00:00+08:00
+description:
+toc: true
+authors:
+tags:
+- JavaScript
+- 数据结构
+categories:
+- 数据结构
+series:
+- JavaScript
+date: "2022-04-09T16:28:39+08:00"
+lastmode: "2022-04-06T16:28:39+08:00"
+featuredImage:
+featuredVideo:
 draft: false
 ---
 
@@ -9,18 +22,21 @@ draft: false
 - [3. 队列](#3-队列)
 - [4. 排序](#4-排序)
 
-# 1. 数组 Array
+## 1. 数组 Array
 
 - JS数组可以存储不同数据类型
 - 容量随存储内容自动缩放
 - Array.prototype的API
+
 ```js
 //封装数组
 
 ```
 
 ---
-# 2. 栈
+
+## 2. 栈
+
 ```js
 class Stack{
     container = [];
@@ -59,7 +75,9 @@ Number.prototype.decimal2binary = function decimal2binary (){
 ```
 
 ---
-# 3. 队列
+
+## 3. 队列
+
 ```js
 class Queue{
     container=[];
@@ -100,7 +118,9 @@ console.log(game(8, 5));
 ```
 
 ---
-# 4. 排序
+
+## 4. 排序
+
 ```js
 
 let arr = [1,7,8,6,5];
@@ -133,4 +153,5 @@ function insertSort(arr){
     }
 }
 ```
+
 ---

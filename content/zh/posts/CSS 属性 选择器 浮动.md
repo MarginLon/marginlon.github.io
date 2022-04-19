@@ -9,7 +9,9 @@ tags:
 - 浮动
 - CSS
 categories:
-- CSS
+- 选择器
+- 属性
+- 浮动
 series:
 - CSS
 date: '2020-10-01T22:02:39+08:00'

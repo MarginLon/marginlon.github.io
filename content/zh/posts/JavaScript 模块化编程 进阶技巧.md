@@ -6,8 +6,9 @@ authors:
 tags: 
   - JavaScript
   - 模块化编程
+  - 进阶技巧
 categories:
-  - JavaScript
+  - 模块化编程
 series:
   - JavaScript
 date: "2022-04-17T16:28:39+08:00"

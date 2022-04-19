@@ -4,11 +4,12 @@ description:
 toc: true
 authors:
 tags:
-
 - JavaScript
 - 堆栈内存
+- 函数底层运行机制
+- 块级作用域
 categories:
-- JavaScript
+- 堆栈内存
 series:
 - JavaScript
 date: "2022-04-11T16:28:39+08:00"

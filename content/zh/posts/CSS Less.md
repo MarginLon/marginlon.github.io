@@ -7,7 +7,7 @@ tags:
 - Less
 - CSS
 categories:
-- CSS
+- Less
 series:
 - CSS
 date: '2020-10-01T22:02:39+08:00'

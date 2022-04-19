@@ -7,7 +7,7 @@ tags:
 - Sass
 - CSS
 categories:
-- CSS
+- Sass
 series:
 - CSS
 date: '2020-10-01T22:02:39+08:00'

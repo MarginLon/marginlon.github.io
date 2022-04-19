@@ -127,3 +127,4 @@ setTimeout(function(x){
 - ```Function.prototype```
 
 ---
+![This例题](https://github.com/MarginLon/theImages/blob/master/This%E4%BE%8B%E9%A2%98.png?raw=true)

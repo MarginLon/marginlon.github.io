@@ -7,7 +7,7 @@ tags:
   - JavaScript
   - AJAX 
 categories:
-  - JavaScript
+  - AJAX 
 series:
   - JavaScript
 date: "2021-09-24T16:28:39+08:00"

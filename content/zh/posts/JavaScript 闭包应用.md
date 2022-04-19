@@ -1,6 +1,19 @@
 ---
 title: "JavaScript 闭包应用"
-date: 2021-09-11T20:00:00+08:00
+description:
+toc: true
+authors:
+tags:
+- JavaScript
+- 闭包应用
+categories:
+- 闭包应用
+series:
+- JavaScript
+date: "2022-04-12T16:29:39+08:00"
+lastmode: "2022-04-06T16:28:39+08:00"
+featuredImage:
+featuredVideo:
 draft: false
 ---
 - [1. 闭包应用：循环中的闭包处理方案](#1-闭包应用循环中的闭包处理方案)
