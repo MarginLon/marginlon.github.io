@@ -63,12 +63,6 @@
     <loc>/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</loc>
     <lastmod>2022-04-17T16:28:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
-    <lastmod>2022-04-17T16:28:39+08:00</lastmod>
-  </url><url>
-    <loc>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</loc>
-    <lastmod>2022-04-17T16:28:39+08:00</lastmod>
-  </url><url>
     <loc>/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2022-04-17T16:28:39+08:00</lastmod>
   </url><url>
@@ -130,20 +124,38 @@
     <loc>/zh/tags/%E4%BA%8B%E4%BB%B6/</loc>
     <lastmod>2022-04-17T16:28:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/tags/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98/</loc>
-    <lastmod>2022-04-17T16:28:39+08:00</lastmod>
-  </url><url>
-    <loc>/zh/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
-    <lastmod>2022-04-17T16:28:39+08:00</lastmod>
-  </url><url>
     <loc>/zh/tags/%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-04-17T16:28:39+08:00</lastmod>
   </url><url>
+    <loc>/zh/tags/gc%E6%9C%BA%E5%88%B6/</loc>
+    <lastmod>2022-04-13T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/javascript-this%E6%8C%87%E5%90%91/</loc>
+    <lastmod>2022-04-13T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/tags/%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
+    <lastmod>2022-04-13T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/</loc>
+    <lastmod>2022-04-12T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
+    <lastmod>2022-04-11T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/tags/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98/</loc>
+    <lastmod>2022-04-11T16:28:39+08:00</lastmod>
+  </url><url>
     <loc>/zh/posts/javascript-%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2022-04-08T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-11T16:27:39+08:00</lastmod>
   </url><url>
     <loc>/zh/tags/%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2022-04-08T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-11T16:27:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</loc>
+    <lastmod>2022-04-10T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2022-04-10T16:28:39+08:00</lastmod>
   </url><url>
     <loc>/zh/docs/</loc>
     <lastmod>2022-03-23T00:00:00+00:00</lastmod>
@@ -199,12 +211,6 @@
   </url><url>
     <loc>/zh/posts/js_items_06/</loc>
     <lastmod>2021-09-11T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>/zh/posts/js_items_05/</loc>
-    <lastmod>2021-09-10T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>/zh/posts/js_items_04/</loc>
-    <lastmod>2021-09-09T20:00:00+08:00</lastmod>
   </url><url>
     <loc>/zh/posts/js_items_03/</loc>
     <lastmod>2021-09-09T20:00:00+08:00</lastmod>
@@ -389,5 +395,7 @@
     <loc>/zh/authors/example-author/</loc>
   </url><url>
     <loc>/zh/authors/hugo-authors/</loc>
+  </url><url>
+    <loc>/zh/tags/let/const/var/</loc>
   </url>
 </urlset>

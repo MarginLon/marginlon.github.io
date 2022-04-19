@@ -6,11 +6,11 @@
     <description>Recent content in 精度问题 on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 08 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/tags/%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Apr 2022 16:27:39 +0800</lastBuildDate><atom:link href="/zh/tags/%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript 精度问题</title>
       <link>/zh/posts/javascript-%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Fri, 08 Apr 2022 16:28:39 +0800</pubDate>
+      <pubDate>Mon, 11 Apr 2022 16:27:39 +0800</pubDate>
       
       <guid>/zh/posts/javascript-%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</guid>
       <description>1. 精度问题 1. 精度问题 解决方法： 扩大系数 第三方库 Math.js decimal.js big.js JS中有关于小数的计算会出现精准度丢失的问题 JS中所有值以2进制存在底层，会出现无限循环的情况 底层</description>

@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>JavaScript axios | Marginlon</title>
+<title>GC机制 | Marginlon</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content=" 1.axios  1.axios ">
+  content="Marginlon.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,51 +66,52 @@
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"Posts",
-      "item":"/zh/posts/"},{
+      "name":"Tags",
+      "item":"/zh/tags/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"JavaScript axios",
-      "item":"/zh/posts/js_items_17/"}]
+      "name":"GC机制",
+      "item":"/zh/tags/gc%E6%9C%BA%E5%88%B6/"}]
 }
 </script>
 
 
 
+
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "/zh/posts/js_items_17/"
-    },
-    "headline": "JavaScript axios | Marginlon","datePublished": "2021-09-24T20:00:00+08:00",
-    "dateModified": "2021-09-24T20:00:00+08:00",
-    "wordCount":  2 ,
-    "publisher": {
-        "@type": "Person",
-        "name": "Marginlon",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "/images/icon.png"
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[{
+            "@type":"ListItem",
+            "position":  1 ,
+            "name": "JavaScript This指向",
+            "description": "1. This指向: 函数执行的主体 1.1. 事件绑定 1.2. 函数执行 [普通/成员访问/匿名函数/回调函数] 1.3. 构造函数 1.4. 箭头函数 [生成器generator] 1.5. call/a",
+            "url": "/zh/posts/javascript-this%E6%8C%87%E5%90%91/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
+            "name": "JavaScript GC机制 闭包作用域 let/const/var",
+            "description": "1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释",
+            "url": "/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/"
         }
-        },
-    "description": " 1.axios  1.axios "
+    ]
 }
-</script><meta property="og:title" content="JavaScript axios | Marginlon" />
-<meta property="og:type" content="article" />
+</script><meta property="og:title" content="GC机制 | Marginlon" />
+<meta property="og:type" content="website" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/zh/posts/js_items_17/" />
+<meta property="og:url" content="/zh/tags/gc%E6%9C%BA%E5%88%B6/" />
 
 
 
 
-<meta property="og:description" content=" 1.axios  1.axios " />
+
+<meta property="og:description" content="Marginlon." />
+
 
 
 
@@ -127,17 +128,14 @@
 
 
 
-<meta property="article:published_time" content="2021-09-24T20:00:00&#43;08:00" />
-
-
-<meta property="article:modified_time" content="2021-09-24T20:00:00&#43;08:00" />
+<meta property="og:updated_time" content="2022-04-13T16:28:39&#43;08:00" />
 
 
 
-<meta property="article:section" content="posts" />
+<meta property="article:section" content="tags" />
 
 
-
+<link rel="alternate" type="application/rss+xml" href="/zh/tags/gc%E6%9C%BA%E5%88%B6/index.xml" title="Marginlon" />
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -157,7 +155,7 @@
         class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
             <a href="/zh/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
-            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">博客</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">博客</a>
             <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
         </div>
 
@@ -208,76 +206,114 @@
   <main class="grow pt-16">
     <div class="ps-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<article class="mx-6 my-8">
+    <h1 class="font-bold text-3xl text-primary-text">GC机制</h1>
+    
+</article>
+<div class="bg-secondary-bg rounded px-6">
+    <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/javascript-this%E6%8C%87%E5%90%91/" class="font-bold text-xl hover:text-eureka">JavaScript This指向</a>
+</div>
+<div class="content">
+  
+    1. This指向: 函数执行的主体 1.1. 事件绑定 1.2. 函数执行 [普通/成员访问/匿名函数/回调函数] 1.3. 构造函数 1.4. 箭头函数 [生成器generator] 1.5. call/a
+  
+</div>
 
-
-<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
-    <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">JavaScript axios</h1>
-        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2021-09-24</span>
+        <span>2022-04-13</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>2分钟阅读时长</span>
     </div>
     
     
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="/zh/categories/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
+    
 
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
     
 </div>
-        
-        
-        
 
-        <div class="content">
-            <ul>
-<li><a href="#1axios">1.axios</a></li>
-</ul>
-<h1 id="1axios">1.axios</h1>
+  </div>
 
-        </div>
-        
-        
-        
-
-
-        
-        
-        
-        
-<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
-    <div>
-        
-        <span class="block font-bold">上一页</span>
-        <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="block">JavaScript 数据类型 类型检测 类型转换</a>
-        
-    </div>
-    <div class="md:text-right mt-4 md:mt-0">
-        
-        <span class="block font-bold">下一页</span>
-        <a href="/zh/posts/javascript-ajax/" class="block">JavaScript AJAX</a>
-        
-    </div>
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/" class="font-bold text-xl hover:text-eureka">JavaScript GC机制 闭包作用域 let/const/var</a>
+</div>
+<div class="content">
+  
+    1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释
+  
 </div>
 
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2022-04-12</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
         
-
-
-
+        <a href="/zh/categories/javascript/" class="hover:text-eureka">JavaScript</a>
+        
     </div>
     
 
     
+    <div class="me-6 my-2">
+        <i class="fas fa-th-list me-1"></i>
+        
+        <a href="/zh/series/javascript/" class="hover:text-eureka">JavaScript</a>
+        
+    </div>
     
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', ()=>{
-        hljs.initHighlightingOnLoad();
-    })
-</script>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+</div>
+
+
+</div>
+
 
       </div>
     </div>

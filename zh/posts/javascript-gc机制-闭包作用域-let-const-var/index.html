@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>JavaScript client offset相关属性和对比 | Marginlon</title>
+<title>JavaScript GC机制 闭包作用域 let/const/var | Marginlon</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="1.client 2.offset 3.offset/scroll/client对比 1.client clientWidth: width&#43;padding; clientHeight: width&#43;padding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width&#43;padding&#43;border; offsetHeight: width&#43;padding&#43;border; offsetPare">
+  content="1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"/zh/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"JavaScript client offset相关属性和对比",
-      "item":"/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/"}]
+      "name":"JavaScript GC机制 闭包作用域 let/const/var",
+      "item":"/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/"}]
 }
 </script>
 
@@ -83,11 +83,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/"
+        "@id": "/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/"
     },
-    "headline": "JavaScript client offset相关属性和对比 | Marginlon","datePublished": "2022-04-17T16:28:39+08:00",
-    "dateModified": "2022-04-17T16:28:39+08:00",
-    "wordCount":  283 ,
+    "headline": "JavaScript GC机制 闭包作用域 let\/const\/var | Marginlon","datePublished": "2022-04-12T16:28:39+08:00",
+    "dateModified": "2022-04-12T16:28:39+08:00",
+    "wordCount":  1037 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -96,21 +96,21 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "1.client 2.offset 3.offset\/scroll\/client对比 1.client clientWidth: width\u002bpadding; clientHeight: width\u002bpadding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width\u002bpadding\u002bborder; offsetHeight: width\u002bpadding\u002bborder; offsetPare"
+    "description": "1. GC机制 2. 闭包作用域 3.let\/const\/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释"
 }
-</script><meta property="og:title" content="JavaScript client offset相关属性和对比 | Marginlon" />
+</script><meta property="og:title" content="JavaScript GC机制 闭包作用域 let/const/var | Marginlon" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/" />
+<meta property="og:url" content="/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/" />
 
 
 
 
-<meta property="og:description" content="1.client 2.offset 3.offset/scroll/client对比 1.client clientWidth: width&#43;padding; clientHeight: width&#43;padding; 属性只读，不可修改 clientX clientY event调用 clientTop clientLeft 盒子的border 2.offset offsetWidth: width&#43;padding&#43;border; offsetHeight: width&#43;padding&#43;border; offsetPare" />
+<meta property="og:description" content="1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释" />
 
 
 
@@ -127,10 +127,10 @@
 
 
 
-<meta property="article:published_time" content="2022-04-17T16:28:39&#43;08:00" />
+<meta property="article:published_time" content="2022-04-12T16:28:39&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2022-04-17T16:28:39&#43;08:00" />
+<meta property="article:modified_time" content="2022-04-12T16:28:39&#43;08:00" />
 
 
 
@@ -139,7 +139,11 @@
 
 <meta property="article:tag" content="JavaScript" />
 
-<meta property="article:tag" content="事件" />
+<meta property="article:tag" content="GC机制" />
+
+<meta property="article:tag" content="闭包作用域" />
+
+<meta property="article:tag" content="let/const/var" />
 
 
 
@@ -152,6 +156,8 @@
 <meta property="og:see_also" content="/zh/posts/javascript-bom/" />
 
 
+
+<meta property="og:see_also" content="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/" />
 
 
 
@@ -174,8 +180,6 @@
 <meta property="og:see_also" content="/zh/posts/javascript-this%E6%8C%87%E5%90%91/" />
 
 
-
-<meta property="og:see_also" content="/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/" />
 
 
 
@@ -275,15 +279,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">JavaScript client offset相关属性和对比</h1>
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript GC机制 闭包作用域 let/const/var</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2022-04-17</span>
+        <span>2022-04-12</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>3分钟阅读时长</span>
     </div>
     
     
@@ -310,64 +314,144 @@
 
         <div class="content">
             <ul>
-<li><a href="#1client">1.client</a></li>
-<li><a href="#2offset">2.offset</a></li>
-<li><a href="#3offsetscrollclient%E5%AF%B9%E6%AF%94">3.offset/scroll/client对比</a></li>
+<li><a href="#1-gc%E6%9C%BA%E5%88%B6">1. GC机制</a></li>
+<li><a href="#2-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F">2. 闭包作用域</a></li>
+<li><a href="#3letconstvar">3.let/const/var</a></li>
 </ul>
-<h2 id="1client">1.client</h2>
+<h2 id="1-gc机制">1. GC机制</h2>
 <ul>
-<li><code>clientWidth</code>: <code>width+padding</code>;</li>
-<li><code>clientHeight</code>: <code>width+padding</code>;
+<li>GC：浏览器的垃圾回收机制（内存释放）
 <ul>
-<li>属性只读，不可修改</li>
-</ul>
-</li>
-<li><code>clientX</code></li>
-<li><code>clientY</code>
+<li>栈内存：
 <ul>
-<li>event调用</li>
-</ul>
-</li>
-<li><code>clientTop</code></li>
-<li><code>clientLeft</code>
+<li>加载页面，形成全局context，只有页面关闭后，全局context释放</li>
+<li>函数执行私有context，进栈执行；函数中代码执行完成，大部分情况，出栈释放。
 <ul>
-<li>盒子的border</li>
+<li>特殊：如果当前context的某些内容（一般是一个堆），被context以外内容占用，则不能出栈释放。</li>
 </ul>
 </li>
 </ul>
-<h2 id="2offset">2.offset</h2>
+</li>
+<li>堆内存
 <ul>
-<li><code>offsetWidth</code>: <code>width+padding+border</code>;</li>
-<li><code>offsetHeight</code>: <code>width+padding+border</code>;</li>
-<li><code>offsetParent</code>:获取定位父元素/ body</li>
-<li><code>offsetLeft/offsetTop</code>:相对于父的偏移(从父的padding开始，不算border)</li>
-</ul>
-<h2 id="3offsetscrollclient对比">3.offset/scroll/client对比</h2>
-<p>1.</p>
+<li>（谷歌）：标记清除
 <ul>
-<li>offset = width + padding + border</li>
-<li>scroll = 不包含border的内容宽度</li>
-<li>client = width + padding
-2.</li>
-<li>offsetTop/Left:
-<ul>
-<li>调用:盒子</li>
-<li>作用:距离父元素的偏移距离</li>
+<li>浏览器在空闲或指定时间，查看所有堆内存，把没有被任何东西占用的堆内存释放。</li>
 </ul>
 </li>
-<li>scrollTop/scrollLeft:
+<li>（IE低版本）：引用计数
 <ul>
-<li>调用:document.body.scrollTop(window调用)</li>
-<li>作用:浏览器无法显示的部分</li>
-</ul>
-</li>
-<li>clientY/X:
-<ul>
-<li>调用:event</li>
-<li>作用:鼠标距离浏览器的距离</li>
+<li>创建了堆内存，被占用一次，则浏览器计数+1，取消占用计数-1，计数=0释放内存； =&gt; 某些情况（循环占用）导致计数混乱，出现“内存泄漏”</li>
 </ul>
 </li>
 </ul>
+</li>
+<li>释放内存：
+<ul>
+<li>x=null =&gt; 手动取消占用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-闭包作用域">2. 闭包作用域</h2>
+<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E9%97%AD%E5%8C%85%E6%A1%88%E4%BE%8B.png?raw=true" alt="闭包案例"></p>
+<ul>
+<li>EC(FN)：
+<ul>
+<li>开辟的某个堆内存，被当前EC(FN)外的变量占用，此时当前context即EC(FN)不能被出栈释放</li>
+<li>闭包：(大函数执行返回小函数只是其中一种形式)
+<ul>
+<li>函数执行产生一个私有context，保护内部私有变量不受污染。[保护]</li>
+<li>有可能形成不被释放的context，私有变量和一些值被保存，可供下级context中调取使用。[保存]</li>
+<li>闭包特点
+<ul>
+<li>保护：保护私有context的私有变量和外界互不影响</li>
+<li>保存：context的私有变量和值保存起来</li>
+<li>弊端：栈内存太大，影响性能，需合理利用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3letconstvar">3.let/const/var</h2>
+<ul>
+<li>let VS const
+<ul>
+<li>let 变量储值可改</li>
+<li>const 赋值不能再与其他赋值关联</li>
+</ul>
+</li>
+<li>let VS var
+<ul>
+<li>
+<p>变量提升：var 存在变量提升 let 不存在变量提升</p>
+</li>
+<li>
+<p>GO：全局context var相当于给GO增一个属性，随动；let和GO没有关系。</p>
+</li>
+<li>
+<p>重复声明：let不允许同context重复声明（不管先前何种方式声明，都不能let声明,词法解析阶段），var无所谓。</p>
+</li>
+<li>
+<p>let/const/function产生块级私有context</p>
+<ul>
+<li>context &amp; 作用域
+<ul>
+<li>全局context</li>
+<li>函数执行的私有context</li>
+<li>块级作用域（私有context）
+<ul>
+<li>
+<p>对象 function的大括号 判断，循环和代码块的大括号</p>
+<pre><code>  ```js
+      debugger;//开启断点调试,控制台基于F10/F11 逐过程/逐语句 控制执行
+      //代码块不会对n产生限制，n使全局context
+      {
+          var n = 12;
+          console.log(n);
+
+          let m = 13;
+      }
+      console.log(n);
+      console.log(m);// m is not defined
+
+
+      let i = 0;//不产生块级context
+      for (; i&lt; 5;i++)
+      {
+          console.log(i);
+      }
+      console.log(i);//5
+  ```
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>暂时性死区（基于typeof检测一个未被声明的变量，不会报错，结果是&rsquo;undefined&rsquo;）</p>
+<ul>
+<li>
+<p>只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</p>
+<pre><code class="language-js">console.log(typeof n);//undefined
+let n = 12;//使上一句报错 
+</code></pre>
+</li>
+</ul>
+<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/var%E5%8F%98%E9%87%8F.png?raw=true" alt="var"></p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
 
         </div>
         
@@ -375,7 +459,11 @@
     
     <a href="/zh/tags/javascript/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#JavaScript</a>
     
-    <a href="/zh/tags/%E4%BA%8B%E4%BB%B6/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#事件</a>
+    <a href="/zh/tags/gc%E6%9C%BA%E5%88%B6/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#GC机制</a>
+    
+    <a href="/zh/tags/%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#闭包作用域</a>
+    
+    <a href="/zh/tags/let/const/var/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#let/const/var</a>
     
 </div>
         
@@ -391,13 +479,13 @@
     <div>
         
         <span class="block font-bold">上一页</span>
-        <a href="/zh/posts/javascript-bom/" class="block">JavaScript BOM</a>
+        <a href="/zh/posts/javascript-this%E6%8C%87%E5%90%91/" class="block">JavaScript This指向</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/zh/posts/javascript-dom/" class="block">JavaScript DOM</a>
+        <a href="/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="block">JavaScript 堆栈内存 函数底层运行机制 块级作用域</a>
         
     </div>
 </div>
@@ -466,9 +554,9 @@
 <div class="sticky-toc hidden lg:block px-6 pb-6 ">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#1client">1.client</a></li>
-    <li><a href="#2offset">2.offset</a></li>
-    <li><a href="#3offsetscrollclient对比">3.offset/scroll/client对比</a></li>
+    <li><a href="#1-gc机制">1. GC机制</a></li>
+    <li><a href="#2-闭包作用域">2. 闭包作用域</a></li>
+    <li><a href="#3letconstvar">3.let/const/var</a></li>
   </ul>
 </nav>
 </div>
@@ -488,22 +576,19 @@
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
-            <a href="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">JavaScript 事件绑定 事件对象 事件传播 事件委托</a>
+            <a href="/zh/posts/javascript-%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98-%E5%87%BD%E6%95%B0%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/">JavaScript 堆栈内存 函数底层运行机制 块级作用域</a>
             <br />
             
-            <a href="/zh/posts/javascript-bom/">JavaScript BOM</a>
+            <a href="/zh/posts/javascript-%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/">JavaScript 精度问题</a>
             <br />
             
-            <a href="/zh/posts/javascript-dom/">JavaScript DOM</a>
+            <a href="/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">JavaScript 数据类型 类型检测 类型转换</a>
             <br />
             
-            <a href="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/">JavaScript scroll相关属性和缓动动画</a>
+            <a href="/zh/posts/javascript-ajax/">JavaScript AJAX</a>
             <br />
             
-            <a href="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/">JavaScript 模块化编程 进阶技巧</a>
-            <br />
-            
-            <a href="/zh/posts/javascript-this%E6%8C%87%E5%90%91/">JavaScript This指向</a>
+            <a href="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">JS内置对象</a>
             <br />
             
         </div>

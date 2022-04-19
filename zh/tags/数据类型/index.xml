@@ -6,11 +6,11 @@
     <description>Recent content in 数据类型 on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 17 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript 数据类型 类型检测 类型转换</title>
       <link>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
+      <pubDate>Sun, 10 Apr 2022 16:28:39 +0800</pubDate>
       
       <guid>/zh/posts/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
       <description>1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: // NaN 非有效数字、Infinity 无穷大 // Number.MIN_SAFE_INTERGER // NaN == NaN false // NaN === NaN false =&amp;gt; NaN !== NaN // =&amp;gt; isNaN([value]); // Object.is(NaN,NaN); true string: &amp;lsquo;&amp;rsquo;, &amp;ldquo;&amp;rdquo;,`` boolean: true、f</description>
