@@ -22,7 +22,7 @@ draft: false
 
 - [1. GC机制](#1-gc机制)
 - [2. 闭包作用域](#2-闭包作用域)
-- [3.let/const/var](#3letconstvar)
+- [3. let/const/var](#3-letconstvar)
 
 ## 1. GC机制
 
@@ -43,7 +43,22 @@ draft: false
 
 ## 2. 闭包作用域
 
-![闭包案例](https://github.com/MarginLon/MarginPostImage/blob/master/%E9%97%AD%E5%8C%85%E6%A1%88%E4%BE%8B.png?raw=true)
+![闭包案例](https://github.com/MarginLon/theImages/blob/master/%E9%97%AD%E5%8C%85%E6%A1%88%E4%BE%8B.png?raw=true)
+
+- 匿名函数具名化：自执行函数 + 函数表达式
+  - 自执行函数:
+    - 不会在所处上下文（宿主环境）中声明：设置的名字在外面用不了
+    - 在自己执行产生的上下文中会被声明赋值，赋值为函数本身
+    - 赋值默认不能被修改，但被其他方式声明则可以修改，以声明为主。
+
+```js
+  (function fn(){
+    let fn = 100; // 生效
+    fn = 100; // 无效
+    console.log(fn); // 函数本身
+    fn(); // arguments.callee() 递归
+  })();
+```
 
 - EC(FN)：
   - 开辟的某个堆内存，被当前EC(FN)外的变量占用，此时当前context即EC(FN)不能被出栈释放
@@ -57,7 +72,7 @@ draft: false
 
 ---
 
-## 3.let/const/var
+## 3. let/const/var
 
 - let VS const
   - let 变量储值可改
@@ -73,26 +88,27 @@ draft: false
       - 块级作用域（私有context）
         - 对象 function的大括号 判断，循环和代码块的大括号
 
-                ```js
-                    debugger;//开启断点调试,控制台基于F10/F11 逐过程/逐语句 控制执行
-                    //代码块不会对n产生限制，n使全局context
-                    {
-                        var n = 12;
-                        console.log(n);
+          ```js
+              debugger;//开启断点调试,控制台基于F10/F11 逐过程/逐语句 控制执行
+              //代码块不会对n产生限制，n使全局context
+              {
+                  var n = 12;
+                  console.log(n);
 
-                        let m = 13;
-                    }
-                    console.log(n);
-                    console.log(m);// m is not defined
+                  let m = 13;
+              }
+              console.log(n);
+              console.log(m);// m is not defined
 
 
-                    let i = 0;//不产生块级context
-                    for (; i< 5;i++)
-                    {
-                        console.log(i);
-                    }
-                    console.log(i);//5
-                ```
+              let i = 0;//不产生块级context
+              for (; i< 5;i++)
+              {
+                  console.log(i);
+              }
+              console.log(i);//5
+          ```
+
   - 暂时性死区（基于typeof检测一个未被声明的变量，不会报错，结果是'undefined'）
     - 只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。
 
@@ -101,6 +117,6 @@ draft: false
         let n = 12;//使上一句报错 
         ```
 
-    ![var](https://github.com/MarginLon/MarginPostImage/blob/master/var%E5%8F%98%E9%87%8F.png?raw=true)
+    ![var](https://github.com/MarginLon/theImages/blob/master/var%E5%8F%98%E9%87%8F.png?raw=true)
 
 ---

@@ -20,9 +20,10 @@ draft: false
 - [1. 函数防抖](#1-函数防抖)
 - [2. 函数节流](#2-函数节流)
 
-# 1. 函数防抖
+## 1. 函数防抖
 
 - 防抖：只识别一次  --点击事件
+
 ```js
 let submit = document.querySelector("#submit");
 
@@ -81,10 +82,13 @@ const debounce = function debounce(func, wait, immediate) {
     };
 };
 ```
+
 ---
 
-# 2. 函数节流
+## 2. 函数节流
+
 - 节流：控制触发频率，能识别‘多次’ --键盘 滚动条
+
 ```js
 /*
 throttle:函数节流
@@ -129,4 +133,5 @@ const throttle = function throttle(func, wait) {
 };
 
 ```
+
 ---
