@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面向对象 on Marginlon</title>
+    <link>/zh/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+    <description>Recent content in 面向对象 on Marginlon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 15 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 面向对象[构造函数 原型和原型链]</title>
+      <link>/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Fri, 15 Apr 2022 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>1. 构造函数 2. 原型和原型链 3. 面向对象相关 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &amp;hellip; DOM HTML标签 -&amp;gt; HTMLXXXElement -&amp;gt; HTMLElement -&amp;gt; Element -&amp;gt; Node -&amp;gt; EventTarget -&amp;gt; Object HTMLDocument -&amp;gt; Document -&amp;gt; Node -&amp;gt; &amp;hellip; Window -&amp;gt; WindowProperties -&amp;gt; EventTarget -&amp;gt; Object 元素集合 -&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

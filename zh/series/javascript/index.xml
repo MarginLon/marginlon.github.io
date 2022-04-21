@@ -6,14 +6,14 @@
     <description>Recent content in JavaScript on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 17 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/series/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/series/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>JavaScript 模块化编程 进阶技巧</title>
-      <link>/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/</link>
-      <pubDate>Sun, 17 Apr 2022 16:28:39 +0800</pubDate>
+      <title>JavaScript 面向对象[构造函数 原型和原型链]</title>
+      <link>/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Fri, 15 Apr 2022 16:28:39 +0800</pubDate>
       
-      <guid>/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/</guid>
-      <description>1. 模块化编程 2. 进阶技巧 2.1 JQ环境区分 2.2 柯里化函数 2.3 compose函数 2.4 惰性函数 1. 模块化编程 模块化编程 高级单例 解决私有化：自执行函数，产生闭包 模块间的互</description>
+      <guid>/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>1. 构造函数 2. 原型和原型链 3. 面向对象相关 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &amp;hellip; DOM HTML标签 -&amp;gt; HTMLXXXElement -&amp;gt; HTMLElement -&amp;gt; Element -&amp;gt; Node -&amp;gt; EventTarget -&amp;gt; Object HTMLDocument -&amp;gt; Document -&amp;gt; Node -&amp;gt; &amp;hellip; Window -&amp;gt; WindowProperties -&amp;gt; EventTarget -&amp;gt; Object 元素集合 -&amp;gt;</description>
     </item>
     
     <item>
@@ -23,6 +23,15 @@
       
       <guid>/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</guid>
       <description>1. 函数防抖 2. 函数节流 1. 函数防抖 防抖：只识别一次 &amp;ndash;点击事件 let submit = document.querySelector(&amp;quot;#submit&amp;quot;); //简易处理:加标识 不适于通用 submit.isLoading = false; submit.onclick = function () { if (this.isLoading) return; this.isLoading = true; console.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 模块化编程 进阶技巧</title>
+      <link>/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Thu, 14 Apr 2022 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/</guid>
+      <description>1. 模块化编程 2. 进阶技巧 2.1 JQ环境区分 2.2 柯里化函数 2.3 compose函数 2.4 惰性函数 1. 模块化编程 模块化编程 高级单例 解决私有化：自执行函数，产生闭包 模块间的互</description>
     </item>
     
     <item>
@@ -49,7 +58,7 @@
       <pubDate>Tue, 12 Apr 2022 16:28:39 +0800</pubDate>
       
       <guid>/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/</guid>
-      <description>1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释</description>
+      <description>1. GC机制 2. 闭包作用域 3. let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context</description>
     </item>
     
     <item>

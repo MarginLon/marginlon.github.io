@@ -21,7 +21,7 @@
       <pubDate>Tue, 12 Apr 2022 16:28:39 +0800</pubDate>
       
       <guid>/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/</guid>
-      <description>1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释</description>
+      <description>1. GC机制 2. 闭包作用域 3. let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context</description>
     </item>
     
   </channel>

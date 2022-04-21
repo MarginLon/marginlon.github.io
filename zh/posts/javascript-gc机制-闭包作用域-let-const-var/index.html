@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释">
+  content="1. GC机制 2. 闭包作用域 3. let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,7 +87,7 @@
     },
     "headline": "JavaScript GC机制 闭包作用域 let\/const\/var | Marginlon","datePublished": "2022-04-12T16:28:39+08:00",
     "dateModified": "2022-04-12T16:28:39+08:00",
-    "wordCount":  1037 ,
+    "wordCount":  1174 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -96,7 +96,7 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "1. GC机制 2. 闭包作用域 3.let\/const\/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释"
+    "description": "1. GC机制 2. 闭包作用域 3. let\/const\/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context"
 }
 </script><meta property="og:title" content="JavaScript GC机制 闭包作用域 let/const/var | Marginlon" />
 <meta property="og:type" content="article" />
@@ -110,7 +110,7 @@
 
 
 
-<meta property="og:description" content="1. GC机制 2. 闭包作用域 3.let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context释" />
+<meta property="og:description" content="1. GC机制 2. 闭包作用域 3. let/const/var 1. GC机制 GC：浏览器的垃圾回收机制（内存释放） 栈内存： 加载页面，形成全局context，只有页面关闭后，全局context" />
 
 
 
@@ -153,11 +153,15 @@
 
 
 
-<meta property="og:see_also" content="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/" />
+<meta property="og:see_also" content="/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" />
 
 
 
 <meta property="og:see_also" content="/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/" />
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/" />
 
 
 
@@ -328,7 +332,7 @@
             <ul>
 <li><a href="#1-gc%E6%9C%BA%E5%88%B6">1. GC机制</a></li>
 <li><a href="#2-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F">2. 闭包作用域</a></li>
-<li><a href="#3letconstvar">3.let/const/var</a></li>
+<li><a href="#3-letconstvar">3. let/const/var</a></li>
 </ul>
 <h2 id="1-gc机制">1. GC机制</h2>
 <ul>
@@ -368,7 +372,27 @@
 </ul>
 <hr>
 <h2 id="2-闭包作用域">2. 闭包作用域</h2>
-<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/%E9%97%AD%E5%8C%85%E6%A1%88%E4%BE%8B.png?raw=true" alt="闭包案例"></p>
+<p><img src="https://github.com/MarginLon/theImages/blob/master/%E9%97%AD%E5%8C%85%E6%A1%88%E4%BE%8B.png?raw=true" alt="闭包案例"></p>
+<ul>
+<li>匿名函数具名化：自执行函数 + 函数表达式
+<ul>
+<li>自执行函数:
+<ul>
+<li>不会在所处上下文（宿主环境）中声明：设置的名字在外面用不了</li>
+<li>在自己执行产生的上下文中会被声明赋值，赋值为函数本身</li>
+<li>赋值默认不能被修改，但被其他方式声明则可以修改，以声明为主。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-js">  (function fn(){
+    let fn = 100; // 生效
+    fn = 100; // 无效
+    console.log(fn); // 函数本身
+    fn(); // arguments.callee() 递归
+  })();
+</code></pre>
 <ul>
 <li>EC(FN)：
 <ul>
@@ -390,7 +414,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="3letconstvar">3.let/const/var</h2>
+<h2 id="3-letconstvar">3. let/const/var</h2>
 <ul>
 <li>let VS const
 <ul>
@@ -420,26 +444,24 @@
 <ul>
 <li>
 <p>对象 function的大括号 判断，循环和代码块的大括号</p>
-<pre><code>  ```js
-      debugger;//开启断点调试,控制台基于F10/F11 逐过程/逐语句 控制执行
-      //代码块不会对n产生限制，n使全局context
-      {
-          var n = 12;
-          console.log(n);
+<pre><code class="language-js">    debugger;//开启断点调试,控制台基于F10/F11 逐过程/逐语句 控制执行
+    //代码块不会对n产生限制，n使全局context
+    {
+        var n = 12;
+        console.log(n);
 
-          let m = 13;
-      }
-      console.log(n);
-      console.log(m);// m is not defined
+        let m = 13;
+    }
+    console.log(n);
+    console.log(m);// m is not defined
 
 
-      let i = 0;//不产生块级context
-      for (; i&lt; 5;i++)
-      {
-          console.log(i);
-      }
-      console.log(i);//5
-  ```
+    let i = 0;//不产生块级context
+    for (; i&lt; 5;i++)
+    {
+        console.log(i);
+    }
+    console.log(i);//5
 </code></pre>
 </li>
 </ul>
@@ -458,7 +480,7 @@ let n = 12;//使上一句报错
 </code></pre>
 </li>
 </ul>
-<p><img src="https://github.com/MarginLon/MarginPostImage/blob/master/var%E5%8F%98%E9%87%8F.png?raw=true" alt="var"></p>
+<p><img src="https://github.com/MarginLon/theImages/blob/master/var%E5%8F%98%E9%87%8F.png?raw=true" alt="var"></p>
 </li>
 </ul>
 </li>
@@ -516,10 +538,13 @@ let n = 12;//使上一句报错
     <div class="content">
         
         
-        <a href="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/">JavaScript 模块化编程 进阶技巧</a>
+        <a href="/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">JavaScript 面向对象[构造函数 原型和原型链]</a>
         <br />
         
         <a href="/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/">JavaScript 函数防抖 函数节流</a>
+        <br />
+        
+        <a href="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/">JavaScript 模块化编程 进阶技巧</a>
         <br />
         
         <a href="/zh/posts/javascript-this%E6%8C%87%E5%90%91/">JavaScript This指向</a>
@@ -577,7 +602,7 @@ let n = 12;//使上一句报错
   <ul>
     <li><a href="#1-gc机制">1. GC机制</a></li>
     <li><a href="#2-闭包作用域">2. 闭包作用域</a></li>
-    <li><a href="#3letconstvar">3.let/const/var</a></li>
+    <li><a href="#3-letconstvar">3. let/const/var</a></li>
   </ul>
 </nav>
 </div>
