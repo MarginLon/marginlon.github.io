@@ -54,8 +54,8 @@
   integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hucb9d0de5eba7d46562152e85dcb0c7e0_242552_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hucb9d0de5eba7d46562152e85dcb0c7e0_242552_180x180_fill_box_center_3.png">
 
 <meta name="description"
   content="1. 数据类型 2. 类型检测 3. 类型转换 1. 数据类型 原始值 number: // NaN 非有效数字、Infinity 无穷大 // Number.MIN_SAFE_INTERGER // NaN == NaN false // NaN === NaN false =&gt; NaN !== NaN // =&gt; isNaN([value]); // Object.is(NaN,NaN); true string: &lsquo;&rsquo;, &ldquo;&rdquo;,`` boolean: true、f">
@@ -87,7 +87,7 @@
     },
     "headline": "JavaScript 数据类型 类型检测 类型转换 | Marginlon","datePublished": "2022-04-10T16:28:39+08:00",
     "dateModified": "2022-04-10T16:28:39+08:00",
-    "wordCount":  1745 ,
+    "wordCount":  1756 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -420,7 +420,7 @@ Object(Symbol()) // pass
 </ul>
 </li>
 <li>
-<p>[example] instanceof [class]  实例是否属于类（通过原型链）</p>
+<p>[example] instanceof [class]  实例是否属于构造函数（通过原型链）</p>
 <ul>
 <li>返回true/false</li>
 <li>细分Object</li>
@@ -442,7 +442,7 @@ Object(Symbol()) // pass
 <ul>
 <li>返回结果: &ldquo;[object ?]&rdquo;
 <ol>
-<li>example[Symbol.toStringTag]</li>
+<li>example[Symbol.toStringTag] (Math =&gt; &ldquo;[object Math]&rdquo; GeneratorFunction Promise Set Map&hellip;)</li>
 <li>没有此属性，则找构造函数</li>
 </ol>
 </li>

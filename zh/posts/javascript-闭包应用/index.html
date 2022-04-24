@@ -54,8 +54,8 @@
   integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hucb9d0de5eba7d46562152e85dcb0c7e0_242552_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hucb9d0de5eba7d46562152e85dcb0c7e0_242552_180x180_fill_box_center_3.png">
 
 <meta name="description"
   content="1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 1.2. 循环定时器 1. 闭包应用：循环中的闭包处理方案 1.1. 循环事件绑定 var buttons = document.querySelectorAll(&#39;button&#39;); for (var i = 0; i &lt; buttons.length; i&#43;&#43;) { // i=0 buttons[0] 第一个按钮 //">
@@ -351,7 +351,8 @@
   var buttons = document.querySelectorAll('button');
   for (var i = 0; i &lt; buttons.length; i++) {
       // 每一轮循环形成一个闭包，存储私有变量i的值
-      //    + 自执行函数执行，产生EC(A) 私有形参i=0/1/2
+      //    + 自执行函数执
+      行，产生EC(A) 私有形参i=0/1/2
       //    + EC（A）中有个小函数,让全局buttons中的某一项占用创建的函数
     (function(i) {
        buttons[i].onclick = function(){
