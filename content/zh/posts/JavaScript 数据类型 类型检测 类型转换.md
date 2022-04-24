@@ -97,7 +97,7 @@ Object(Symbol()) // pass
     }
     ```
 
-- [example] instanceof [class]  实例是否属于类（通过原型链）
+- [example] instanceof [class]  实例是否属于构造函数（通过原型链）
   - 返回true/false
   - 细分Object
   - 无法检测标准普通对象
@@ -108,7 +108,7 @@ Object(Symbol()) // pass
 - [example].constructor===[class] 获取构造函数
 - Object.prototype.toString.call([value])
   - 返回结果: "[object ?]"
-    1. example[Symbol.toStringTag]
+    1. example[Symbol.toStringTag] (Math => "[object Math]" GeneratorFunction Promise Set Map...)
     2. 没有此属性，则找构造函数
   - 标准普通对象=>字符串
     - JSON.stringify
