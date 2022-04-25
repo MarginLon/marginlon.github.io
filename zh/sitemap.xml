@@ -21,7 +21,7 @@
     <lastmod>2022-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/zh/categories/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -34,16 +34,16 @@
                 />
   </url><url>
     <loc>/zh/tags/javascript/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
   </url><url>
     <loc>/zh/series/javascript/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
   </url><url>
-    <loc>/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <loc>/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
   </url><url>
     <loc>/zh/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -56,7 +56,7 @@
                 />
   </url><url>
     <loc>/zh/posts/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -69,7 +69,7 @@
                 />
   </url><url>
     <loc>/zh/series/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -82,7 +82,7 @@
                 />
   </url><url>
     <loc>/zh/tags/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -95,9 +95,12 @@
                 />
   </url><url>
     <loc>/zh/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2022-04-15T16:28:39+08:00</lastmod>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
   </url><url>
     <loc>/zh/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2022-04-16T16:28:39+08:00</lastmod>
+  </url><url>
+    <loc>/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2022-04-15T16:28:39+08:00</lastmod>
   </url><url>
     <loc>/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</loc>
@@ -235,9 +238,6 @@
   </url><url>
     <loc>/zh/posts/js_items_11/</loc>
     <lastmod>2021-09-16T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>/zh/posts/js_items_10/</loc>
-    <lastmod>2021-09-15T20:00:00+08:00</lastmod>
   </url><url>
     <loc>/zh/tags/bom/</loc>
     <lastmod>2021-04-17T16:28:39+08:00</lastmod>

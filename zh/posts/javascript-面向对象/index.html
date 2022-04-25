@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hucb9d0de5eba7d46562152e85dcb0c7e0_242552_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="1. 构造函数 2. 原型和原型链 3. 面向对象相关 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &hellip; DOM HTML标签 -&gt; HTMLXXXElement -&gt; HTMLElement -&gt; Element -&gt; Node -&gt; EventTarget -&gt; Object HTMLDocument -&gt; Document -&gt; Node -&gt; &hellip; Window -&gt; WindowProperties -&gt; EventTarget -&gt; Object 元素集合 -&gt;">
+  content="1. 构造函数 2. 原型和原型链 3. 面向对象相关 4. Function和Object 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &hellip; DOM HTML标签 -&gt; HTMLXXXElement -&gt; HTMLElement -&gt; Element -&gt; Node -&gt; EventTarget -&gt; Object HTMLDocument -&gt; Document">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,7 +87,7 @@
     },
     "headline": "JavaScript 面向对象[构造函数 原型和原型链] | Marginlon","datePublished": "2022-04-15T16:28:39+08:00",
     "dateModified": "2022-04-15T16:28:39+08:00",
-    "wordCount":  1173 ,
+    "wordCount":  1230 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -96,7 +96,7 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "1. 构造函数 2. 原型和原型链 3. 面向对象相关 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function \u0026hellip; DOM HTML标签 -\u0026gt; HTMLXXXElement -\u0026gt; HTMLElement -\u0026gt; Element -\u0026gt; Node -\u0026gt; EventTarget -\u0026gt; Object HTMLDocument -\u0026gt; Document -\u0026gt; Node -\u0026gt; \u0026hellip; Window -\u0026gt; WindowProperties -\u0026gt; EventTarget -\u0026gt; Object 元素集合 -\u0026gt;"
+    "description": "1. 构造函数 2. 原型和原型链 3. 面向对象相关 4. Function和Object 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function \u0026hellip; DOM HTML标签 -\u0026gt; HTMLXXXElement -\u0026gt; HTMLElement -\u0026gt; Element -\u0026gt; Node -\u0026gt; EventTarget -\u0026gt; Object HTMLDocument -\u0026gt; Document"
 }
 </script><meta property="og:title" content="JavaScript 面向对象[构造函数 原型和原型链] | Marginlon" />
 <meta property="og:type" content="article" />
@@ -110,7 +110,7 @@
 
 
 
-<meta property="og:description" content="1. 构造函数 2. 原型和原型链 3. 面向对象相关 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &hellip; DOM HTML标签 -&gt; HTMLXXXElement -&gt; HTMLElement -&gt; Element -&gt; Node -&gt; EventTarget -&gt; Object HTMLDocument -&gt; Document -&gt; Node -&gt; &hellip; Window -&gt; WindowProperties -&gt; EventTarget -&gt; Object 元素集合 -&gt;" />
+<meta property="og:description" content="1. 构造函数 2. 原型和原型链 3. 面向对象相关 4. Function和Object 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &hellip; DOM HTML标签 -&gt; HTMLXXXElement -&gt; HTMLElement -&gt; Element -&gt; Node -&gt; EventTarget -&gt; Object HTMLDocument -&gt; Document" />
 
 
 
@@ -146,6 +146,10 @@
 
 
 
+
+
+
+<meta property="og:see_also" content="/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/" />
 
 
 
@@ -329,6 +333,7 @@
 <li><a href="#1-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">1. 构造函数</a></li>
 <li><a href="#2-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE">2. 原型和原型链</a></li>
 <li><a href="#3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3">3. 面向对象相关</a></li>
+<li><a href="#4-function%E5%92%8Cobject">4. Function和Object</a></li>
 </ul>
 <h2 id="1-构造函数">1. 构造函数</h2>
 <ul>
@@ -442,8 +447,17 @@
 <li>
 <p>检测公有属性</p>
 <pre><code class="language-js">function hasPubProperty(obj,attr){
-//弊端：既私有又公有
-return (attr in obj) &amp;&amp; !obj.hasOwnProperty(attr);
+
+// 弊端：既私有又公有
+// return (attr in obj) &amp;&amp; !obj.hasOwnProperty(attr);
+
+// 跳过私有，直接公有
+let proto = Object.getPrototypeof(this);
+while(proto){
+  if(proto.hasOwnProperty(attr)) return true;
+  proto = Object.getPrototypeOf(proto);
+}
+if(!proto) return false;
 }
 </code></pre>
 </li>
@@ -464,6 +478,8 @@ keys.forEach(key=&gt; {
 </code></pre>
 </li>
 </ul>
+<h2 id="4-function和object">4. Function和Object</h2>
+<p><img src="" alt=""></p>
 
         </div>
         
@@ -485,6 +501,9 @@ keys.forEach(key=&gt; {
         
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/" class="block">JavaScript CLASS 继承</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
@@ -508,6 +527,9 @@ keys.forEach(key=&gt; {
     <h3 class="text-lg font-semibold mb-4">系列文章</h3>
     <div class="content">
         
+        
+        <a href="/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/">JavaScript CLASS 继承</a>
+        <br />
         
         <a href="/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">JavaScript 面向对象[构造函数 原型和原型链]</a>
         <br />
@@ -574,6 +596,7 @@ keys.forEach(key=&gt; {
     <li><a href="#1-构造函数">1. 构造函数</a></li>
     <li><a href="#2-原型和原型链">2. 原型和原型链</a></li>
     <li><a href="#3-面向对象相关">3. 面向对象相关</a></li>
+    <li><a href="#4-function和object">4. Function和Object</a></li>
   </ul>
 </nav>
 </div>

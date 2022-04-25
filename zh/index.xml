@@ -6,7 +6,7 @@
     <description>Recent content on Marginlon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 15 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Apr 2022 16:28:39 +0800</lastBuildDate><atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Qt多语言</title>
       <link>/zh/docs/qtdoc/chapter1/</link>
@@ -62,12 +62,21 @@
     </item>
     
     <item>
+      <title>JavaScript CLASS 继承</title>
+      <link>/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Sat, 16 Apr 2022 16:28:39 +0800</pubDate>
+      
+      <guid>/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/</guid>
+      <description>1.CLASS 2.类的继承 1.CLASS //ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; // this.n = 100; } // 给实例的私有属性和方法 n = 100; // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） // 增加</description>
+    </item>
+    
+    <item>
       <title>JavaScript 面向对象[构造函数 原型和原型链]</title>
       <link>/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
       <pubDate>Fri, 15 Apr 2022 16:28:39 +0800</pubDate>
       
       <guid>/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
-      <description>1. 构造函数 2. 原型和原型链 3. 面向对象相关 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &amp;hellip; DOM HTML标签 -&amp;gt; HTMLXXXElement -&amp;gt; HTMLElement -&amp;gt; Element -&amp;gt; Node -&amp;gt; EventTarget -&amp;gt; Object HTMLDocument -&amp;gt; Document -&amp;gt; Node -&amp;gt; &amp;hellip; Window -&amp;gt; WindowProperties -&amp;gt; EventTarget -&amp;gt; Object 元素集合 -&amp;gt;</description>
+      <description>1. 构造函数 2. 原型和原型链 3. 面向对象相关 4. Function和Object 1. 构造函数 JS内置类 Number String Boolean Symbol BigInt Object Function &amp;hellip; DOM HTML标签 -&amp;gt; HTMLXXXElement -&amp;gt; HTMLElement -&amp;gt; Element -&amp;gt; Node -&amp;gt; EventTarget -&amp;gt; Object HTMLDocument -&amp;gt; Document</description>
     </item>
     
     <item>
@@ -212,15 +221,6 @@
       
       <guid>/zh/posts/js_items_11/</guid>
       <description>1.工厂设计模式 2.数组和对象的深浅拷贝 3.深比较浅比较合并 1.工厂设计模式 var jQuery = function( selector, context ) { return new jQuery.fn.init( selector, context ); }; jQuery.fn = jQuery.prototype = { jquery: &amp;quot;3.6.0&amp;quot;, constructor: jQuery }; init = jQuery.fn.init = function( selector, context, root ){}; init.prototype = jQuery.fn;</description>
-    </item>
-    
-    <item>
-      <title>JavaScript CLASS 继承</title>
-      <link>/zh/posts/js_items_10/</link>
-      <pubDate>Wed, 15 Sep 2021 20:00:00 +0800</pubDate>
-      
-      <guid>/zh/posts/js_items_10/</guid>
-      <description>1.CLASS 2.类的继承 1.CLASS //ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; // this.n = 100; } // 给实例的私有属性和方法 n = 100; // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） // 增加</description>
     </item>
     
     <item>

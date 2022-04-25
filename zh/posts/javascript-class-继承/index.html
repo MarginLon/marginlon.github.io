@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>JavaScript 事件绑定 事件对象 事件传播 事件委托 | Marginlon</title>
+<title>JavaScript CLASS 继承 | Marginlon</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hucb9d0de5eba7d46562152e85dcb0c7e0_242552_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener(&#39;click&#39;,function(){},false) true:捕获阶段触发 / false：冒泡阶段触发(默认) this: 事件对象 ie8">
+  content="1.CLASS 2.类的继承 1.CLASS //ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; // this.n = 100; } // 给实例的私有属性和方法 n = 100; // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） // 增加">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"/zh/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"JavaScript 事件绑定 事件对象 事件传播 事件委托",
-      "item":"/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/"}]
+      "name":"JavaScript CLASS 继承",
+      "item":"/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/"}]
 }
 </script>
 
@@ -83,11 +83,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/"
+        "@id": "/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/"
     },
-    "headline": "JavaScript 事件绑定 事件对象 事件传播 事件委托 | Marginlon","datePublished": "2021-04-17T16:28:39+08:00",
-    "dateModified": "2021-04-17T16:28:39+08:00",
-    "wordCount":  175 ,
+    "headline": "JavaScript CLASS 继承 | Marginlon","datePublished": "2022-04-16T16:28:39+08:00",
+    "dateModified": "2022-04-16T16:28:39+08:00",
+    "wordCount":  495 ,
     "publisher": {
         "@type": "Person",
         "name": "Marginlon",
@@ -96,21 +96,21 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener(\u0027click\u0027,function(){},false) true:捕获阶段触发 \/ false：冒泡阶段触发(默认) this: 事件对象 ie8"
+    "description": "1.CLASS 2.类的继承 1.CLASS \/\/ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; \/\/ this.n = 100; } \/\/ 给实例的私有属性和方法 n = 100; \/\/ 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） \/\/ 增加"
 }
-</script><meta property="og:title" content="JavaScript 事件绑定 事件对象 事件传播 事件委托 | Marginlon" />
+</script><meta property="og:title" content="JavaScript CLASS 继承 | Marginlon" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" />
+<meta property="og:url" content="/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/" />
 
 
 
 
-<meta property="og:description" content="1. 事件绑定 2. 事件对象 3. 事件传播 4. 事件委托 1. 事件绑定 DOM0: DOM对象.事件 = 函数 DOM2: element.addEventListener(&#39;click&#39;,function(){},false) true:捕获阶段触发 / false：冒泡阶段触发(默认) this: 事件对象 ie8" />
+<meta property="og:description" content="1.CLASS 2.类的继承 1.CLASS //ES6 class Modal { constructor(x, y) { this.x = x; this.y = y; // this.n = 100; } // 给实例的私有属性和方法 n = 100; // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数） // 增加" />
 
 
 
@@ -127,10 +127,10 @@
 
 
 
-<meta property="article:published_time" content="2021-04-17T16:28:39&#43;08:00" />
+<meta property="article:published_time" content="2022-04-16T16:28:39&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2021-04-17T16:28:39&#43;08:00" />
+<meta property="article:modified_time" content="2022-04-16T16:28:39&#43;08:00" />
 
 
 
@@ -139,7 +139,7 @@
 
 <meta property="article:tag" content="JavaScript" />
 
-<meta property="article:tag" content="事件" />
+<meta property="article:tag" content="面向对象" />
 
 
 
@@ -148,8 +148,6 @@
 
 
 
-
-<meta property="og:see_also" content="/zh/posts/javascript-class-%E7%BB%A7%E6%89%BF/" />
 
 
 
@@ -204,6 +202,8 @@
 <meta property="og:see_also" content="/zh/posts/javascript-dom/" />
 
 
+
+<meta property="og:see_also" content="/zh/posts/javascript-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" />
 
 
 
@@ -295,11 +295,11 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">JavaScript 事件绑定 事件对象 事件传播 事件委托</h1>
+        <h1 class="font-bold text-3xl text-primary-text">JavaScript CLASS 继承</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2021-04-17</span>
+        <span>2022-04-16</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
@@ -310,7 +310,7 @@
     <div class="me-6 my-2">
         <i class="fas fa-folder me-1"></i>
         
-        <a href="/zh/categories/%E4%BA%8B%E4%BB%B6/" class="hover:text-eureka">事件</a>
+        <a href="/zh/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="hover:text-eureka">面向对象</a>
         
     </div>
     
@@ -330,42 +330,111 @@
 
         <div class="content">
             <ul>
-<li><a href="#1-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A">1. 事件绑定</a></li>
-<li><a href="#2-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1">2. 事件对象</a></li>
-<li><a href="#3-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD">3. 事件传播</a></li>
-<li><a href="#4-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98">4. 事件委托</a></li>
+<li><a href="#1class">1.CLASS</a></li>
+<li><a href="#2%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF">2.类的继承</a></li>
 </ul>
-<h2 id="1-事件绑定">1. 事件绑定</h2>
+<h2 id="1class">1.CLASS</h2>
+<pre><code class="language-js">//ES6
+class Modal {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        // this.n = 100;
+    } 
+    // 给实例的私有属性和方法
+    n = 100;
+
+    // 原型上公共方法（公共属性无法直接设置，方法不能使用箭头函数）
+    // 增加的方法没有prototype，不可枚举
+    getX() { console.log(this.x);}
+    getY() { console.log(this.y);}
+
+    //当作普通对象设置“静态”属性和方法
+    static n = 200;
+    static setNumber(n) {this.n=n;}
+}
+//原型上的公共属性提取到外面单独写
+Modal.prototype.z = 10;
+let m = new Modal(10, 20);
+
+//ES5
+function Modal(x,y){
+    this.x=x;
+    this.y=y;
+}
+
+Modal.prototype.z=10;
+Modal.prototype.getX=function(){
+    console.log(this.x);
+}
+Modal.prototype.getY=function(){
+    console.log(this.y);
+}
+// Model-&gt;普通对象: 私有属性和方法与实例无关
+Modal.n=200;
+Modal.setNumber=function(n){
+    this.n=n;
+};
+let m = new Model(10,20);
+
+</code></pre>
+<hr>
+<h2 id="2类的继承">2.类的继承</h2>
 <ul>
-<li>DOM0: DOM对象.事件 = 函数</li>
-<li>DOM2: <code>element.addEventListener('click',function(){},false)</code>
-<ul>
-<li>true:捕获阶段触发 / false：冒泡阶段触发(默认)</li>
-<li>this: 事件对象</li>
-<li>ie8兼容:<code>element.attachEvent('onclick',function(){})</code> 后绑定的先执行，this:window</li>
-</ul>
+<li>
+<p>封装：低耦合、高内聚</p>
+</li>
+<li>
+<p>多态: 重载[方法名相同，参数类型或个数不同 =&gt; 多个方法] &amp; 重写[子类重写父类中的方法]</p>
+</li>
+<li>
+<p>继承: 子类继承父类 [JS:子类的实例既有子类赋予的私有/共有属性和方法，也想拥有父类的私有/公有属性方法]</p>
+<ol>
+<li>原型继承</li>
+</ol>
+<pre><code class="language-js">//基于原型链__proto__
+// + 父要赋予其实例的私有属性，子实例会变为公有属性
+// + 子实例可以修改父的方法，影响父实例。
+Child.prototype = new Parent;
+Child.prototype.get = function get(){};
+</code></pre>
+<ol start="2">
+<li>call继承</li>
+</ol>
+<pre><code class="language-js">// 父类普通方法执行{原型失效}，让方法中的this是子类的实例，让父类的私有赋予子类实例的私有
+function Child(){
+  Parent.call(this);
+}
+Child.prototype = new Parent;
+</code></pre>
+<ol start="3">
+<li>寄生组合式继承</li>
+</ol>
+<pre><code class="language-js">function Child(){
+ Parent.call(this);
+}
+
+Child.prototype = Object.create(Parent.prototype);
+</code></pre>
+<ol start="4">
+<li>ES6 extends继承</li>
+</ol>
+<pre><code class="language-js">class Parent {
+  constructor(){
+    this.x =100;
+  }
+  getX(){}
+}
+class Child extends Parent {
+  constructor(){
+    super();
+    this.y = 200;
+  }
+  getY(){}
+}
+</code></pre>
 </li>
 </ul>
-<h2 id="2-事件对象">2. 事件对象</h2>
-<ul>
-<li>event:<code>event||window.event;</code>
-<ul>
-<li>timeStamp</li>
-<li>bubbles:boolean</li>
-<li>button</li>
-<li>pageX/Y: <code>event.pageX || scroll().left + event.clientX;</code></li>
-<li>clientX/Y:</li>
-<li>screenX/Y:</li>
-<li>target</li>
-<li>type</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-事件传播">3. 事件传播</h2>
-<ul>
-<li>捕获 目标 冒泡</li>
-</ul>
-<h2 id="4-事件委托">4. 事件委托</h2>
 
         </div>
         
@@ -373,7 +442,7 @@
     
     <a href="/zh/tags/javascript/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#JavaScript</a>
     
-    <a href="/zh/tags/%E4%BA%8B%E4%BB%B6/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#事件</a>
+    <a href="/zh/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#面向对象</a>
     
 </div>
         
@@ -388,14 +457,11 @@
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="/zh/posts/javascript-dom/" class="block">JavaScript DOM</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/" class="block">JavaScript client offset相关属性和对比</a>
+        <a href="/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="block">JavaScript 面向对象[构造函数 原型和原型链]</a>
         
     </div>
 </div>
@@ -479,10 +545,8 @@
 <div class="sticky-toc hidden lg:block px-6 pb-6 ">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-事件绑定">1. 事件绑定</a></li>
-    <li><a href="#2-事件对象">2. 事件对象</a></li>
-    <li><a href="#3-事件传播">3. 事件传播</a></li>
-    <li><a href="#4-事件委托">4. 事件委托</a></li>
+    <li><a href="#1class">1.CLASS</a></li>
+    <li><a href="#2类的继承">2.类的继承</a></li>
   </ul>
 </nav>
 </div>
@@ -502,19 +566,22 @@
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
-            <a href="/zh/posts/javascript-bom/">JavaScript BOM</a>
+            <a href="/zh/posts/javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">JavaScript 面向对象[构造函数 原型和原型链]</a>
             <br />
             
-            <a href="/zh/posts/javascript-dom/">JavaScript DOM</a>
+            <a href="/zh/posts/javascript-%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/">JavaScript 函数防抖 函数节流</a>
             <br />
             
-            <a href="/zh/posts/javascript-client-offset%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E5%AF%B9%E6%AF%94/">JavaScript client offset相关属性和对比</a>
+            <a href="/zh/posts/javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7/">JavaScript 模块化编程 进阶技巧</a>
             <br />
             
-            <a href="/zh/posts/javascript-scroll%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E5%92%8C%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/">JavaScript scroll相关属性和缓动动画</a>
+            <a href="/zh/posts/javascript-this%E6%8C%87%E5%90%91/">JavaScript This指向</a>
             <br />
             
-            <a href="/zh/posts/javascript-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">JavaScript 内置对象</a>
+            <a href="/zh/posts/javascript-%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8/">JavaScript 闭包应用</a>
+            <br />
+            
+            <a href="/zh/posts/javascript-gc%E6%9C%BA%E5%88%B6-%E9%97%AD%E5%8C%85%E4%BD%9C%E7%94%A8%E5%9F%9F-let-const-var/">JavaScript GC机制 闭包作用域 let/const/var</a>
             <br />
             
         </div>
