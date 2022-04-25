@@ -45,8 +45,7 @@ draft: false
   var buttons = document.querySelectorAll('button');
   for (var i = 0; i < buttons.length; i++) {
       // 每一轮循环形成一个闭包，存储私有变量i的值
-      //    + 自执行函数执
-      行，产生EC(A) 私有形参i=0/1/2
+      //    + 自执行函数执行，产生EC(A) 私有形参i=0/1/2
       //    + EC（A）中有个小函数,让全局buttons中的某一项占用创建的函数
     (function(i) {
        buttons[i].onclick = function(){

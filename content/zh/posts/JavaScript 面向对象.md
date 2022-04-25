@@ -19,6 +19,7 @@ draft: false
 - [1. 构造函数](#1-构造函数)
 - [2. 原型和原型链](#2-原型和原型链)
 - [3. 面向对象相关](#3-面向对象相关)
+- [4. Function和Object](#4-function和object)
 
 ## 1. 构造函数
 
@@ -94,8 +95,17 @@ draft: false
 
   ```js
   function hasPubProperty(obj,attr){
-  //弊端：既私有又公有
-  return (attr in obj) && !obj.hasOwnProperty(attr);
+    
+  // 弊端：既私有又公有
+  // return (attr in obj) && !obj.hasOwnProperty(attr);
+
+  // 跳过私有，直接公有
+  let proto = Object.getPrototypeof(this);
+  while(proto){
+    if(proto.hasOwnProperty(attr)) return true;
+    proto = Object.getPrototypeOf(proto);
+  }
+  if(!proto) return false;
   }
   ```
 
@@ -113,3 +123,7 @@ draft: false
               console.log(`属性名:$(),属性值:$()`);.
   });
   ```
+
+## 4. Function和Object
+
+![]()

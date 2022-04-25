@@ -197,7 +197,7 @@ draft: false
 
   // eg.
   const curring = function curring(){
-      let args = [];
+      let params = [];
       const add = (...args) => {
         params = params.concat(args);
         //每次执行都返回add，无限次执行
