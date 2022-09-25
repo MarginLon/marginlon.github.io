@@ -1,0 +1,175 @@
+<!----
+
+# Navigation
+# By: Dreamer-Paul
+# Last Update: 2022.3.11
+
+一个简单的个人首页，让你的朋友方便快捷的，找到你在各站点的社交链接
+
+本代码为奇趣保罗原创，并遵守 MIT 开源协议。欢迎访问我的博客：https://paugram.com
+
+
+
+ * Navigation changed from https://paugram.com
+ * @author: MarginLon
+ * @since: 2022-09-24
+ * index.html
+
+---->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>奇趣保罗</title>
+    <link href="static/32.png" rel="icon" sizes="32x32" />
+    <link href="static/192.png" rel="icon" sizes="192x192" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1" />
+    <style>
+        html,
+        body,
+        main {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            user-select: none;
+            font: lighter 16px "微软雅黑";
+        }
+
+        body:before {
+            content: '';
+            z-index: -1;
+            width: 3000px;
+            height: 3000px;
+            display: block;
+            position: fixed;
+            top: calc(50% - 1500px);
+            left: calc(50% - 1500px);
+            animation: bg-rotate 15s infinite linear;
+            /* background: linear-gradient(45deg, #20b57d 40%, #258ec5 60%); */
+            /* background: linear-gradient(45deg, #30cfd0 0%, #330867 100%); */
+            /* background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%); */
+            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+            background-image: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+            background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
+            background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+        }
+
+        @keyframes bg-rotate {
+            0% {
+                transform: rotate(0)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        main {
+            display: table;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding-top: 50px;
+            padding-bottom: 70px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .logo {
+            margin-bottom: 50px;
+        }
+
+        .logo img {
+            height: auto;
+            max-width: 100px;
+            border-radius: 100%;
+            border: 3px solid #fff;
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1, 1.1) rotate(1turn);
+        }
+
+        .links {
+            max-width: 300px;
+        }
+
+        .links a {
+            color: #fff;
+            display: block;
+            min-width: 80px;
+            padding: 1em 2em;
+            text-align: center;
+            margin-bottom: 1em;
+            border-radius: 100px;
+            border: #fff 1px solid;
+            transition: background 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+        }
+
+        .links a:hover {
+            color: #258ec5;
+            background: #fff;
+            transform: scale(1.1, 1.1);
+        }
+
+        .links a:active {
+            opacity: 0.7;
+            transform: scale(0.9, 0.9);
+        }
+
+        .links a:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #fff;
+            position: fixed;
+            text-align: center;
+        }
+
+        footer a {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="content">
+            <div class="logo">
+                <img src="static/avatar.jpg" alt="MarginLon" />
+            </div>
+            <div class="links">
+                <a href="https://www.marginlon.zone">主页</a>
+                <a href="https://www.marginlon.zone/blog/">博客</a>
+                <!-- <a href="http://weibo.com/234891753/" target="_blank">微博</a> -->
+                <!-- <a href="http://music.163.com/#/user/home?id=7041859" target="_blank">网易云</a> -->
+                <!-- <a href="http://steamcommunity.com/id/dreamer-paul/" target="_blank">Steam</a> -->
+                <a href="https://github.com/MarginLon/" target="_blank">GitHub</a>
+                <a href="https://space.bilibili.com/2008016" target="_blank">哔哩哔哩</a>
+            </div>
+        </div>
+    </main>
+    <!-- <footer>
+        <p>©
+            <script>document.write(new Date().getFullYear())</script> By <a href="https://paugram.com"
+               target="_blank">Dreamer-Paul</a>.
+        </p>
+    </footer> -->
+</body>
+
+</html>
